@@ -1,0 +1,9 @@
+cau truc can ban:
+   public class 'ten lop'{
+     public static void main(String[] args){
+	System.out.println("abc gi do");
+  }
+}
+
+
+note: luu y la ten lop phai trung voi ten_file.java

@@ -1,0 +1,42 @@
+chuyển đổi hay con gọi là ép kiểu dữ liệu trong java: là dạng chuyển đổi từ kiểu dữ liệu này sang kiểu dữ liệu khác.
+ví dụ: float - int và ngược lại:
+
+*****có cac cách ép kiểu dữ liệu:
+
+ 01/ ép kiểu ngầm định: nghĩa là khi một kiểu dữ liệu được gán cho một biến của kiểu dữ liệu khác, trước đó thì nó tự động chuyển đổi
+ chuyển qua kiểu dữ liệu được gán đó
+     **điều kiện:
+        - hai kiểu dữ liệu phải tương thích.
+        - kiểu đích phải có giá trị lớn hơn kiểu đầu nguồn: vd: int->float ( tức ép kiểu float cho int), rõ ràng là float có giá trị lớn hơn
+        int, thì mới thỏa điều kiện.
+          ex: int a = 100;
+              int b = 200;
+            ép kiểu float có biến a, b của kiểu type int-->
+            float c = a;
+            float d = b; // mặc định lúc này value của biến a và b sẽ đc chuyển sang giá trị của biến c và d ở dạng thập phân của kiểu float.
+
+02/ ép kiểu tường minh: thì cần cho trường hợp ép kiểu có độ chính xác cao, ví dụ như từ số thập phân sáng kiểu số nguyên, có giá trị làm tròn.
+*dieu kien: do thuong ep kieu dich co gia tri nho hon dau nen can dung cach nay.
+ ex: đây ta mún chuyển giá trị thập phân sang số nguyên có độ chính xác thì ta khai báo như sau:
+    float a = 10.35402f;  / cần thêm giá trị f... phía sau để giá trị biến a được tường minh và gặp build lỗi.
+    int b =(int)a;
+ ---> rõ ràng ta thâý là để ép kiểu int biến b = gia trị biên a cho kiểu float để chuyển từ số thập phân cho ra kq số nguyên rõ ràng. Thì khi ép 
+ kiểu int ta cần khai báo rõ ràng tường minh int b=(int)a.
+
+
+
+03/ ep kieu du lieu doi tuong: ................
+  se hoc o phan  tinh ke thua...
+
+04/ ep kieu du lieu chuyen doi qua lai giua bien nguyen thuy va bien` doi` tuong: 
+chỉ áp dụng với các đối tượng có sẵn trong java.lang, tương ứng với các kiểu dữ liệu nguyên thủy:
+ các kiểu dữ liệu nguyên thủy:
+   + boolean
+   + interger(int, short, long, byte, char)
+   + floating-point( float, double);
+
+ctchung: int tên dối tượng = new interger(value)
+   vd: int x =new interger(32);
+
+
+ 

@@ -1,0 +1,58 @@
+- Bien la mot vung dung de luu chu cac gia tri du lieu
+
+-Cac loai bien trong Jva: hieu nom na la moi ten bien dat ra phai di voi mot gia tri du lieu duoc chi dinh
+trong mot ngon ngu lap trinh ( java, c, c++, c#...). vay cac gia tri du lieu duoc chi dinh trong ngon ngu java
+bao gom:
+
+### kieu du lieu nguyen thuy
+  + int, long, short, byte: luu tru so nguyen ( loai nao nen su dung thi phu thuoc vao gia tri so cua no)
+  + float, double: luu tru cac gia tri thap phan
+  + char: dang ky tu don le ( luu y khi khai bao thi bo trong nhay don ' ').
+  + boolean: gia tri dung hoac sai.
+----> day la kieu du lieu nguyen thuy: thuong se viet thuong het, ke ca chu cai dau
+
+ ## kieu du lieu doi tuong:
+  + Array: chua Mang
+  + String: luu chu dang van ban, kieu chuoi~, khi khai bao thi bo trong nhay doi "".
+  + Double: so thuc
+------>>> thuong khac biet voi kieu du lieu nguyen thuy la no viet hoa chu cai dau
+
+- cach dat ten bien:
+   ct chung: type(kieu gia tri du lieu chi dinh cho bien dat phia sau) + varialname(ten bien dat) = " value(gia tri gang cho bien";
+     vd: int, long, string...  khaiBao ="abcdexz";
+
+
+- vd doan code ve ten bien
+**vd1:
+
+public class main{
+	public static void main(String[] args) {
+		String thongBao =" xin chao cac ban";
+		String hoVaTen ="tran huu Phuc";
+		String maSoSinhVien;
+		maSoSinhVien ="1400253";
+		
+		System.out.println("trang thai thong bao: " + thongBao);
+		System.out.println("Ten cua ban la: "+hoVaTen);
+		System.out.println("MSSV Cua ban la: "+maSoSinhVien);
+	}
+}
+
+**vd2:
+public class main{
+	public static void main(String[] args) {
+		String tensach ="sach lap trinh java";
+		int namSX = 2012;
+		double giaTien = 15.5;
+		boolean conSach = true;
+		char maKho ='J';
+		
+		System.out.println("ten sach la:"+ tensach);
+		System.out.println("ngay san xuat: "+namSX);
+		System.out.println("thanh gia: "+giaTien);
+		System.out.println("tinh trang: "+conSach);
+		System.out.println("ma kho la: "+maKho);
+		
+		
+	}
+}

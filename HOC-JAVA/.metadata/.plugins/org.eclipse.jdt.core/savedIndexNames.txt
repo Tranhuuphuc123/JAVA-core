@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+G:\GOC HOC LAP TRINH\HOC JAVA\.metadata\.plugins\org.eclipse.jdt.core
+639001272.index
+3354589281.index
+1865797976.index
+3357016980.index
+2662099890.index

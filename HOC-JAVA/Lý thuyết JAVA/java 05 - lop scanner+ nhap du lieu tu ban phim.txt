@@ -1,0 +1,51 @@
+** lop scanner: giup ta nhap du lieu tu ban phim thay vi chi xuat in ra man hinh mot cach thong thuong, bai
+toan lop scanner ung dung trong cac cach nhap tim kiem du lieu, thong tin lien quan cua cac trang web.
+
+
+** cu phap khai bao lop scanner:
+   cu phap: Scanner + ten lop scanner(tu dat) = new Scanner(System.in);
+          vd: scanner kH = newScanner(System.in); (luc nay de nhap thong tin thi ta can gang
+gia tri lop scanner vua khai bao nhu sao: System.out.println("nhap khai bao: ");
+                                          String khaibao(ten bien) = kH(ten lop scanner).nextLine();
+
+** mot so phuong thuc nhap: gang gia tri bien voi lop scanner
+  + boolean = nextBoolean()
+  + int = nextInt()
+  + byte = nextByte()
+  + float = nextFloat()
+  + String = nextLine()
+  + long = nextLong()
+  + short = nextShort()
+  + double = nextdouble()
+
+
+***vd bai tap nhap tim kiem thong tin sinh vien bang cach dung lop scanner:
+
+
+ import java.util.Scanner;         /* note:khai bao thu vien de ho tro cho lop scanner
+                                   neu khong co import thi lop scanner khong hoat dong*/
+
+public class nhapdulieu {
+	public static void main(String[] args) {
+		Scanner nhapVaXuat = new Scanner(System.in); //note: khai bao ten lop scanner
+		
+		System.out.println("nhap vao ten ho cua ban: ");
+		String tenHo = nhapVaXuat.nextLine();       //note: gang ten bien vao lop scanner
+		
+		System.out.println("nhap MSSV cua ban: ");
+		long mssv = nhapVaXuat.nextLong();
+		
+		System.out.println("nhap vao diem thi cua ban: ");
+		float diemThi =nhapVaXuat.nextFloat();
+		
+		// note: xuat ra cac gia tri nhap tu scanner
+		System.out.println("-----------------------");
+		System.out.println("ho va ten: " + tenHo);
+		System.out.println("ma so sinh vien cua ban la: "+ mssv);
+		System.out.println("diem thi cui ky la: "+diemThi);
+		
+	}
+
+}
+
+   

@@ -1,0 +1,17 @@
+-hang so:
+ hang cung tuong tu nhu bien, khac o cho gia tri cua hang so gan nhu co dinh va khong thay doi, neu ta co gan gia tri khac
+gia tri value da dat truoc thi se loi khi bien dich.
+
+-cach dat ten hang so:
+ final + type( kieu du lieu) + varialname( ten hang so, dat tuong tu nhu dat ten bien) = value( gia tri).
+
+
+vd:
+
+   public class hangso {
+ public static void main(String[] args) {
+	 final int x =100;
+	 System.out.println("gia tri x la: "+ x);
+	 //x= 100; neu gang gia tri sai value ban dau se bao loi;
+ }
+}

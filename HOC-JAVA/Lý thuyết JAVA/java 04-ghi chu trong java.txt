@@ -1,0 +1,11 @@
+***** day la huong dan cach ghi chu de an dong lenh hoac la note them chu thich cho doan code ma khong anh huong 
+toi qua trinh bien dich code.
+
+01/ cach ghi chu tren mot dong:
+    cu phap: //....noi dung...
+
+02/ cach ghi chu nhieu dong:
+    cu phap: /*... noi dung */.
+
+03/ cach ghi chu de tao ra tai lieu doc huong dan nham dua source code cho tham khao
+   cu phap: /** ....noi dung ...**/.
