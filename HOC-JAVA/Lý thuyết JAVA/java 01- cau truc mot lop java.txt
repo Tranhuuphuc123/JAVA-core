@@ -1,4 +1,4 @@
-cau truc can ban:
+***********cau truc can ban:
 
 
         public class 'ten lop'{
@@ -8,5 +8,67 @@ cau truc can ban:
           }
 
 
-note: luu y la ten lop phai trung voi ten_file.java
+ ** trong đó: 
+    - class: khai báo tên lớp java, lưu ý class_name phải trung với tên file.java(tên fiel có đuôi .java)
+    - Public static void main(String[] args):
+       + main(): main là phương thức chính sẽ chứa câu lệnh bên trong sau dấu { }
+       + public static void: đứng trc phương thức main để xác định xem phương thức main đó sẽ đc sử dụng ở mức độ nào.
+       + (String[] args): là một mảng chuổi được truyền vào hàm main như là một tham số.
+
+
+
+
+   ++ ví dụ: tạo một file gioithieu.java:
+
+      public class gioithieu {
+            public static void main(String[] args){
+                System.out.println("hello world");
+            }
+        }
+
+
+
+
+*****TÌM HIỂU RÕ HƠN VỀ MÔI TRƯỜNG CHẠY JAVA(JDK, JVM, JRE)***************
+ 
+ - Java Development Kit (JDK ) là một môi trường phát triển phần mềm được sử dụng để phát triển các ứng dụng và applet Java. 
+ Nó bao gồm Môi trường thời gian chạy Java (JRE), trình thông dịch / trình tải (Java), trình biên dịch (javac), trình lưu trữ (jar),
+ trình tạo tài liệu (Javadoc) và các công cụ khác cần thiết để phát triển Java. 
+
+====>Bây giờ chúng ta cần một môi trường để chạy chương trình của mình. 
+====>Từ đó, JRE là viết tắt của “Java Runtime Environment” và cũng có thể được viết là “Java RTE” ra đời. Môi trường thời gian chạy Java 
+cung cấp các yêu cầu tối thiểu để thực thi một ứng dụng Java; nó bao gồm Máy ảo Java (JVM), các lớp lõi và các tệp hỗ trợ . 
+
+===> Bây giờ chúng ta hãy thảo luận về JVM , nổi bật của máy ảo java. Nó như sau:
+
+   - Một đặc tả nơi hoạt động của Máy ảo Java được chỉ định. Nhưng nhà cung cấp triển khai độc lập để lựa chọn thuật toán. Việc triển khai nó 
+   đã được cung cấp bởi Sun và các công ty khác.
+   - Việc triển khai là một chương trình máy tính đáp ứng các yêu cầu của đặc tả JVM.
+   - Phiên bản thời gian chạy Bất cứ khi nào bạn viết một lệnh java trên dấu nhắc lệnh để chạy lớp java, một phiên bản của JVM sẽ được tạo.
+
+
+
+***rút gọn lại:
+ >>> JDK (Java Development Kit) là Bộ công cụ cung cấp môi trường để phát triển và thực thi (chạy) chương trình Java. JDK là một bộ (hoặc gói)
+  bao gồm hai thứ:
+      + Công cụ phát triển (để cung cấp môi trường để phát triển các chương trình java của bạn)
+      + JRE (để thực thi chương trình java của bạn).
+
+    ===> dồng thời biên dịch các câu lệnh java thành mã nhị phân byte code để máy tính hiểu được. Vì nếu không có 
+    JDK thì các câu lệnh java bình thường máy tính sẽ không hiểu và thực thi dc.
+
+
+ >>> JRE (Java Runtime Environment) là một gói cài đặt cung cấp một môi trường để chỉ chạy (không phát triển) chương trình java (hoặc ứng dụng)
+  trên máy của bạn. JRE chỉ được sử dụng bởi những người chỉ muốn chạy các chương trình Java là người dùng cuối của hệ thống của bạn.
+
+
+ >>> JVM ( Máy ảo Java) là một phần rất quan trọng của cả JDK và JRE vì nó được chứa hoặc có sẵn trong cả hai. Bất kỳ chương trình Java nào 
+ bạn chạy bằng JRE hoặc JDK đều đi vào JVM và JVM chịu trách nhiệm thực thi từng dòng chương trình java, do đó nó còn được gọi là interpreter.
+
+
+
+
+
+
+
 

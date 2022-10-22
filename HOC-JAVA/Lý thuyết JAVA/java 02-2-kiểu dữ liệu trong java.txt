@@ -1,0 +1,22 @@
+*****************CÁC KIỂU DỮ LIỆU TRONG JAVA*******************
+### kieu du lieu nguyen thuy
+  + int, long, short, byte: luu tru so nguyen ( loai nao nen su dung thi phu thuoc vao gia tri so cua no)
+  + float, double: luu tru cac gia tri thap phan
+  + char: dang ky tu don le ( luu y khi khai bao thi bo trong nhay don ' ').
+  + boolean: gia tri dung hoac sai.
+----> day la kieu du lieu nguyen thuy: thuong se viet thuong het, ke ca chu cai dau
+
+### kieu du lieu doi tuong:
+  + Array: chua Mang
+  + String: luu chu dang van ban, kieu chuoi~, khi khai bao thi bo trong nhay doi "".
+  + Double: so thuc
+
+### kiểu dữ liệu tự định nghĩa:
+ 
+  -
+
+
+
+----------------------------------------------------------------------------------------------------------------------
+******CHI TIẾT****
+- 

@@ -1,4 +1,4 @@
-Cacs phép toán trong java cũng tương tự như trong các ngôn ngữ lập trình C/C++;
+Các phép toán trong java cũng tương tự như trong các ngôn ngữ lập trình C/C++;
 01/ +: phép cộng
 02/ *: phép nhân
 03/ /: phép chia
