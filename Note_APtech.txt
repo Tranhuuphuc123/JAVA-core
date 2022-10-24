@@ -6,3 +6,8 @@
  - String vowis lenght, subString, replace, trim(), ...? 
  - String builder?
  - Wrapper class? kieu bao dong trong String java?
+ 
+ 
+ 
+ 
+ 
