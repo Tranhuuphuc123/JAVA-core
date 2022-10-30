@@ -1,0 +1,38 @@
+*****************THƯ VIỆN MATH TOÁN HỌC TRONG JAVA***************
+>>>> CÁC THÀNH PHẦN TOÁN HỌC TRONG THƯ VIỆN MATH:
+  > abs: hàm trị tuyệ đối
+  > min, max: giá trị max min
+  > ceil: hàm làm tròn số lên ( quy tắc trên 0.5 thì làm tròn lên 1)
+  > floor: hàm làm tron về số nguyên: nghĩa là số sau dấu , bao nhiêu cũng kệ. Nó chỉ làm tròn lên số nguyên  mà thui
+  > sqrt: hàm căn bậc hai
+  > hàm pow(a^b): hàm mũ vs dụ a^2 thi viết pow(a,2) 
+
+
+    ++ ví dụ code:
+
+
+
+        import java.util.Scanner;
+        public class thuvien_math {
+            public static void main(String[] args){
+                Scanner sc = new Scanner(System.in);
+                int a, b;
+                System.out.println("nhap vào gia tri a: ");
+                a = sc.nextInt();
+                System.out.println("nhap vào gia tri b: ");
+                b = sc.nextInt();
+
+                // trị tuyệt đối
+                System.out.println("|a|: " + Math.abs(a));
+
+                //^2
+                System.out.println("a^2: " + Math.pow(a,2));
+
+                //hàm ceil
+                System.out.println("ceil a: " + Math.ceil(b));
+                //...
+            }
+        }
+
+
+

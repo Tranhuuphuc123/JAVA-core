@@ -1,0 +1,183 @@
+*******************CÁC TOÁN TỬ TRONG JAVA (OPERATOR)****************
+
+>> toán tử căn bản số học trong Java
+
+
+  Toántử	           Miêu tả	                                Ví dụ
+    +	         Cộng hai toán hạng	                     A(10) + B(20) kết quả là 30
+    -	     Trừ toán hạng thứ hai từ toán hạng đầu      A(10) - B(20) kết quả là -10
+    *	         Nhân hai toán hạng	                     A(10) * B(20) kết quả là 200
+    /	             Phép chia	                         B(20) / A(10) kết quả là 2
+    %	            Phép lấy số dư	                     B(20) % A(10) kết quả là 0, la chia het khong co du..
+    ++	           Toán tử tăng (++)                     A(10)++ kết quả là 11
+    --	           Toán tử giảm (--)	                 A(10)-- kết quả là 9
+
+
+>> tóan tử quan hệ:
+
+ Toántử	                   Miêu tả	                                          Ví dụ
+    ==	      Kiểm tra nếu 2 toán hạng bằng nhau hay không. 
+            Nếu bằng thì điều kiện là true.	                            (A == B) là không đúng
+    !=	      Kiểm tra 2 toán hạng có giá trị khác nhau hay không.
+            Nếu không bằng thì điều kiện là true.	                    (A != B) là true
+    >	      Kiểm tra nếu toán hạng bên trái có giá trị lớn hơn 
+            toán hạng bên phải hay không. Nếu lớn hơn thì điều
+            kiện là true.                                       	    (A > B) là không đúng
+    <	      Kiểm tra nếu toán hạng bên trái nhỏ hơn toán hạng 
+            bên phải hay không. Nếu nhỏ hơn thì là true.	            (A < B) là true
+    >=	      Kiểm tra nếu toán hạng bên trái có giá trị lớn hơn
+            hoặc bằng giá trị của toán hạng bên phải hay không.
+            Nếu đúng là true.	                                        (A >= B) là không đúng
+    <=	      Kiểm tra nếu toán hạng bên trái có giá trị nhỏ hơn 
+            hoặc bằng toán hạng bên phải hay không. Nếu đúng là true.	(A <= B) là true
+
+
+
+>>>Toán tử logic trong Java:
+  
+     Toán tử	            Miêu tả	                                              Ví dụ
+        &&	      Được gọi là toán tử logic AND (và). Nếu cả hai toán 
+                tử đều có giá trị khác 0 thì điều kiện trở lên true.	     (A && B) là false.
+
+        ||	       Được gọi là toán tử logic OR (hoặc). Nếu một trong hai 
+                toán tử khác 0, thì điều kiện là true.	                     (A || B) là true.
+
+        !	       Được gọi là toán tử NOT (phủ định). Sử dụng để đảo 
+                lại trạng thái logic của toán hạng đó. Nếu điều kiện toán 
+                hạng là true thì phủ định nó sẽ là false.	                 !(A && B) là true.
+
+
+>>> Toán tử so sánh bit (bitwise) trong Java
+   Đây là dạng toán tử dùng cho mã nguồn nhị phân ( biểu thị duới dạng cơ số thập phân)
+
+      toán tử            tên                   ví dụ                                  kết quả
+
+         &           AND (num1 & num2)        1101&1110              1100 đối với toán tử & thì 1 với 1 là 1 
+                                                                  còn lại 0vs1 hoặc 1vs0 đều là 0
+					                                                                                                                                                                                                                                                             
+		 ^	         XOR (num1 ^ num2)        1101&1110              0011 đối với ^ (XOR) thì 1vs1 la 0 còn
+                                                                  0vs1 hoặc 1vs0 đều bằng 1.
+
+		 |           OR (num1 | num2)         1101|1110              1111 đối với | (OR của toán hạng bit)
+                                                                  chỉ cần 1 vế của num1 or num2 có 1 thì thành 1.
+		
+		 ~           NOT (~ num1)	          ~1101	                 0010 đối với ~ (NOT của toán hạng bit) thì 
+                                                                  nó sẽ phủ định và đổi ngược kết quả 0 thành 
+                                                                  1 và 1 thành 0.
+
+
+
+>>>Toán tử gán trong Java
+        Toán tử	                    Miêu tả                                         Ví dụ
+        =	        Toán tử gán đơn giản. Gán giá trị toán hạng
+                bên phải cho toán hạng trái.	                     C = A + B sẽ gán giá trị của A + B vào trong C
+
+        +=	        Thêm giá trị toán hạng phải tới toán hạng trái
+                và gán giá trị đó cho toán hạng trái.	             C += A tương đương với C = C + A
+
+        -=	        Trừ đi giá trị toán hạng phải từ toán hạng trái 
+                và gán giá trị này cho toán hạng trái.	             C -= A tương đương với C = C - A
+
+        *=	        Nhân giá trị toán hạng phải với toán hạng trái
+                và gán giá trị này cho toán hạng trái.	             C *= A tương đương với C = C * A
+
+        /=	        Chia toán hạng trái cho toán hạng phải và gán 
+                giá trị này cho toán hạng trái.	                     C /= A tương đương với C = C / A
+
+        %=	        Lấy phần dư của phép chia toán hạng trái cho 
+                 toán hạng phải và gán cho toán hạng trái.	         C %= A tương đương với C = C % A
+
+        <<=	       Dịch trái toán hạng trái sang số vị trí là giá 
+               trị toán hạng phải.	                                 C <<= 2 tương đương với C = C << 2
+
+        >>=	       Dịch phải toán hạng trái sang số vị trí là giá 
+               trị toán hạng phải.	C >>= 2 tương đương với          C = C >> 2
+
+        &=	       Phép AND bit	C &= 2 tương đương với               C = C & 2
+
+        ^=	       Phép OR loại trừ bit	                             C ^= 2 tương đương với C = C ^ 2
+
+        |=	       Phép OR bit.	                                     C |= 2 tương đương với C = C | 2    
+
+
+
+
+
+
+
+>>>>>>> Toán tử hỗn hợp trong Java
+  
+         Toán tử                                       	Miêu tả
+
+         sizeof	              Toán tử sizeof trong C++ trả về kích cỡ của một biến. Ví dụ: sizeof(a), 
+                           với a là integer, sẽ trả về 4
+                           
+     Điều kiện ? X : Y	      Toán tử điều kiện trong java. Nếu Condition là true ? thì nó trả về giá trị 
+                           X : nếu không thì trả về Y
+
+           ,	              Toán tử Comma trong java làm cho một dãy hoạt động được thực hiện. Giá trị 
+                           của toàn biểu thức comma là giá trị của biểu thức cuối cùng trong danh sách được
+                           phân biệt bởi dấu phảy
+
+ . (dot) và -> (arrow)	     Toán tử thành viên trong java được sử dụng để tham chiếu các phần tử đơn của 
+                           các lớp, các cấu trúc, và union
+
+        Cast	             Toán tử ép kiểu (Casting) trong java biến đổi một kiểu dữ liệu thành kiểu khác.
+                           Ví dụ: int(2.2000) sẽ trả về 2
+
+        &	                  Toán tử con trỏ & trong java trả về địa chỉ của một biến. Ví du: &a; sẽ trả về 
+                           địa chỉ thực sự của biến này
+
+        *	                  Toán tử con trỏ * trong java là trỏ tới một biến. Ví dụ: *var sẽ trỏ tới một 
+                           biến var
+
+
+
+
+******************** THỨ TỰ ƯU TIÊN TRONG TOÁN HẠNG CUA JAVA**************************
+ - Độ ưu tiên của toán tử được xếp từ trên xuống và môi hàng có độ ưu tiên riêng biệt
+     
+                **Loại**                              **toán hạng**                             **thứ tự ưu tiên**
+	       
+          Postfix( hậu tố, ngoặc)                    () [] - > . ++ --				            từ trái sang phải	
+
+          Unary (toán 1 ngôi)	            +a(dương a)  -a(âm a) !(not của logical)		    từ  dưới lên và từ phải sang trái
+			                                ~(not cua bit)  ++ -- (type)* sizeof
+     
+           Tính nhân	  	                       * / %					                    từ trái sang phải
+
+           Tính cộng trừ		                     + -					                    từ trái ang phải
+
+           Dịch chuyển		                       << >>					                    từ trái sang phải
+  
+           Quan hệ	                               < <= > >=				                    từ trái sang phải
+
+           Cân bằng		                           ==  !=(#)		                            từ trái sang phải
+
+           Phép AND của bit	                          &     
+ 
+           Phép XOR của bit	                          ^
+       
+           Phép OR của bit                            |
+
+           Phép AND của logic	                      &&
+    
+           Phép OR của logic                          ||
+  
+           Toán tử điều kiện                          ? :			                             từ phải sang trái
+
+           Phép gán		                = += -= *= /= %= > >= < <= &= ^= |=                      từ phải sang trái
+        
+           dấu phẩy		                             ,
+
+
+
+                                                      
+
+  
+  
+ >>>>> Note:
+  **thứ tự ưu tiên trong toán tử thì: +-*/  --> tới toán tử so sánh( thứ tự ưu tiên từ trái sang phải) > < == !=  ---> phép toán logic and, or. not ( not tới and và tới or -->thứ tự ưu tiên thì từ phải  sang trái)
+    
+ *** thứ tự các dấu ngoặc trong toán tử là ưu tiên trc hết, ví dụ so sánh độ ưu tiên trên chỉ cần bỏ vào ngoặc ().. thì dù phép tính có độ ưu tiên thấp nhất vẫn 
+ được ưu tiên trên hết

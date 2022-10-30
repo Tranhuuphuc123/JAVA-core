@@ -1,0 +1,73 @@
+***********TIỀM HIỂU VỀ CÂU LỆNH NHẢY JUM(BREAK, CONTINUE, RETURN)********************
+## Khái niệm:  đÂY LÀ NHỮNG CÂU LỆNH Hổ trợ khi ngưng ngắt dòng kết thúc vòng lặp hay đk kiện if else....
+
+>> CÂU LỆNH HỖ TRỢ JUMP TRONG JAVA:
+
+ ## Break;
+    - Break: Trong Java, break chủ yếu được sử dụng để: 
+        + Kết thúc một chuỗi trong một câu lệnh switch (đã thảo luận ở trên).
+        + Để thoát khỏi một vòng lặp.
+        + Được sử dụng như một dạng goto "văn minh".
+
+ ## continue: tiếp tục thực thi bỏ qua câu lệnh vòng hay đk vòng lặp.
+
+   + ví dụ:
+
+       for(int i =0; i<100; i++){
+         if(i<50)
+            continue;
+            System.out.println(i);
+       }
+
+       ===> trong đoạn code trên  đk là vòng lặp chạy từ 0 tới 99( tức 100 dòng). nhưng lại có đk khi tới 50 thì
+       ngưng vòng lặp. Lúc này vai trò của continue sẽ là in ra các dòng có stt từ 50 tới 99, lí do là continue như
+       đã nói là câu lệnh jum nhảy bỏ qua các đk đc đề ra. Do đk i<50 nên các dòng từ 49 trở về 0 sẽ bị lượt bỏ.
+   
+ ## return: câu lệnh trả về giá trị ban đầu, hiểu rõ hơn là câu lệnh ngưng chương trình trực tiếp
+
+     ++ minh họa:
+
+          public static void main(String[] args) {
+           for(int i=2; i<=9; i++) {
+              for(int j=1; j<=10; j++) {
+                  if(j>5)
+                    return;
+                  System.out.println(i+" x "+j +" = "+(i*j));
+                }
+                System.out.println("---");
+              }
+            }
+
+
+  ===> với đoạn code trên khi sử dụng return thì chuyện gì xảy ra?. với đk j> 5 thì nó sẽ in đúng giá trị 2*1=2..
+  tới 2*5=10. xong kết thúc lun, ngưng hẳn hkoong thêm dòng nào. Vì return giá trị thảo đk sẽ trả về ban đầu kết thúc vòng lặp.
+
+
+
+
+
+
+
+*****************************************************************************************************************
+>>>>> NOTE:
+
+ ===> lưu ý với break, continue, return nó chỉ có giá trị duy nhất ở vòng lặp hay đk gần nó nhất, giả dụ có nhiều vòng 
+ lặp thì break, continue hay return chi có tác dụng ở vòng lặp kế cận nó.
+ ====> nên nếu mún nó có giá trị cho tất cả thì nên đặt label nhãn dán 
+
+   ++ minh họa:
+      
+            public static void main(String[] args) {
+              outer: for(int i=2; i<=9; i++) {
+              for(int j=1; j<=10; j++) {
+                  if(j>5)
+                    continue outer;
+                  System.out.println(i+" x "+j +" = "+(i*j));
+                }
+                System.out.println("---");
+              }
+            }
+
+
+            ==> như đoạn trên mặc dù continue đang nằm ở vòng lặp trong for của j những với cách đặt label: có tên
+            outer thì ta khai báo continue outer; nó sẽ hiểu là giá trị continue có hiệu lực với cả vòng for ở ngoài.

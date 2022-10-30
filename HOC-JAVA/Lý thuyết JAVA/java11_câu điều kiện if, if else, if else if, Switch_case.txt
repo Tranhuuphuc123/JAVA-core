@@ -1,0 +1,112 @@
+*************************TIỀM HIỂU VỀ CÁC CÂU LỆNH ĐIỀU KIỆN TRONG JAVA***********************
+>>>> CÂU ĐIỀU KIỆN IF
+ >>IF:câu lệnh if là câu lệnh ra quyết định đơn giản nhất. Nó được sử dụng để quyết định xem một câu lệnh 
+ hoặc một khối câu lệnh nào đó sẽ được thực thi hay không, tức là nếu một điều kiện nhất định là đúng thì 
+ một khối câu lệnh được thực thi, ngược lại thì không. 
+
+  ## cấu trúc:
+      
+       IF (điều kiện)
+        {
+            // Các câu lệnh thực thi if
+            // điều kiện là đúng
+        }
+
+        ===> nếu đk trong if đúng nó sẽ thực thi.
+
+
+
+>> IF ESLE: Chỉ riêng câu lệnh if cho chúng ta biết rằng nếu một điều kiện là đúng, nó sẽ thực hiện một khối 
+câu lệnh và nếu điều kiện sai thì nó sẽ không. Nhưng nếu chúng ta muốn làm điều gì đó khác nếu điều kiện sai.
+ Đây là tuyên bố khác. Chúng ta có thể sử dụng câu lệnh else với câu lệnh if để thực thi một khối mã khi điều 
+ kiện sai. 
+
+    ## Cú pháp : 
+
+                    if (điều kiện)
+                    {
+                        // Thực thi khối này nếu
+                        // điều kiện là đúng
+                    }
+                    else
+                    {
+                        // Thực thi khối này nếu
+                        // điều kiện sai
+                    }
+
+
+>> Nested if: khái niệm điều kiện lòng trong điều kiện: điều này là khả thi:
+
+    ## ví dụ:
+
+                if(a>b){
+                    if(b>c){
+                        System.out.println(" thưc thi khoi lenh nay");
+                    }else{
+                        SYstem.out.printn("thực thi trường hợp b");
+                    }
+                }else{
+                    System.out.println("không hợp lệ");
+                    
+                }
+
+                
+>> IF ELSE IF: Tại đây, người dùng có thể quyết định trong số nhiều lựa chọn. Các câu lệnh if được thực 
+hiện từ trên xuống. Ngay sau khi một trong các điều kiện kiểm soát if là đúng, câu lệnh liên kết với if
+ đó được thực thi và phần còn lại của bậc thang bị bỏ qua. Nếu không có điều kiện nào là đúng, thì câu 
+ lệnh else cuối cùng sẽ được thực thi. 
+
+
+    ## cấu trúc:
+
+        if(diều kiện){
+            // nội dung thực thi câu lệnh
+        }else if(điều kiện 2){
+            // nội dụng thự thi câu lệnh 2
+        }else if(điều kiện 3){
+            // nội dung thực thi câu lệnh 3
+        }else{
+            // nội dung cúi cùng thực thi khi cac đk trên bất khả thi.
+        }
+
+
+>> SWITCH-CASE: Câu lệnh switch là một câu lệnh rẽ nhánh nhiều đường. Nó cung cấp một cách dễ dàng để gửi 
+thực thi đến các phần khác nhau của mã dựa trên giá trị của biểu thức. 
+
+  ## cấu trúc:
+      
+      Switch(đối số){
+            case value1: 
+                // câu lệnh thực thi value1;
+                break;
+
+            case value2: 
+                // câu lệnh thực thi value2;
+                break;
+
+              case value3: 
+             // câu lệnh thực thi value3;
+             break;
+
+              case value4: 
+             // câu lệnh thực thi value4;
+             break;
+
+              case value5: 
+             // câu lệnh thực thi value5;
+             break;
+
+             default:
+                // thực thi giá trị mặc định khi các giá trị trên sai( default tg tự else, không cần có break)
+      }
+
+
+
+
+
+
+ ====> tham khảo chi tiết ví dụ minh họa về câu lệnh điều kiện thông qua 2 ví dụ trong phần code lệnh 2 bt
+ giải pt bậc nhất và 2.
+
+    
+

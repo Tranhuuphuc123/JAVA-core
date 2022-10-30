@@ -1,0 +1,61 @@
+********************TIỀM HIỂU VỀ VÒNG LẶP TRONG JAVA*********************
+>>>> Vòng lặp For:
+ - Vòng lặp for là một vòng lặp có thể biết trước đc số lần lặp và đk kết thúc vòng lặp.
+ - Vòng lặp for Java cung cấp một cách ngắn gọn để viết cấu trúc vòng lặp. Câu lệnh for sử dụng quá trình
+ khởi tạo, điều kiện và tăng / giảm trong một dòng, do đó cung cấp cấu trúc vòng lặp ngắn hơn, dễ gỡ lỗi.
+
+  ## Câu trúc vòng lặp for:
+     
+      for(expr khởi tạo; test expr; update exp)
+        {
+            // nội dung của vòng lặp
+            // câu lệnh chúng ta muốn thực thi
+        }
+
+    + ví dụ:
+
+       for(int i=0;i<=100;i++){
+         // nội dung
+       }
+
+        ** trong đó:
+          ++ int i: gia trị khởi tạo điểm bắt đầu vòng lặp, mặc định là 0.
+          ++ i<100: đây là đk xét true false cho vòng lặp, đúng sẽ thực thi sai kết thúc vòng lặp.
+          ++ i++/i--: giúp vòng lặp tăng giảm một đơn vị hay nhiều đơn vị: i+=2, i-=2....
+
+
+
+
+
+>>>> vòng lặp while(hay while() do):
+ - vòng lặp while hay while(){} do là một vòng lặp kiểm tra dk ban đầu trước theo giá trị boolean(true/false).
+ - Vòng lặp while được coi như một câu lệnh if lặp lại. Nếu số lần lặp không cố định thì nên sử dụng vòng lặp
+  while.
+
+  ## Cấu trúc vòng lặp WHile() do.
+
+     while(điều kiện){
+        // câu lệnh 1
+        update_expression;
+     }
+
+      * trong đó:
+         + update_expression;: giá trị tăng giảm, vd: i++, i--....
+
+
+        ++ ví dụ code:
+           
+
+
+>>>> Vòng lặp do while:
+  - được sử dụng khi chúng ta cần thực thi lặp đi lặp lại một khối câu lệnh. Vòng lặp do-while trong Java là 
+  một vòng lặp điều khiển Thoát . Do đó, không giống như vòng lặp for hoặc while , do-while kiểm tra điều kiện
+   sau khi thực hiện các câu lệnh của thân vòng lặp.
+ - Đối với do while thì nó sẽ thực thi câu lệnh trc rồi mới kiểm tra điều kiện. 
+
+  ## Cấu trúc:
+     do{
+
+        // cau lệnh thực thin 1
+     }while(điều kiện);
+         

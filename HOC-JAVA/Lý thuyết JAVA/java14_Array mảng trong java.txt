@@ -1,0 +1,157 @@
+*********************ARRAY, lIST VÀ ARRAYLIST TRONG JAVA ******************************
+ >>>>>ARRAY:
+  - Khái niệm: là một nhóm các biến kiểu giống nhau được gọi bằng một tên chung. Mảng trong Java hoạt động 
+  khác với trong C / C ++. Một mảng có thể chứa các tham chiếu nguyên thủy (int, char, v.v.) và đối tượng 
+  (hoặc không nguyên thủy)
+
+
+    >> Cấu trúc mảng một chiều
+    
+                    type var_name []  // khởi tạo tên Mảng hya khai báo mảng
+
+                        or
+
+                    type [] var_name // viết dầy cũng đc.
+
+    <=> cấp phát bộ nhớ động cho mảng
+        
+                    var_name = new type[x];
+
+    <=> cách viết tinh gọn:
+        
+            type [] var_name = new int [20];
+
+
+            ++ ví dụ:
+            int myArray []; // khai báo Mảng
+            myArray = new int [20]; // cấp phát vùng nhớ cho mảng là 20
+
+        ===>or có thể viết tinh gọn:
+
+            int [] myArray = new int [20];
+
+
+    ### Array listeral:
+    - Trong tình huống đã biết kích thước của mảng và các biến của mảng, có thể sử dụng các ký tự của mảng. 
+
+            + ví dụ:
+                int [] intArray = new int [] {1,2,3,4,5,6,7,8,9,10};
+
+                     <=>or có thể viết
+
+                int [] intArray = {1,2,3,4,5,6,7,8,9,10};
+
+                    <=> or có thể khai báo khi biết sl pt giới hạn trc như sau:
+
+                int [] intArray = new int [4];
+                intArray[0] = 10;
+                intArray[1] = 3;
+                intArray[2] = 40;
+                intArray[3] = 50;
+
+
+                // Khai báo mảng ký tự khi biết kích thước và biến cụ thể
+
+
+    ### Truy cập các phần tử mảng Java bằng cách sử dụng cho Vòng lặp
+    - sử dụng mảng liên kết hàm lenght
+    + minh họa:
+    
+            for (int i = 0; i <arr.length; i ++){
+                System.out.println ("Phần tử tại chỉ mục" + i + ":" + arr [i]);
+            }
+
+            ===> ví dụ khai báo:
+                    arr[0] = 10;
+                    arr[1] = 20;
+                    arr[2] = 30;
+                    arr[3] = 40;
+                    arr[4] = 50;
+            ===> lúc này hàm lenght sẽ truy vấn vào mảng a[i] = 0 có value là 10....lặp tới khi hết giá trị đk vòng lặp.
+
+
+
+
+
+
+ >> Cấu trúc mảng 2 chiều hay đa chiều (multiDimensional Arrays forr JAVA):
+
+  - tương tự mảng 1 chiều ta sẽ dùng cách tinh gọn luôn cho nhanh:
+ ## cấu trúc:
+
+        type [][] var_name = new int [x1] [x2];
+
+   + minh họa:
+
+
+      int [] [] intArray = new int [10] [20]; // một mảng hoặc ma trận 2 chiều
+      int [] [] [] intArray = new int [10] [20] [10]; // một mảng 3 chiều
+            ............
+
+
+
+
+
+            ++ ví dụ:
+
+
+             public class multiDimensional {
+                public static void main(String args[])
+                {
+                    // declaring and initializing 2D array
+                    int arr[][] = { { 2, 7, 9 }, { 3, 6, 1 }, { 7, 4, 2 } };
+            
+                    // printing 2D array
+                    for (int i = 0; i < 3; i++) {
+                        for (int j = 0; j < 3; j++)
+                            System.out.print(arr[i][j] + " ");
+            
+                        System.out.println();
+                    }
+                }
+            }
+           
+   
+===========================================================================================================
+
+   *****note: các type khi khai báo mảng thì ngoài int có thể là String.. các kiểu dữ liệu nguyên thủy và đối tượng..
+
+==============================================================================================
+>>>>>>Jagged Array forr Java Mảng  răng cưa trong java()
+ ### Khais nieemj: răng cưa là một mảng gồm các mảng sao cho các mảng thành viên có thể có kích thước khác 
+ nhau, tức là chúng ta có thể tạo mảng 2-D nhưng với số cột trong mỗi hàng thay đổi. Các loại mảng này còn 
+ được gọi là mảng răng cưa. 
+
+ ### cách thức khai báo Jagged Array:
+   
+      type [][] var_name = new type[n][]{  // với n ban đầu là số dòng hiển thị
+         var_name[]=new type[n1]{},
+         var_name[]=new type[n2]{}
+
+         //n1, n2khởi tạo cot trong hang
+      }
+
+      ++ ví dụ code tham khảo: xem bên phàn project/ ben file Jagged_Array.java
+
+    
+>>>>>> copy mảng trong ARRAY java: hya tạo bản sao cho mảng
+  - đối với ngời dùng copy sẽ dex lầ tưởng là copy paste qua. tuy nhiên trong ngôn ngư java :
+
+       // Chương trình Java để minh họa cách sao chép sai một mảng
+
+        // Đầu vào mảng
+        int a [] = {1, 8, 3};
+
+        // Tạo mảng b [] có cùng kích thước với a []
+        int b [] = new int [a.length];
+
+        // Không sao chép các phần tử của a [] sang b [], chỉ tạo
+        // b tham chiếu đến cùng một vị trí
+        b = a;
+    ===> cách thức copy một mảng là như thế.
+
+
+
+  
+
+
