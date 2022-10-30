@@ -1,0 +1,13 @@
+*****************NOI DUNG BAI HOC**********
+>>nGAY24/10/2022:
+ - Arraylist: ?
+ - replace?
+ - substring?
+ - String vowis lenght, subString, replace, trim(), ...? 
+ - String builder?
+ - Wrapper class? kieu bao dong trong String java?
+ 
+ 
+ 
+ 
+ 
