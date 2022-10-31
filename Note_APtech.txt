@@ -1,5 +1,5 @@
 *****************NOI DUNG BAI HOC**********
->>nGAY24/10/2022:
+>>>>>>nGAY24/10/2022:
  - Arraylist: ?
  - replace?
  - substring?
@@ -7,6 +7,95 @@
  - String builder?
  - Wrapper class? kieu bao dong trong String java?
  
+ 
+ --------------------------------
+ - can tim hieu class, interface voi asbtract. goi chung la thu can trong java oop?
+ --------------------------------------------------------
+ >>>> NOI DUNG BAI HOC NGAY 31102022:
+  ** tifm hieu ve  Interfaces and nessted classes!
+   ## interfaces:
+      - rang buoc, da ke thua trong java
+      - 
+      
+      
+      + vis du code:
+         - tao project: javacanban_oop
+         - tao file interface: 
+         
+                                 package javacanban_oop;
+                                    public interface show {
+                                        // khai bao thanh phan interface
+                                        void print_show();
+                                        void print_share();
+                                    }
+                
+          - tao file thuc thi implements cho interface(tuc tao ra phuowng thuc class tu dinh nghix dung cho interface)
+              
+                                           package javacanban_oop;
+
+                                           public class imp implements show{// dung implement de thuc thi cac interface
+
+                                               //thuc hien dinh nghia lai thuc te interface de thuc thi imlement thuc te vao du an
+                                               @Override
+                                               public void print_show(){
+                                                   System.out.println("tim hieu so ve interface01");
+                                               }
+
+                                               @Override
+                                               public void print_share(){
+                                                   System.out.println("tim hieu ve interface02");
+                                               }
+                                           }
+             
+             
+             
+             
+            - tien hanh thuc thi class tren du an(file duan ten aplications)
+                
+                   package javacanban_oop;
+
+                       public class Javacanban_oop {
+
+                           public static void main(String[] args) {
+                               imp phuc = new imp();// goi class imp vua dat vaf dat ten cho class vua tao
+
+                               phuc.print_show(); // lk class voi noi dung thuc thi tren interface
+                               phuc.print_share();
+                           }
+
+                       }
+                       
+                       
+                       
+                  - neu co nhieu interface de lk cac tp khai bao thay vi vopy qua lai ta dung exten de ke thua cac tp khai bao do va class tu tao se la noi \
+                  luu tru no
+                  
+                    + vidU: tao 2 file interface show co print_show va shar co print_shar dung extend de lk 2 gia tr print_show va print_share vao nhau de class tu tao imp co the luu tru het 
+                    
+                    
+                        package javacanban_oop;
+
+                        public interface show  extends share{
+                            // khai bao thanh phan interface
+                            void print_show();
+
+
+                        }
+
+
+
+
+   >>>>>Nested class: lop long nhau
+   
+      
+      
+
+
+
+
+                
+            
+               
  
  
  
