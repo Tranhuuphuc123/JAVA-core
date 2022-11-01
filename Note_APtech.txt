@@ -10,7 +10,15 @@
  
  --------------------------------
  - can tim hieu class, interface voi asbtract. goi chung la thu can trong java oop?
- --------------------------------------------------------
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ --------------------------------------------------------------------------------------------------------------------------------------------------------
  >>>> NOI DUNG BAI HOC NGAY 31102022:
   ** tifm hieu ve  Interfaces and nessted classes!
    ## interfaces:
@@ -86,6 +94,115 @@
 
 
    >>>>>Nested class: lop long nhau
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   ----------------------------------------------------------------------------------------------------------------------------------------------------'
+   
+******* bai hoc Ngay 01/11/2022:
+ >>>>>>>>>>>>>>Exxceptions(Ngoai le trong java)
+  ## khai niem: th phat sinh khi chay ung dung java(1 hd khoong binh thuong, khong on dinh trong ung dung java bat ngo xay ra)
+  ===> exception sinh ra  de giai quyet van de loi bang cach ho tro hg dan phat sinh loi đó để cảnh báo th bất ngờ khi lỗi xảy ra.
+   + tìm hiểu về Try_ catch: truy băt lỗi cảnh báo
+   + cách viết exception: thông báo cảnh báo lôi khi băt try catch
+   + vd: cach khai bao Exxception truc tiep voi try catch:
+   
+   
+         /*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
+                          package Exception;
+
+                          /**
+                           *
+                           * @author STUDENT
+                           */
+
+                          import java.util.Scanner;
+                          public class Exception1 {
+                              public static void main(String[] args){
+
+                                     Scanner phuc = new Scanner(System.in);
+                              int a = 10;
+
+                            System.out.println("yeu cau nhap b: ");
+
+                               int thuong = 0;
+                               int b ;
+
+
+                               try{
+                                        b = phuc.nextInt();
+
+                                        thuong  = a/b;
+                               }
+                               catch(Exception A){
+                                   System.out.println("khong duoc nhap so 0");
+                               }
+
+                                System.out.println("ket qua: " + thuong);
+
+                              }  
+                          }
+                          
+                          
+                          
+            + khai bao ngoai main voi trycat va Exxception:
+            
+                                      package Exception;
+
+                                    /**
+                                     *
+                                     * @author STUDENT
+                                     */
+
+                                    import java.util.Scanner;
+                                    public class Exception1 {
+                                        public static void hamngoai() throws Exception{
+                                           Scanner phuc = new Scanner(System.in);
+                                            int a = 10;
+
+                                            System.out.println("yeu cau nhap b: ");
+
+                                              int b= phuc.nextInt();
+                                              int thuong = a/b;
+
+                                        }
+
+
+
+                                        public static void main(String[] args){
+                                            try{
+                                                hamngoai();
+                                            }catch(Exception phuc){
+                                                System.out.println("yeu cau khong nhap so 0");
+                                            }
+                                        }
+                                    }
+
+
+
+
    
       
       
