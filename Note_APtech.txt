@@ -199,6 +199,26 @@
                                             }
                                         }
                                     }
+                                    
+      \
+      
+      
+      
+    
+    
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------
+   >>>>>> BAI HOC NGAY 02/11/2022:
+   **********TIEM HIEU VE NEW TIME AND TIME API***************
+    + 1/ TIM HIEU TRANG WWEB JAVA GOC: DocsOracle.java.com
+    + 2/  cach set hay lay time zone voi cac package javatime.com
+    + ...........
+    
+    
+    
+   ====================================================
+  >>>>>>> Bai hoc ngay 03/11/2022: hoc tiep bai ngay 02/11/2022
+   >>>>>> bai hoc cont (tip theo cua new date and Time API)
+   
 
 
 
