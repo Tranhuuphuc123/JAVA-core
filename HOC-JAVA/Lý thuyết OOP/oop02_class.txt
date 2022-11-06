@@ -1,1 +1,153 @@
 ************************TIỀM HIỂU VỀ CLASS TRONG JAVA**********************
+>>>> CLASS:
+  ## Khái niệm:
+    1. Lớp là một tập hợp các đối tượng có chung các đặc điểm / hành vi và các thuộc tính / thuộc tính chung.
+    2. Lớp không phải là một thực thể trong thế giới thực. Nó chỉ là một khuôn mẫu hoặc bản thiết kế hoặc nguyên mẫu mà từ đó các đối tượng được
+     tạo ra.
+    3. Lớp không chiếm bộ nhớ.
+    4. Lớp là một nhóm các biến của các kiểu dữ liệu và nhóm các phương thức khác nhau.
+
+
+
+ ## Access Modifer: (Access modifiers hay còn gọi là công cụ sữa đổi truy cập) tức là phần chỉ định múc truy cập dc khai báo trc tên biến, class..
+
+  > Khái niệm Acess Modifier: Access Modifer trong Java xác định phạm vi có thể truy cập của biến, phương thức, constructor hoặc lớp (class).
+  Access Modifiers trong Java được sử dụng để chỉ định các mức truy cập cho các lớp, các phương thức biến và hàm tạo. Nó giúp cập nhật giá trị 
+  của một biến . Chúng còn được gọi là công cụ điều chỉnh "khả năng nhìn thấy".
+
+  > Có hai loại Access Modifier trong Java, đó là: Access Modifier và Non-access Modifier.
+     - Access Modifer (): có 4 phạm vị truy cập như sau:
+      + Private: có thể truy cập trong lớp được xác định ( giá trị riêng biệt), chỉ được truy cập trong phạm vi lớp khởi tạo.
+
+          ++ vd:
+                                           class A {
+                                                private int data = 40;
+                                            
+                                                private void msg() {
+                                                    System.out.println("Hello java");
+                                                }
+                                            }
+                                            
+                                            public class Simple {
+                                                public static void main(String args[]) {
+                                                    A obj = new A();
+                                                    System.out.println(obj.data);// Compile Time Error
+                                                    obj.msg();// Compile Time Error
+                                                }
+                                            }
+          
+          
+          
+         =====>  Trong ví dụ, chúng ta tạo 2 lớp A và Simple. Lớp A chứa biến và phương thức được khai bao là private. Chúng ta cố gắng truy cập 
+          chúng từ bên ngoài lớp A. Điều này dẫn đến Compile time error:
+
+
+            
+      ++ default: hoặc gói-riêng, mặc định (khi không chỉ định công cụ sửa đổi quyền truy cập) 
+      <=>Note: Nếu bạn không khai báo modifier nào, thì nó chính là trường hợp mặc định. Default Access Modifier là chỉ được phép truy cập trong cùng package.
+
+         ++ vd:
+
+                                          class A {
+                                                 void msg() {
+                                                    System.out.println("Hello java");
+                                                }
+                                            }
+                                            
+                                         public class Simple {
+                                                public static void main(String args[]) {
+                                                    A obj = new A();
+                                                    System.out.println(obj.data);
+                                                    obj.msg();
+                                                }
+                                            }
+
+                                ====> Trong ví dụ trên, phạm vi truy cập của lớp A và phương thức của msg() của nó là mặc định nên chúng không thể
+                                 được truy cập từ bên ngoài package.
+
+             
+              
+      + protected: Protected access modifier được truy cập bên trong package và bên ngoài package nhưng phải kế thừa.Protected access modifier có 
+      thể được áp dụng cho biến, phương thức, constructor. Nó không thể áp dụng cho lớp.
+
+
+          ++ vd:
+                                            // Lưu file với tên A.java
+                                                package vn.viettuts.demo;
+                                                
+                                                public class A {
+                                                    protected void msg() {
+                                                        System.out.println("Hello");
+                                                    }
+                                                }
+                                            
+                                            // Lưu file với tên B.java
+                                                
+                                                public class B extends A {
+                                                    public static void main(String args[]) {
+                                                        B obj = new B();  
+                                                        obj.msg(); 
+                                                    }
+                                                }
+
+                    ==> kw là hello dc in ra tuy nhiên lưu ý với Protected thì class trong pt main phải đc extends(ké thừa)
+
+
+
+      ++ public:  ( có thể truy cập từ bất kỳ lớp nào), nghĩa là nó khong ràng buộc như cần kế thừa, phải trong một packgae hay class nào. Chỉ 
+      cần đc gọi là thực thi ngay.
+
+
+                
+
+
+   
+ ## cấu thành một lớp trong java: (những thứ bên trong một class thừơng có)
+    - thành viên dữ liệu (data member): tức khai báo định nghĩa cho các biên kèm kiểu dl type
+    - phương thức (Method): nơi thực thi 1 lớp, còn gọi là hàm, là một tập các câu lệnh được nhóm lại với nhau nhằm thực hiện một công việc nào đó.
+    - hàm khởi tạo (contructor): khởi tạo các đối tượng mới vừa đc khai báo ở data member
+    - lớp lồng nhau (Nested class)
+    - giao diện (Interface)
+
+
+         + ví dụ:
+             
+                                                    public class Dog
+                                                    {
+                                                        // data member, khai báo type and tên biến
+                                                        String name;
+                                                        String breed;
+                                                    
+                                                        // khởi tạo lk các data member đc gọi là phương thức contructor
+                                                        // lưu ý tên constructor phải giống tên class
+                                                        public Dog(String name, String breed)
+                                                        {
+                                                            this.name = name;
+                                                            this.breed = breed;
+                                                        }
+                                                    
+                                                        // method 1, pt nơi thực thi khối lệnh cho các contructor của class
+                                                        public String getName()
+                                                        {
+                                                            return name;
+                                                        }
+                                                    
+                                                        // method 2
+                                                        public String getBreed()
+                                                        {
+                                                            return breed;
+                                                        }
+                                                    
+                                                    // thực thi lệnh trên hàm main, () xem hàm main như một dự án đg làm
+                                                        public static void main(String[] args)
+                                                        {
+                                                            // gọi class Dog vừa khởi tạo và đặt tên cho class.
+                                                            Dog tuffy = new Dog("tuffy","papillon");
+                                                            System.out.println(tuffy.toString());
+                                                        }
+                                                    }
+
+
+
+Note: xem ví dụ cụ thể bên bài class phương thức class trong OOP.
+
