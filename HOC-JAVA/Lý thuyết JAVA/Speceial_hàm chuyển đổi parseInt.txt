@@ -1,0 +1,29 @@
+*******************TIỀM HIỂU VE CÁC HÀM CHUYỂN ĐỔI CHUYÊN NGHIỆP*****************
+- thay vì ép kiểu dữ liệu quá ghiệp dư ta dùng hàm chuyển đổi 
+
+>>>> HÀM CHUYỂN ĐỔI PARSEINT
+ ## cấu trúc:
+      int i = Integer.parseInt("200");    //" " là nọi dung chuyển chuyển thành kiểu int
+      ==> ngoài ra có thể chuyển thành dounle, float...... theo cấu trúc trên
+
+      ++ ví dụ:
+           
+           public class StringToIntExample {
+                public static void main(String args[]) {
+                    String s = "100";
+                    int i = Integer.parseInt(s);
+                    // 10050 vì + là thao tác nối string
+                    System.out.println(s + 50);
+                    // 150 vì + là thao tác cộng số nguyên
+                    System.out.println(i + 50);
+                }
+            }
+            ==> hàm parseInt chuyển chuyên s nhập vào thành số nguyên int.
+
+>>>>> một số hàm liên kết chuyển đổi :
+ >> toBinaryString: hàm chuyển mã nhị phân 
+   +vd:
+
+     int i = Integer.toBinaryString(20);
+     --> biến 20 thành mã nhị phân.
+        

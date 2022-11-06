@@ -1,0 +1,71 @@
+*********************KIẾN THỨC TỔNG QUAN VỀ OOP TRONG JAVA*********************
+>>>>>>Khái niệm về OOP trong JAVA:
+ ##OOP (từ viết tắt của -Object Oriented Programming)_lập trình hướng đối tượng là một phương pháp lập trình 
+ dựa trên các khái niệm về lớp và đối tượng. OOP thường tập trung vào các đối tượng thao tác hơn là logic để 
+ có thể thao tác chúng. 
+
+ ##OOP là một nền tảng quen thuộc của các design pattern hiện nay. OOP đặt ra mục tiêu quản lý source code 
+ giúp gia tăng khả năng tái sử dụng và quan trọng hơn hết là có thể tóm gọn được các thủ tục đã biết trước 
+ tính chất thông qua quá trình sử dụng các đối tượng. 
+
+
+
+  >> Object(đối tượng trong OOP):
+   -  gồm 2 luồn thông tin là:
+     + Thuộc tính(Attribute): là các thông tin, đặc điểm của đối tượng mà lập trình viên hướng đến. 
+     + Phương thức(Method): Chính là các thao tác, hành động mà đối tượng lập trình có thể thực hiện
+      được. 
+
+  >> về Class(lớp trong OOP)
+   - Mỗi một lớp là một kiểu dữ liệu và nó bao gồm nhiều thuộc tính và phương thức đã được định 
+   nghĩa từ trước. Đây được xem là sự trừu tượng hóa của rất nhiều đối tượng. Hoàn toàn khác với 
+   các kiểu dữ liệu thông thường, mỗi một lớp là một đơn vị bao gồm các sự kế hợp giữa phương thức
+    cũng như thuộc tính. 
+
+=====> sự khác nhau giữa lớp và đối tượng là Lớp(class) nó tương tự như khuôn mẫu, còn đối tượng(Object)
+ là thực thể thể hiện dựa vào khuôn mẫu đó. 
+
+
+
+  >>Ưu điểm của lập trình hướng đối tượng OOP là gì?
+   # Code OOP có thể sử dụng lại nên giúp cho các lập trình viên tiết kiệm được tài nguyên. 
+   # OOP mô hình hóa được những thứ phức tạo dưới dạng các cấu trúc đơn giản. 
+   # OOP giúp quá trình sửa lỗi trở nên dễ dàng hơn, so với việc tìm lỗi ở nhiều vị trí khác trong 
+   code thì tìm lỗi ở trong các lớp sẽ đơn giản và ít mất thời gian hơn. 
+   # OOP có tính bảo mật cao, có khả năng bảo vệ mọi thông tin thông qua việc đóng gói. 
+   # Sử dụng OOP có thể dễ dàng mở rộng được dự án lớn nhỏ. 
+
+====================================================================================================
+
+                >>>>>>>>Những nguyên lý cơ bản của OOP là gì?<<<<<<<<<<<
+                
+>>>> Encapsulation (tính đóng gói)
+ - Mọi dữ liệu và phương thức có liên quan đều sẽ được đóng gói thành các lớp để tiện lợi hơn cho 
+ quá trình sử dụng và quản lý. Nhờ vậy mà mỗi lớp đều sẽ được xây dựng để thực hiện một nhóm chức 
+ năng đặc trưng riêng của lớp đó. Việc đóng gói sẽ giúp che dấu một số thông tin và chi tiết cài đặt
+nội bộ khiến bên ngoài không thể nhìn thấy. 
+
+
+>>>> Inheritance (tính năng kế thừa)
+ - Tính kế thừa sẽ cho phép bạn xây dựng một lớp mới dựa trên những định nghĩa đã có của lớp đó.
+  Điều này có nghĩa là: Lớp cha có khả năng chia sẻ dữ liệu cũng như phương thức cho các lớp con. 
+  Từ đó, các lớp con không cần phải định nghĩa lại mà còn có thể mở rộng thành phần kế thừa để bổ 
+  sung thêm các thành phần mới.
+
+
+
+>>>> Polymorphism (Tính đa hình)
+ - Đây là hành động có thể được thực hiện bởi nhiều cách khác nhau và nó là tính chất thể hiện việc 
+ chứa đựng sức mạnh của một lập trình hướng đối tượng. Hiểu như sau: Đa hình là khái niệm mà hai 
+ hoặc nhiều lớp sẽ có những phương thức tương đối giống nhau nhưng nó lại có  thể thực thi theo 
+ nhiều cách khác. 
+
+
+
+ >>>> Abstraction (Tính trừu tượng)
+  - Tính trừu tượng thể hiện tổng quát hóa lên một cái gì đó mà không cần chú ý các chi tiết bên 
+  trong. Nó sẽ không màng đến những chi tiết bên trong là gì mà người ta vẫn có thể hiểu nó ngay 
+  mỗi khi nó được nhắc đến. 
+ 
+
+
