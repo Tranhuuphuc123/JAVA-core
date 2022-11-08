@@ -1,0 +1,192 @@
+*************************TIỀM HIỂU VỀ ANNOTATIONS***************************
+>>>>>KHÁI NIỆM:
+ - Annotation được hiểu là một dạng chú thích hoặc  một dạng siêu dữ liệu (metadata) được dùng để cung cấp thông tin dữ liệu cho mã nguồn Java. 
+ Các chú thích không có ảnh hưởng trực tiếp đến hoạt động của mã mà chúng chú thích. Annotation được thêm vào Java từ Java 5. Các Annotation được 
+ sử dụng trong mã nguồn sẽ được biên dịch thành bytecode và sử dụng kỹ thuật phản chiếu (Reflection) để truy vấn thông tin siêu dữ liệu và đưa ra 
+ hành động thích hợp.Chúng ta có thể chú thích các lớp (class), phương thức (method), các biến (variable), các gói (package) và các tham số 
+ (prameter) trong Java.
+
+   ==> Java Annotation có hai loại:
+
+        + Các Annotation được tích hợp sẵn.
+        + Annotation do người dùng tự định nghĩa.
+
+   ==> Chức năng của Annotation:
+       + Chỉ dẫn cho trình biên dịch Compiler
+       + chỉ dẫn thời điểm biên dịch (Build time)
+       + chỉ dẫn trong thời gian chạy (run time)
+
+  #### Cấu trúc Annotation
+
+      @ Annotation_name
+      //
+
+  #### Annotation có sẵn:
+    >> @Override:
+       - Được sử dụng cho các phương thức có nghĩa là ghi đè một phương thức trong lớp cha (supperclass). Nếu một phương thức đánh dấu 
+      @Override không ghi đè chính xác một phương thức trong lớp cha của nó hay hiểu đơn giản là phương thức đó không hợp lệ thì trình biên dịch 
+      sẽ báo lỗi. Chúng ta không nhất thiết phải sử dụng @Override khi ghi đè phương thức, nhưng Annotation này sẽ giúp chúng ta tránh lỗi dễ dàng 
+      hơn.
+
+            + ví dụ:
+
+                            *tạo lớp superExampleNMD
+
+                                  public class superExampleNMD {
+                                        public void methodOverride() {
+                                            System.out.println("SupperClass Nguyen Minh Duc");
+                                        }
+                                    }
+
+                            *Tạo lớp phụ ExampleNMD thừ kế lớp chính superExampleNMD
+
+                                    public class ExampleNMD extends superExampleNMD{
+                                        @Override
+                                        public void methodOverride() {
+                                            System.out.println("SubClass Nguyen Minh Duc");
+                                        }
+                                    }
+
+                            *Trong phương thức main chính
+
+                                    public class MainNMD {
+                                        public static void main(String[] args) {
+                                            ExampleNMD ex = new ExampleNMD();
+                                            ex.methodOverride();
+                                        }    
+                                    }
+
+                 ===> kết quả in ra dòng : SubClass Nguyen Minh Duc do @Override ghi dè lên.
+
+
+
+
+
+
+
+    >> @Deprecated:
+      - Được sử dụng để dánh dấu một đối tượng (class, method hoặc field) và chỉ dẫn rằng nó tốt nhất không nên được sử dụng nữa. Trình biên dịch 
+      sẽ đưa các câu cảnh báo khi chương trình sử dụng các thuộc tính, lớp hoặc phương thức có gắn với @Deprecated.
+
+      ==> nếu có @Deprecated thì method đó sẽ có dấu gchaj ngang biểu thị phương thức đó đã cũ.
+
+
+    
+
+
+    >>@SuppressWarrnings:
+     - Thông báo cho trình biên dịch biết là không được in các câu cảnh báo nào đó.      
+      + @SuppressWarnings(“deprecation”) để thông báo trình biên dịch không cảnh báo việc sử dụng phương thức có sử dụng @Deprecated.
+
+      + @SuppressWarnings(“unchecked”) để thông báo trình biên dịch không cảnh báo việc sử một ép kiểu không an toàn.
+
+      + @SuppressWarnings(“rawtypes”) để thông báo trình biên dịch không cảnh báo lỗi trong khai báo kiểu dữ liệu.
+
+
+====>> tất cả phương thức Annotation có sẵn xem phần bài tập ví dụ liên quan
+
+
+
+
+
+
+
+===================================================================================================================================================
+                                  >>>>>>>ANNOTATIONS TỰ ĐỊNH NGHĨA<<<<<<<<<<<<<<<<<<<
+
+>>>>> Java Annotation được tích hợp sẵn được sử dụng trong Annotation khác.
+  ## @Target: Dùng để chú thích cho một annotation khác, và annotation đó sẽ được sử dụng trong phạm vi nào. Các chú thích này đã được định nghĩa 
+  trong enum java.lang.annotation.ElementType:
+
+            - ElementType.TYPE  : Chú thích trên Class, interface, enum(kiểu dữ liệu nhất định), annotation
+
+            - ElementType.FIELD : Chú thích trường (field), bao gồm cả các hằng số enum.
+
+            - ElementType.METHOD : Chú thích trên method.
+
+            - ElementType.PARAMETER : Chú thích trên parameter
+
+            - ElementType.CONSTRUCTOR : Gắn trên khai báo cấu tử
+
+            - ElementType.LOCAL_VARIABLE : Chú thích trên biến địa phương.
+
+            - ElementType.ANNOTATION_TYPE: Chú thích trên Annotation khác.
+
+            - ElementType.PACKAGE: Chú thích trên package.
+
+
+
+  ## @Retention: Dùng để chú thích mức độ tồn tại của một annotation nào đó. Cụ thể có 3 mức nhận thức tồn tại của vật được chú thích, và được 
+  định nghĩa trong enum java.lang.annotation.RetentionPolicy:
+
+           - RetentionPolicy.SOURCE: Tồn tại trên code nguồn, và không được biên dịch (compiler) nhận ra.
+
+           - RetentionPolicy.CLASS: Mức tồn tại được biên dịch nhận ra, nhưng không được nhận biết bởi máy ảo tại thời điểm chạy (Runtime).
+
+           - RetentionPolicy.RUNTIME: Mức tồn tại lớn nhất, được bộ dịch (compiler) nhận biết, và máy ảo thời điểm chạy cũng nhận ra sự tồn tại của nó.
+
+### @Documented
+     - chú thích này chỉ ra rằng chú thích mới nên được bao gồm trong tài liệu java được tạo ra bởi các công cụ tạo tài liệu java.
+
+### @Inherited:
+     - Chú thích chỉ ra rằng loại chú thích có thể được kế thừa từ lớp cha và có giá trị mặc định là false. Khi người dùng truy vấn kiểu Annotation 
+     của lớp con và lớp con không có chú thích cho kiểu này thì lớp cha của lớp được truy vấn cho loại chú thích sẽ được gọi. Chú thích này chỉ áp 
+     dụng cho các khai báo class.
+
+
+
+    
+
+---------------------------------------------------------------------------------
+>>>>>>>>> Khởi tạo Annotation (Annotation tự định nghĩa)<<<<<<<<<<<<<<<
+
+     >>> Một phần tử của Annotation có các đặc điểm như sau:
+
+          ##  Không có thân hàm
+          ##  Không có tham số hàm
+          ##  Khai báo trả về phải là một kiểu dữ liệu cụ thể (Kiểu nguyên thủy, Enum, Annotation hoặc Class).
+          ##  Có thể có giá trị mặc định.
+
+
+    >>>Khởi tạo:
+     - Một Annotation sẽ đượng định nghĩa bởi các Meta-Annotations. Các Meta-Annotations gồm @Retention, @Target, @Documented, @Inherited. 
+      ## khởi Tạo:
+
+       // import thư viện Annotation
+
+            import java.lang.annotation.ElementType;
+            import java.lang.annotation.Retention;
+            import java.lang.annotation.RetentionPolicy;
+            import java.lang.annotation.Target;
+            
+            @Retention(value = RetentionPolicy.SOURCE)
+            //Nó tồn tại trên mã nguồi và trình biên dịch không nhận ra
+            @Target(value = {ElementType.METHOD, ElementType.FIELD})
+            //Nó sẽ được dùng chú thích tren mot method
+
+        // Annotation MyCustomAnnotation đc định nghĩa xong
+            public @interface MyCustomAnnotation{   
+
+            }
+
+      #Sử dụng
+
+            public class UsingAnno {
+                // gọi annotation @MyCustomAnnotation vừa đc tạo
+
+                @MyCustomAnnotation  //Gán trước một field
+                private int myAge = 22;    
+                
+                @MyCustomAnnotation   //Gán trước một method
+                public void aMethod(){
+                    // nội dung thực thi
+                }
+            }
+
+
+>>>> Nested Annotation: phưởng thức Annotation lồng nhau
+
+   + ví dụ : // thông qua tổng hợp khởi tạo và sử dụng các Annotation
+
+
+       

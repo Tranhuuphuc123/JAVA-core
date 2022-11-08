@@ -1,0 +1,2 @@
+**********************TIỀM HIỂU VỀ PHƯƠNG THỨC GET AND SET TRONG OOP JAVA*************************
+>>>> Get
