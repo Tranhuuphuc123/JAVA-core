@@ -188,5 +188,7 @@
 
    + ví dụ : // thông qua tổng hợp khởi tạo và sử dụng các Annotation
 
+      + ví dụ code tham khảo bên file bài tập oop/aptech
+
 
        
