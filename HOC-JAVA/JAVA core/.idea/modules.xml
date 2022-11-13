@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Baitap_java/Baitap_java.iml" filepath="$PROJECT_DIR$/Baitap_java/Baitap_java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/JAVA core.iml" filepath="$PROJECT_DIR$/.idea/JAVA core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/OOP_java/OOP_java.iml" filepath="$PROJECT_DIR$/OOP_java/OOP_java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java_canban01/java_canban01.iml" filepath="$PROJECT_DIR$/java_canban01/java_canban01.iml" />
+    </modules>
+  </component>
+</project>

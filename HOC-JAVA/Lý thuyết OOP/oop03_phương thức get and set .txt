@@ -1,2 +1,98 @@
 **********************TIỀM HIỂU VỀ PHƯƠNG THỨC GET AND SET TRONG OOP JAVA*************************
->>>> Get
+
+->  Getter và Setter là các phương pháp được sử dụng để bảo vệ dữ liệu của bạn và làm cho mã của bạn an toàn hơn
+
+>>>> GETTER
+  ## Khái niệm:
+   - Getter trả về giá trị (các trình truy cập), nó trả về giá trị của kiểu dữ liệu int, String, double, float, v.v. Để thuận tiện cho chương trình, 
+   getter bắt đầu bằng từ “get” theo sau là tên biến.
+
+     ++ ví dụ:
+
+         public String getName() { 
+            return name; 
+        }
+         
+
+>>>>> SETTER:
+ ## khái niệm:       
+  - Trong khi Setter đặt hoặc cập nhật giá trị (bộ đột biến). Nó đặt giá trị cho bất kỳ biến nào được sử dụng trong các chương trình của một lớp. 
+  và bắt đầu bằng từ “set” theo sau là tên biến.
+
+     ++ ví dụ:
+           public void setName(String N)
+            {
+        
+                // Từ khóa này đề cập đến chính phiên bản hiện tại
+                this.name = N;
+            }
+        
+  
+==================> Getter và Setter giúp lập trình viên thuận tiện trong việc thiết lập và nhận giá trị cho một kiểu dữ liệu cụ thể.
+ Trong cả getter và setter, chữ cái đầu tiên của biến phải là chữ hoa.
+
+
+ >>>>>>>>  CHỨC NĂNG CHÍNH:
+ - Getter và Setter cung cấp cho bạn sự tiện lợi khi nhập giá trị của các biến thuộc bất kỳ kiểu dữ liệu nào theo yêu cầu của mã. Getters và setters
+  cho phép bạn quản lý cách các biến quan trọng trong mã của bạn được truy cập và thay đổ
+
+
+    + xét ví dụ tổng quan:
+
+                                          class 1             
+                                                import java.io.*;
+                                                
+                                                // tạo một lớp Getset
+                                                class GetSet {
+                                                
+                                                    // data member of class
+                                                    private int num;
+
+                                                    // khởi tạo contructor
+                                                
+                                                public GetSet(int num){
+                                                    this.num = num;
+                                                }
+
+                                                    // xây dựng pt Getter
+                                                    public int getNum(){
+                                                        return this.num;
+                                                    }
+                                                    // xây dựng pt setter, lưu ý nó không tv giá trị type nên mặc định alf kiểu dl void
+                                                    public void setNum(int n)
+                                                    {
+                                                
+                                                        // Checking if number is between 1 to 10 exclusive
+                                                        if (n < 1 && n > 10) {
+                                                            // n nhập vào thỏa đk if() thì sẽ báo lõi
+                                                            throw new IllegalArgumentException();
+                                                        }
+                                                        // mếu n truyền vào nằm ngoài đk trên tức trong khoản (1-10) in ra số đó, do thỏa đk đề bài từ 1 - 10.
+                                                        num = number;
+                                                    }
+                                                
+                                                }
+                                                
+
+                                         Class main
+                                                // Main class
+                                                class GFG {
+                                                
+                                                    // Main driver method
+                                                    public static void main(String[] args)
+                                                    {
+                                                        // gọi class GetSet ra và gáng tên
+                                                        GetSet obj = new GetSet();
+                                                
+                                                        // gọi và thực thi method setNum
+                                                        obj.setNum(5);
+                                                
+                                                        // xuất giá trị vừa truyền
+                                                        System.out.println(obj.getNum());
+                                                    }
+                                                }
+                   ===> kết quả sẽ là 5. Ở đây chúng ta có thể thấy rằng nếu chúng ta lấy một giá trị lớn hơn 10 thì nó sẽ hiển thị lỗi. Bằng cách
+                    sử dụng phương thức setNum(), người ta có thể chắc chắn rằng giá trị của một số luôn nằm trong khoảng từ 1 đến 10. Điều này 
+                    tốt hơn nhiều so với việc cập nhật biến số trực tiếp.
+
+       ==> xem thêm bài tập ví dụ bên bài tập thực hành.

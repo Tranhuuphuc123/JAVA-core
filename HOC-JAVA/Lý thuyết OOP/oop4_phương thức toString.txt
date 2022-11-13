@@ -1,0 +1,20 @@
+*************************TIỀM HIỂU VÈ PHƯƠNG THỨC TOSTRING() TRONG JAVA************************************
+>>>>>>>>>>>>>>> Khái niệm:
+ - Chúng tôi thường sử dụng phương thức toString () để lấy biểu diễn chuỗi của một đối tượng. Điều rất quan trọng và người đọc cần lưu ý rằng bất
+  cứ khi nào chúng ta cố gắng in tham chiếu đối tượng thì phương thức toString () bên trong được gọi ra. Nếu chúng tôi không xác định phương thức 
+  toString () trong lớp của bạn thì phương thức toString () của lớp Object sẽ được gọi, nếu không phương thức toString () được triển khai hoặc ghi 
+  đè của chúng tôi sẽ được gọi.
+
+   #### cách thức khai báo:
+
+      @Override     
+       public String toString(){
+           return [giá_trị]
+       }
+
+       ===> @Override ph thức ghi đè, tiềm hiểu thêm ở  bài Annotation
+            return [giá_trị]: trả về giá trị mong muốn
+
+    ====> pt thức toString() xét trong bài tập ví dụ về myDate ở bên mục Java core/oop, thì toString() giúp ta có thể xuất chuỗi value
+    khi gán vào tên class khi đc gọi bên hàm main mà không cần xậy dựng pt method riêng hay là gọi setter và truyền tham số cho nó mà vẫn
+    đầy đủ thồn tin day, month, year như khởi tạo ở contructor (xem theem been phaanf code thuc hanh JAVA core/OOP_java/to_String.java)
