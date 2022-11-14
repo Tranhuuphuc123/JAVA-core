@@ -5,7 +5,18 @@
   > ceil: hàm làm tròn số lên ( quy tắc trên 0.5 thì làm tròn lên 1)
   > floor: hàm làm tron về số nguyên: nghĩa là số sau dấu , bao nhiêu cũng kệ. Nó chỉ làm tròn lên số nguyên  mà thui
   > sqrt: hàm căn bậc hai
-  > hàm pow(a^b): hàm mũ vs dụ a^2 thi viết pow(a,2) 
+  > hàm pow(a^b): hàm mũ vs dụ a^2 thi viết pow(a,2)
+  > exp: ham mu e: math.exp(4): tuc la
+  > random: gia tri ngau nhien
+  > round(): lam trong thap phan, vd 5,4 tuc la 5, 5.5 thi la 6
+  > log: logarit
+  > log10: log co so 10
+  
+  
+  
+  
+  ********************
+  >>> ham luong giac:
 
 
     ++ ví dụ code:
