@@ -226,7 +226,10 @@
  >>>>>>>>>>>>>>>>>>>>>>>>Annotation?
  ------------------------------------------------------------------------------------------
  >>> tìm hiểu về lambada?
+ >>> tiềm hiểu về comparator
+ >>> tiềm hiểu về list, arraylist?
  >>>> tìm hiểu về selection?
+ >>> tìm hieur về javaSwing?
  
  
    
