@@ -125,6 +125,11 @@
                                                             this.name = name;
                                                             this.breed = breed;
                                                         }
+
+                                                        // khởi tạo lớp rỗng để  tiến hành nhập dữ liệu hông cần gáng cứng khi triển khai class này qua hàm main
+                                                        public Dog(){
+
+                                                        }
                                                     
                                                         // method 1, pt nơi thực thi khối lệnh cho các contructor của class
                                                         public String getName()

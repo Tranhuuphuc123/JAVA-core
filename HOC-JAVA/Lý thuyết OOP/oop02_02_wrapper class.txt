@@ -1,0 +1,42 @@
+*******************TIỀM HIỂU VỀ LỚP WRAPPER CLASSE TRONG JAVA************************
+>>>>> Khái niệm:
+ - Một lớp Wrapper là một lớp có đối tượng bao bọc hoặc chứa các kiểu dữ liệu nguyên thủy. Khi chúng ta tạo một đối tượng cho một lớp trình bao bọc,
+  nó chứa một trường và trong trường này, chúng ta có thể lưu trữ các kiểu dữ liệu nguyên thủy. Nói cách khác, chúng ta có thể bọc một giá trị nguyên 
+  thủy vào một đối tượng lớp bao bọc.
+
+
+  ##### ƯU ĐIỂM VÀ TÍNH NĂNG CỦA LỚP WRAPPER CLASSE
+
+  1/ Chúng chuyển đổi các kiểu dữ liệu nguyên thủy thành các đối tượng. Các đối tượng là cần thiết nếu chúng ta muốn sửa đổi các đối số được truyền
+   vào một phương thức (vì các kiểu nguyên thủy được truyền theo giá trị).
+
+  2/ Các lớp trong gói java.util chỉ xử lý các đối tượng và do đó các lớp bao bọc cũng giúp ích trong trường hợp này.
+
+  3/ Các cấu trúc dữ liệu trong khung Bộ sưu tập, chẳng hạn như ArrayList và Vector , chỉ lưu trữ các đối tượng (kiểu tham chiếu) và không lưu trữ 
+  các kiểu nguyên thủy.
+
+  4/ Một đối tượng là cần thiết để hỗ trợ đồng bộ hóa trong đa luồng.
+
+
+
+    ####################### CÁC KIỂU TYPE VÀ GIÁ TRỊ BAO BỌC WRAPPER CLASSE CỦA NÓ ##########################
+
+                  type                                                          WRAPPER  
+
+                  char                                                          Character
+                  byte                                                          Byte
+                  short                                                         Short
+                  int                                                           Interger
+                  long                                                          Long
+                  float                                                         Float
+                  double                                                        Double
+                  boolean                                                       Boolean
+
+
+            ------------------------------------------------------------------------------------------------
+        
+>>> Autoboxing: tự động chuyển đổi kiểu nguyên thủy thành kiểu bao bọc. 
+
+>>> Unboxing: Nó chỉ là quá trình ngược lại của autoboxing. Tự động chuyển đổi một đối tượng của lớp trình bao bọc thành kiểu nguyên thủy tương ứng 
+của nó được gọi là mở hộp.
+ 

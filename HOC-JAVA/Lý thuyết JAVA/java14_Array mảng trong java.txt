@@ -124,7 +124,7 @@
 
  ### cách thức khai báo Jagged Array:
    
-      type [][] var_name = new type[n][]{  // với n ban đầu là số dòng hiển thị
+      type [][] var_name = new type[n1][n2]{  // với n1 ban đầu là số dòng hiển thị, n2 là số cột muốn hiển thị.
          var_name[]=new type[n1]{},
          var_name[]=new type[n2]{}
 

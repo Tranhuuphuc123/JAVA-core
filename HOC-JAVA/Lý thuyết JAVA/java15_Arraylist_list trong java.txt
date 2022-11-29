@@ -1,2 +1,343 @@
 ****************************************TIỀM HIỂU VỀ ARRAYLIST, LIST TRONG JAVA***********************************
->>>>>ARRAYLIST
+>>>>> ARRAYLIST:
+  ## Khái niệm:
+   - ArrayList là một phần của khung bộ sưu tập Java và nó là một lớp của gói java.util. Nó cung cấp cho chúng ta mảng động trong Java.
+    Mặc dù, nó có thể chậm hơn so với mảng tiêu chuẩn nhưng có thể hữu ích trong các chương trình cần nhiều thao tác trong mảng. Lớp này được 
+    tìm thấy trong gói java.util . Ưu điểm chính của ArrayList là nếu chúng ta khai báo một mảng thì cần phải nói đến kích thước nhưng trong
+     ArrayList thì không cần phải nói đến kích thước của ArrayList nếu bạn muốn nói đến kích thước thì bạn có thể làm được.
+====> tóm lại với Araylist là một mảng mở rộng có thể thêm, sửa và xóa dễ dàng mà mảng tiêu chuẩn Array bt không làm được.
+
+      ++ ví dụ:
+          hàm main():
+
+
+                                        ArrayList<Integer> phuc = new ArrayList<>();
+
+                                        //tạo vòng lặp nối các yếu tố của danh sách Arraylist với kích thước ban đầu
+                                        for(int i =1; i<=5;i++){
+                                            phuc.add(i);
+                                        }
+
+                                        // xuất mảng danh sáchAraylist
+                                        System.out.println(phuc);
+
+
+                                        // xóa bỏ khung [] và in từng phần tử một
+                                        for(int i =0; i<phuc.size(); i++){
+                                            System.out.print(phuc.get(i) + " " );
+                                        }
+
+
+
+
+ >>>> CÁC TÍNH NĂNG QUAN TRỌNG CỦA ARRAYLIST:
+   1/ ArrayList kế thừa lớp AbstractList và thực hiện giao diện List .
+   2/ ArrayList được khởi tạo theo kích thước. Tuy nhiên, kích thước sẽ tự động tăng lên nếu bộ sưu tập tăng lên hoặc thu nhỏ lại nếu các đối 
+   tượng bị xóa khỏi bộ sưu tập.
+
+   3/ Java ArrayList cho phép chúng ta truy cập ngẫu nhiên vào danh sách.
+   4/ ArrayList không thể được sử dụng cho các kiểu nguyên thủy , như int, char, v.v. 
+   ===> Chúng ta cần một lớp bao bọc Wrapper classes(xem bài về Wrapper classes) cho những trường hợp như vậy.
+
+   5/ ArrayList trong Java có thể được coi là một vectơ trong C++ .
+   6/ ArrayList không được đồng bộ hóa. Lớp đồng bộ hóa tương đương của nó trong Java là Vector .
+
+
+
+
+>>>> Một số điểm chính của ArrayList:
+
+    1/ ArrayList là Cấu trúc dữ liệu được gạch chân Mảng có thể thay đổi kích thước hoặc Mảng có thể phát triển.
+    2/ Các bản sao ArrayList được cho phép.
+    3/ Thứ tự chèn được giữ nguyên.
+    4/ Các đối tượng không đồng nhất được cho phép.
+    5/ Có thể chèn Null.
+
+
+
+>>>> Constructor trong ArrayList
+        - các cách khởi tạo trong lớp ArrayList:
+
+        1/ ArrayList(): Hàm tạo này được sử dụng để xây dựng một danh sách mảng trống. Nếu chúng ta muốn tạo một ArrayList trống với tên arr , 
+        thì nó có thể được tạo như sau:
+
+                                            ArrayList arr = new ArrayList();
+
+
+        2/ ArrayList(Collection c): Hàm tạo này được sử dụng để xây dựng một danh sách mảng được khởi tạo với các phần tử từ bộ sưu tập c. Giả sử, 
+        chúng ta muốn tạo một mảng ArrayList chứa các phần tử có trong tập hợp c, sau đó, nó có thể được tạo như sau: 
+        
+
+                                            ArrayList arr = new ArrayList(c); 
+
+
+
+        3/ ArrayList(int capacity): Hàm tạo này được sử dụng để xây dựng một danh sách mảng với dung lượng ban đầu được chỉ định. Giả sử chúng ta muốn 
+        tạo một ArrayList với kích thước ban đầu là N, thì nó có thể được tạo như sau:
+
+                                     ArrayList arr = new ArrayList(N);  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+====================================================================================================================================================
+
+                      ******************************CHI TIẾT ÁC PHƯƠNG THỨC TRONG ARRAYLIST*******************************************  
+
+>>> NOte: lưu ý khi sử dụng ArrayList ta cần dùng thư viên: java.util.Araylist;
+              or
+                                     import  java.util.*;
+>>> Thêm phần tử (ADD):
+  - Để thêm một phần tử vào ArrayList, chúng ta có thể sử dụng phương thức add() . Phương thức này bị quá tải để thực hiện nhiều thao tác dựa 
+  trên các tham số khác nhau. Chúng như sau:  
+
+ ## add(Object): Phương thức này được sử dụng để thêm một phần tử vào cuối ArrayList.
+
+            
+              
+ ## add(int index, Object): Phương thức này được sử dụng để thêm một phần tử vào một chỉ mục cụ thể trong ArrayList.
+ ==> (index là chỉ số cụ thể ta mún thêm)
+
+
+  ++ ví dụ:
+                                        
+                                      public static void main(String args[])
+                                        {
+                                             ArrayList<String> phuc = new ArrayList<>();
+
+                                            // thêm phần tử với add
+                                            phuc.add("value 1");
+                                            phuc.add("value 2");
+
+                                            System.out.println(phuc);
+                                            //===> in kw: [value1, value2]
+
+                                            // Ở đây chúng ta đang đề cập đến chỉ số tại đó nó sẽ được thêm vào
+                                            phuc.add(1,"+");
+
+                                            System.out.println(phuc);
+                                            //===> in kw: [value1,+, value2]
+    
+                                        }
+
+
+
+
+
+>>>> Cộng phần tử giữa 2 số:(insert thêm dòng) này hiểu đúng hơn là chèn thêm phần tử vào vị trí mong muốn
+   
+     + thí dụ:
+        
+                             public static void main(String[] args)
+                                {
+                                    ArrayList<Integer> list = new ArrayList();
+                                    list.add(1);
+                                    list.add(2);
+                                    list.add(4);
+                                    System.out.println(list);
+
+                                ----> kw: [1,2,4]
+
+                                    // chèn thêm số 3 vào vtri 2
+                                    list.add(2, 3);
+                                    System.out.println(list);
+                                -----> kww: [1,2,3,4]
+                                }
+
+
+
+
+
+                    
+>>>>>>> Thay đổi các yếu tố (SET):
+ - Sau khi thêm các phần tử, nếu chúng ta muốn thay đổi phần tử, có thể thực hiện bằng phương thức set() . Vì một ArrayList được lập chỉ mục,
+  phần tử mà chúng ta muốn thay đổi được tham chiếu bởi chỉ mục của phần tử. Do đó, phương thức này lấy một chỉ mục và phần tử được cập nhật
+  cần được chèn vào chỉ mục đó. 
+
+                    ++ vi dụ:
+
+                                        public static void main(String[] args){
+
+                                            ArrayList<String> phuc = new ArrayList<>();
+
+                                            // thêm phần tử với add
+                                            phuc.add("value 1");
+                                            phuc.add("value 2");
+
+                                            System.out.println(phuc);
+                                            //===> in kw: [value1, value2]
+
+                                            // Ở đây chúng ta đang đề cập đến chỉ số tại đó nó sẽ được thêm vào
+                                            phuc.add(1,"+");
+
+                                            System.out.println(phuc);
+                                            //===> in kw: [value1,+, value2]
+
+                                            // thiết lập thay đô với set
+                                            phuc.set(1,"nối");
+                                            System.out.println(phuc);
+
+                                            //====> kw: nó sẽ thay vtri 1 là '+' thành 'nối': [value 1, nối, value 2]
+
+                                        }
+                        
+
+ >>>> Loại bỏ các phần tử (Remove):
+  - Để xóa một phần tử khỏi ArrayList, chúng ta có thể sử dụng phương thức remove() .
+    ## cú pháp:
+        
+            .remove(index): index giá trị muốn loại bỏ
+               or
+            . remove(object): Object đói tượng cụ thể muốn loại bỏ
+
+            ++ ví dụ:
+                    hàm main():
+
+                                        ArrayList<String> phuc = new ArrayList<>();
+
+                                            // thêm phần tử với add
+                                            phuc.add("value 1");
+                                            phuc.add("value 2");
+
+                                            System.out.println(phuc);
+                                            //===> in kw: [value1, value2]
+
+                                            // Ở đây chúng ta đang đề cập đến chỉ số tại đó nó sẽ được thêm vào
+                                            phuc.add(1,"+");
+
+                                            System.out.println(phuc);
+                                            //===> in kw: [value1,+, value2]
+
+                                            // thiết lập thay đô với set
+                                            phuc.set(1,"nối");
+                                            System.out.println(phuc);
+
+                                            //====> kw: nó sẽ thay vtri 1 là + thành nối: [valua 1, nối, value 2]
+
+                                            // loại bỏ với remove
+                                            phuc.remove("nối");
+                                            System.out.println(phuc);
+
+                                            //==> kw: [value 1, value 2] t cũng c thể viết phuc.remove(1)
+
+                                        }
+                            
+
+>>>>> Lặp lại ArrayList (for loop,.....# loop)
+
+ - Có nhiều cách để lặp qua ArrayList. Các cách phổ biến nhất là sử dụng vòng lặp for cơ bản kết hợp với phương thức get() để lấy phần tử tại một 
+ 
+ chỉ mục cụ thể và vòng lặp for nâng cao . 
+
+               ++ Thí dụ      
+
+                         // tạo ArrayList
+                            ArrayList<String> al = new ArrayList<>();
+                    
+                            // Adding elements to ArrayList
+                
+                            al.add("Geeks");
+                            al.add("Geeks");
+                            al.add(1, "For");
+                    
+                            // Using pt vòng lặp for để hiển thị từng tp mảng Araylist
+                            for (int i = 0; i < al.size(); i++) {
+                    
+                                System.out.print(al.get(i) + " ");
+                            }
+                    //Note: hàm get là hàm lấy giá trị mảng xem lại OOP/ phương thức get and set
+                    //====> kw: [Greeks, for, Geeks]
+                            System.out.println();
+                    
+                            // Using the for each loop
+                            for (String str : al)
+                                System.out.print(str + " ");
+
+                      //====> kw: Greeks, for, Geeks
+                        }                             
+                                
+
+
+
+>>>> Lấy phần tử: list.get():
+
+   + thí dụ:
+      
+                            public static void main (String[] args) {
+                                ArrayList<Integer> list = new ArrayList();
+                                // add the number
+                                list.add(9);
+                                list.add(5);
+                                list.add(6);
+
+                                System.out.println(list);
+
+                                ---> kw: [9,5,6]
+
+                                // phương thức lấy phần tử, lưu ý dùng Wrapper chứ không phải kiểu type nguyên thủy
+                                Integer n= list.get(1);
+                                System.out.println(n);
+                                
+                                ----> kw: n = 5
+                            }
+
+
+
+>>>>>>>>>>>>SPECIAL: SẮP XẾP PHẦN TỬ (Collections.Sort):
+ - đối với ARRAYLIST thì sort sắp xếp phàn tử rất quan trọng
+
+
+     ++ thí dụ:
+       
+                                    public static void main(String[] args)
+                                    {
+                                        ArrayList<Integer> list = new ArrayList();
+                                        list.add(2);
+                                        list.add(4);
+                                        list.add(3);
+                                        list.add(1);
+                                        System.out.println("Before sorting list:");
+                                        System.out.println(list);
+                                         ---> kww: [2,4,3,1]
+
+                                         // tiến hành sắp xếp mảng ArrayList
+                                        Collections.sort(list);
+
+                                        System.out.println("after sorting list:");
+                                        System.out.println(list);
+                                           -----> kw: [1,2,3,4]
+                                    }
+
+
+
+>>>> lấy kích thước phần tử mảng ArrayList (size)
+    + thí dụ:
+
+                                     public static void main(String[] args)
+                                        {
+                                            ArrayList<Integer> list = new ArrayList();
+                                    
+                                            list.add(1);
+                                            list.add(2);
+                                            list.add(3);
+                                            list.add(4);
+
+                                            int b = list.size();
+                                            System.out.println("The size is :" + b);
+
+                                            ----> kw: mảng ArrayList list[] có 4 phần tử.
+                                        }
