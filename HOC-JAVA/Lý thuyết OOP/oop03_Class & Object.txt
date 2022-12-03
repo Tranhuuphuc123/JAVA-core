@@ -7,6 +7,11 @@
     3. Lớp không chiếm bộ nhớ.
     4. Lớp là một nhóm các biến của các kiểu dữ liệu và nhóm các phương thức khác nhau.
 
+ >>>> Object(đối tượng trong OOP):
+   -  gồm 2 luồn thông tin là:
+     + Thuộc tính(Attribute): là các thông tin, đặc điểm của đối tượng mà lập trình viên hướng đến. 
+     + Phương thức(Method): Chính là các thao tác, hành động mà đối tượng lập trình có thể thực hiện
+      được. 
 
 
  ## Access Modifer: (Access modifiers hay còn gọi là công cụ sữa đổi truy cập) tức là phần chỉ định múc truy cập dc khai báo trc tên biến, class..

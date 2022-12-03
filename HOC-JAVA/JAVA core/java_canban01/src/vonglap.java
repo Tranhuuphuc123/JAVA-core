@@ -61,6 +61,13 @@ public class vonglap {
 
         // vòng lặp do - while
 
+        // vòng lặp for-each
+
+        String bosuutap[]={"value1", "value2", "value3"};
+        for(String a: bosuutap){
+            System.out.println(a);
+        }
+
 
 
     }

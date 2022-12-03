@@ -1,0 +1,194 @@
+********************************TIỀM HIỂU VỀ CÁC KEYWORD TRONG JAVA**************
+>>>>List of KEYWORD in java
+ >> Super() in java:
+   - từ khóa Super(): Từ khóa super trong java là một biến tham chiếu được sử dụng để chỉ các đối tượng của lớp cha. Cần có sự hiểu biết về 
+   Kế thừa (Inheritance) và Đa hình (Polymorphism) để hiểu từ khóa super. Từ khóa “super” xuất hiện cùng với khái niệm Kế thừa. Nó chủ yếu 
+   được sử dụng trong các ngữ cảnh sau:
+
+      + Sử dụng super với các biến (Variable)
+      + Sử dụng super với các phương thức (Mehod)
+      + Sử dụng super với các hàm tạo (Contructors)
+
+
+===> xem ví dụ code ở phàn OOP_java/list_keyword.java
+
+
+
+  #### super với các Variable( biến ):
+
+  ===> hiểu rõ hơn super trong Variable trong đoạn code sau:
+
+
+
+
+
+    
+                            package list_keyword;
+                            // tìm hiểu về các keyword thng dụng trong java: bài đầu nói về keyword super()
+                            // do ví dụ minh họa ngắn nên ta sẽ tạo các class ngay trong môt file package .java
+
+                            // khởi tạo một lớp tocdo1
+                            class tocdo1{
+                                int speed = 120;
+                            }
+
+                            // khởi tạo tocdo2 thua ke toc do1
+                            class tocdo2 extends  tocdo1{
+                                int speed2=200;
+
+                                // xây dựng method hiển thị
+                                public void hienthi(){
+                                    System.out.println("tốc độ hiển thị thừa kế: " + super.speed);
+                                }
+                            }
+
+
+
+
+
+                            // text thử trong hàm main
+                            public class Super_Variable {
+                                public static void main(String[] args){
+                                    // sử dụng super với  các Variable biến để xem kết quả ntn
+                                    tocdo2 a = new tocdo2();
+
+                                    a.hienthi();
+
+                                    /*--> kww: 120 đơn giản do class tocdo2 nó thừa kế từ tocdo1 nên nó sẽ lấy giá trị speed của tocdo1 để 
+                                    hiển thi do tính kế thừa super gây ra. */
+                                }
+                            }
+
+ 
+------------------------------------------------------------------------------------------------------------------------
+
+ ### Super() với Method phương thức trong java:
+  - Điều này được sử dụng khi chúng ta muốn gọi phương thức của lớp cha . Vì vậy, bất cứ khi nào một lớp cha và lớp con có các phương thức
+   được đặt tên giống nhau thì để giải quyết sự mơ hồ, chúng tôi sử dụng từ khóa super. Đoạn mã này giúp hiểu cách sử dụng siêu từ khóa đã nói.
+   ---> lưu ý với super nó sẽ thừa kế và hiển thị ra nd của lớp cha
+
+    ---> xem đoạn code giải nghĩa sau:
+
+
+                                    package list_keyword;
+                                  /*tiềm hiểu về tính kế thừa của supper với các pt từ lớp cha và lớp con*/
+
+                                  // xây dựng lớp cha với pt message
+                                  class lopcha{
+                                      //method message
+                                      public void message(){
+                                          System.out.println("đây là lớp cha nha");
+                                      }
+                                  }
+
+
+                                  // xây dựng class lopcon với method message y vậy và method hiển thị
+                                    class lopcon extends lopcha{
+                                      //method message y như lớp cha
+                                      public void message(){
+                                          System.out.println("đây là lớp con nha");
+                                      }
+
+                                      // method display lopcha và lopcon
+                                      public void display(){
+                                          //gọi method message() của lopcon
+                                          message();
+
+                                          //gọi method messgae cuar lopcha từ lopcon thông qua super
+                                          super.message();
+                                      }
+                                  }
+
+
+
+                                  // hàm main text đáp án
+                                  public class Super_Method {
+                                      public static void main(String[] ars){
+                                          //gọi class lopcon
+                                          lopcon a = new lopcon();
+
+                                          a.display();
+
+                                          //--> kw: với message() ở method lopcon sẽ hiển thị nd của message trong lopcon
+                                          là "đây là lớp con"
+                                          //--> kw: với super nó sẽ kế thừa đc nôi dung message của lopcha và hiển thị nd đó trong lớp con
+                                         là  " đây là lớp cha"
+                                      }
+  
+  
+                                  }
+=========>Note: Trong ví dụ trên, chúng ta đã thấy rằng nếu chúng ta chỉ gọi phương thức message() thì lớp hiện tại message() được gọi nhưng với 
+việc sử dụng từ khóa super, message() của lớp cha cũng có thể được gọi.
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------
+ #### Super() với Contructor hàm khởi tạo:
+ - Từ khóa super cũng có thể được sử dụng để truy cập hàm tạo của lớp cha. Một điều quan trọng hơn là 'super' có thể gọi cả hàm tạo tham số 
+ cũng như không tham số tùy thuộc vào tình huống. Sau đây là đoạn mã để giải thích khái niệm trên: 
+
+    
+    ++ code ví dụ:
+
+
+             
+
+                                                  package list_keyword;
+                       /*đoạn code ví dụ về tính kes thùa super với hàm khởi tạo contructor khi xây dựng class với hàm khởi tạo contructor*/
+
+
+                                                  // xây dựng class lopcha với hàm khởi tạo contructor kèm theo
+                                                  class lop_cha{
+                                                    private String value1;
+
+                                                      public lop_cha(String value1) {
+                                                          this.value1 = value1;
+                                                      }
+
+                                                      // xây dựng mthod hiển thị lớp cha
+                                                      public void display(){
+                                                          System.out.println("hàm cha: "+ value1);
+                                                      }
+                                                  }
+
+
+
+
+
+                                                  // xây dựng lớp con kế thừa lớp cha và giá trị contructor từ lớp cha
+                                                  class lop_con extends lop_cha{
+                                                      private String value2;
+
+                                                      // khởi tạo contrcutor lớp con với super
+                                                      public lop_con(String value1,String value2) {
+                                                          super(value1);
+                                                          this.value2 = value2;
+                                                      }
+
+                                                      //method hiển thị
+                                                      public void display(){
+                                                          //xuất kết quả ở lớp cha
+                                                          super.display();
+                                                          System.out.println("hàm con: " + value2);
+                                                      }
+
+                                                  }
+
+
+
+
+                                                  // hàm text với super trong contructor
+                                                  public class Super_Contructor {
+                                                      public static void main(String[] args){
+                                                          lop_con a = new lop_con("giá trị cha", "giá trị con");
+                                                          a.display();
+
+                                                          /*--> kww: nó sẽ hiển thị nd lop_cha cả ngay trong lop_con, vì lopcon đã thừ kế từ 
+                                                          lop_cha đây là cách dùng super() với contructor
+                                                          * */
+                                                      }
+                                                  }
+
+   

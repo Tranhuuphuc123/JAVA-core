@@ -34,7 +34,7 @@
 
  >>>>>>>>  CHỨC NĂNG CHÍNH:
  - Getter và Setter cung cấp cho bạn sự tiện lợi khi nhập giá trị của các biến thuộc bất kỳ kiểu dữ liệu nào theo yêu cầu của mã. Getters và setters
-  cho phép bạn quản lý cách các biến quan trọng trong mã của bạn được truy cập và thay đổ
+  cho phép bạn quản lý cách các biến quan trọng trong mã của bạn được truy cập và thay đổi
 
 
     + xét ví dụ tổng quan:

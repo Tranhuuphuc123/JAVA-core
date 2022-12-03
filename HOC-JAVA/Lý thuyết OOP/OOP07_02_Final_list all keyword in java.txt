@@ -1,0 +1,55 @@
+*****************************TIỀM HIỂU VỀ KEYWORD FINAL() TRONG JAVA*************************************
+- từ khóa final được sử dụng trong các ngữ cảnh khác nhau. Trước hết, final là một công cụ sửa đổi không truy cập chỉ áp dụng cho một biến, 
+một phương thức method hoặc một lớp class. Sau đây là các bối cảnh khác nhau trong đó cuối cùng được sử dụng:
+ 
+ >>>> FINAL for variable(biến):
+  - Khi một biến được khai báo với từ khóa Final, giá trị của nó không thể sửa đổi được, về cơ bản, là một hằng số. 
+  Điều này cũng có nghĩa là bạn phải khởi tạo một biến với final.
+
+     vidu:
+           final int abc = 5;
+           ==> giá trị abc =5 là mặc định không thể thay đổi đc.
+
+
+>>>>> FINAL với class:
+  - Khi một lớp được khai báo với từ khóa final , nó được gọi là lớp cuối cùng final class. Một lớp cuối cùng không thể được mở rộng (kế thừa).
+
+            vd:
+                                            final class A
+                                            { 
+                                                // phương thức và trường 
+                                            } 
+                                            
+                                            // Lớp sau là bất hợp pháp 
+                                            lclass B exstend A 
+                                            { 
+                                                // LỖI BIÊN TẬP! Không thể phân lớp A 
+                                            }
+                        ===> như đã nói một lớp class với final không thể thừa kế và mở rộng
+
+>>>>> FINAL với method:
+
+  - Khi một phương thức được khai báo với từ khóa final , nó được gọi là phương thức cuối cùng final mehtod. Một phương pháp cuối cùng không
+  thể được ghi đè . Lớp Object thực hiện điều này—một số phương thức của nó là cuối cùng. 
+
+
+
+   ++ ví dụ:
+
+      
+
+                                   final class A 
+                                    { 
+                                        void m1() 
+                                        { 
+                                            System.out.println("Đây là phương thức cuối cùng."); 
+                                        } 
+                                    } 
+
+                                    class B exstend A
+                                    { 
+                                        void m1() 
+                                        { // Biên dịch lỗi! Chúng tôi không thể ghi đè lên 
+                                            System.out.println("Illegal!"); 
+                                        } 
+                                    }

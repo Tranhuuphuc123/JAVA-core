@@ -1,0 +1,115 @@
+**************************TIỀM HIỂU CHI TIẾT VỀ METHOD TRONG JAVA******************
+>>>> Khái niệm:
+ - Phương thức (Method) trong Java là tập hợp các câu lệnh thực hiện một số tác vụ cụ thể và trả về kết quả cho người gọi. Một phương thức 
+ Java có thể thực hiện một số tác vụ cụ thể mà không trả lại bất kỳ thứ gì
+ - Một phương thức là một khối mã chỉ chạy khi nó được gọi.
+ - Bạn có thể truyền dữ liệu, được gọi là tham số, vào một phương thức.
+ - Các phương thức được sử dụng để thực hiện một số hành động nhất định và chúng còn được gọi là các hàm .
+
+
+
+ >>>>Cú pháp:
+   ### cú pháp Method in java
+
+
+                                <access_modifier> <return_type> <method_name>( list_of_parameters)
+                                    {
+                                        //thân hình
+                                    }
+
+                        + trong đó:
+                                ++ <access_modifier>: phạm vi truy cập biến (xem bài class & object.txt/access_modifier)
+                                ++ <return_type>: kiểu dữ liệu trả về(int, void...)
+                                ++ <method_name>: tên p/t
+                                ++ ( list_of_parameters): ds các tham số truyền vào, có thể có hoặc không
+
+
+
+     
+       + tạo class riêng với class chứa hàm main
+
+                       public class Class_name {
+                         // khởi tạo method tên là myMethod
+                            static void myMethod() {
+                                // nội dung method
+                            }
+                        }
+
+   ***Note: static có nghĩa là phương thức thuộc về lớp Chính và không phải là đối tượng của lớp Chính.
+
+                 or có thể viết:
+
+                         public class Class_name {
+                            // khởi tạo method tên là myMethod
+                            public void myMethod() {
+                                // nội dung method
+                            }
+                        }
+            
+
+
+        + gọi tên pt trong hàm main
+
+                    public static void main(String[] args) {
+                       Class_name abc = new Class_name
+
+                       // gọi tới pt thực thi
+                       abc.myMethod();
+                    }
+
+
+
+
+>>>>>>TRiển khai Mẫu Method trong java
+
+   ## Cách 1: tạo method thông thường không có đối số và tham số
+
+      + tạo class riêng
+           
+                    public class lop_phu{
+                        // khởi tạo method với kiểu trả về là output thông thường
+                        static void in(){
+                            System.out.println("xuất thông tin thui);
+                        }
+                    }
+
+    + gọi method trong hàm main:
+
+                    public sttaic void main(String[] args){
+                        // gọi lớp trc
+                        lop_phu a = new lop_phu();
+                        // gọi method
+                        a.in();
+                        --> kw: câu lệnh đc in ra
+                    }
+
+
+    ## bài tạo xây dựng method có tham số và đối số truyền vào.
+
+       + taọ lớp tính tổng:
+
+                    public class tinhtong{
+                        int sum = 0;
+
+                        // method tính với hai tham số a và b đc khởi tạo
+                        static void  ham_tinh(int a, int b){
+                            sum = a +b;
+                            return sum;
+
+                         // or có thể viết return a+b;
+
+                        }
+                    }
+
+      + trong hàm main:
+
+                    public static void main(String[] args){
+                        // gọi lơp trc
+                        tinhtong a = new tinhtong();
+
+                        // gọi pt
+                        int bien_chua = a.ham_tinh(5,6);
+                        ---> lưu ý với kiểu có tham số khai báo trc thì phải truyền đối số cho nó không sẽ eror!
+                        System.out.println(bien_chua);
+                        -->kww: bien_chua  cho ra kw tổng a+b 
+                    }

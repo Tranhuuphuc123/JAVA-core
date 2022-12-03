@@ -58,4 +58,47 @@
 
         // cau lệnh thực thin 1
      }while(điều kiện);
-         
+
+
+
+
+
+
+
+
+
+>>>>>> Vòng lặp for-each:
+ - For-each là một kỹ thuật duyệt mảng khác như vòng lặp for, vòng lặp while, vòng lặp do-while được giới thiệu trong Java5. 
+ 
+     +  Nó bắt đầu với từ khóa for giống như một vòng lặp for thông thường.
+     + Thay vì khai báo và khởi tạo một biến bộ đếm vòng lặp, bạn khai báo một biến cùng kiểu với kiểu cơ sở của mảng, theo sau là dấu hai chấm, 
+     sau đó là tên mảng.
+     + Trong thân vòng lặp, bạn có thể sử dụng biến vòng lặp mà bạn đã tạo thay vì sử dụng phần tử mảng được lập chỉ mục. 
+      
+     + Nó thường được sử dụng để lặp qua một mảng hoặc một lớp Bộ sưu tập (ví dụ: ArrayList)
+
+
+
+
+   ### Cấu trúc forr-each"
+     
+                           for (type variableName : arrayName) {
+                               // nội dung câu lệnh
+                         }
+
+                         ++ trong đó;
+                           >type: tên kiểu dữ liệu
+                           > variableName: tên biến
+                           > arrayName: tên mảng
+
+
+   ### ví dụ đoạn code:
+                           // tạo ra mảng cars với kiểu String
+                           String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+
+                           // sử dụng for-each để xuất tt
+                           for (String i : cars) {
+                              System.out.println(i);
+                            }
+                            ---> kw: xuất ra các giá trị value của mảng cars
+                                       

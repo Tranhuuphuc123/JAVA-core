@@ -1,0 +1,96 @@
+>>>>> PHƯƠNG THỨC EQUALS:
+ >> Khái niệm:
+    - ví dụ ta có đoạn code sau:
+
+                                            int a = 5;
+                                            int b= 6;
+                                            if(a==b){
+                                                System.out.println(" a = b);
+                                            }else{
+                                                System.out.println("a!=b");
+                                            }
+                              ===> với đoạn code này sẽ khoogn có lỗi kw la a!=b
+
+                         <->tuy nhiên với OOP trong java thì sẽ khác một class sẽ có nhiều object.. vậy nếu so sánh như dậy sẽ lỗi
+
+                          + vd code class OOP:
+
+                                            MyDate md1 = new MyDate(15, 5, 2025);
+                                            MyDate md2 = new MyDate(11, 1, 2021);
+                                            MyDate md3 = new MyDate(15, 5, 2025);
+
+                                        if(md1==md2){
+                                            System.out.println(" md1 = md2");
+                                        }else(
+                                            System.out.println("md1 != md2");
+                                        )
+                                    ===> với cách so sánh như thế này trong OOP java là error!. vì class có nhiều đối tượng, không 
+                                    thể so sánh cách bình thường như thế này đc mà phải dùng method equals để so sánh các Object, class...
+
+
+
+                    
+    #### khái niệm về equals:
+     - Trong java phương thức equals() được sử dụng để so sánh sự bằng nhau của hai Đối tượng. Sự bình đẳng có thể được so sánh theo hai cách:
+
+        + So sánh nông (Shallow comparison): Việc triển khai mặc định của phương thức bằng được định nghĩa trong lớp Java.lang.Object, lớp này
+         chỉ đơn giản kiểm tra xem hai tham chiếu Đối tượng (giả sử x và y) có tham chiếu đến cùng một Đối tượng hay không. tức là Nó kiểm tra 
+         xem x == y. Vì lớp Đối tượng không có thành viên dữ liệu xác định trạng thái của nó, nên nó còn được gọi là so sánh nông.
+
+        + So sánh sâu (Deep Comparison): Giả sử một lớp cung cấp triển khai phương thức equals() của riêng nó để so sánh các Đối tượng của
+         lớp đó với trạng thái wrt của các Đối tượng. Điều đó có nghĩa là các thành viên dữ liệu (tức là các trường) của Đối tượng sẽ được 
+         so sánh với nhau. So sánh như vậy dựa trên các thành viên dữ liệu được gọi là so sánh sâu.
+
+
+
+        
+
+     #### Một số nguyên tắc của phương thức equals() của lớp Object :
+       - Nếu một số đối tượng khác bằng với một đối tượng đã cho, thì nó tuân theo các quy tắc sau:
+
+        + Phản xạ : đối với bất kỳ giá trị tham chiếu a nào, a.equals(a) sẽ trả về giá trị true.
+        + Đối xứng : đối với mọi giá trị tham chiếu a và b, nếu a.equals(b) trả về true thì b.equals(a) phải trả về true.
+        + Chuyển tiếp : đối với mọi giá trị tham chiếu a, b và c, nếu a.equals(b) trả về true và b.equals(c) trả về true, thì a.equals(c)
+         sẽ trả về true.
+
+        + Nhất quán : đối với mọi giá trị tham chiếu a và b, nhiều lệnh gọi a.equals(b) luôn trả về đúng hoặc trả về sai một cách nhất quán, 
+        miễn là không có thông tin nào được sử dụng trong phép so sánh bằng trên đối tượng bị sửa đổi.
+
+   ====> Note (Lưu ý): Đối với mọi giá trị tham chiếu khác null a, a.equals(null) sẽ trả về false.
+
+     #### lib kèm theo lớp equals and hascode: java.io.*;    
+
+
+     #### đoạn code:
+
+
+            tham khảo file thực hành bên java oop/ equals_hascode.java     
+
+
+                                @Override
+                                public boolean equals(Object obj) {
+                                    if (this == obj)
+                                        return true;
+                                    if (obj == null || this.getClass() != obj.getClass())
+                                        return false;
+
+                            /* or có thể viết
+                                  if(obj ==null || !(obj instanceof MyDate))
+                                  return fasle;
+                            */  
+                                    MyDate other = (MyDate) obj;
+                                    if (this.day != other.day)
+                                        return false;
+                                    if (this.month != other.month)
+                                        return false;
+                                    if (this.year != other.year)
+                                        return false;
+                                    return true;
+                                }
+                                        
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+>>>>>> Phương thức Hascode:
+    
