@@ -92,5 +92,30 @@
 
 
 --------------------------------------------------------------------------------------------------------------------------------------------
->>>>>> Phương thức Hascode:
-    
+>>>>>> Phương thức Hascode( hàm băm):
+ ### khái niệm:
+    - Đây là phương thức được sử dụng để trả về giá trị hashcode được liên kết với object. Giá trị hashcode là một số nguyên được liên kết 
+    với mỗi object. Nó được sử dụng để xác định vị trí của các đối tượng trong hashtable (bảng băm).
+    - Các đối tượng như HashMap, HashTable sử dụng các đối tượng key để tìm kiếm các đối tượng value tương ứng (key-value). Và để tối ưu cho
+     việc tìm kiếm, Java sử dụng các hash value lấy từ phương thức hashCode() của các đối tượng key để gom nhóm các đối tượng này trong những 
+     cái gọi là các bucket (Bucket là nơi mà chúng ta lưu trữ các cặp key-value)
+
+     - Khi tìm kiếm một đối tượng bất kỳ trong HashMap hay HashTable, đầu tiên Java sẽ lấy hash value của đối tượng key mà chúng ta muốn tìm
+      kiếm. Sau đó nó sẽ kiểm tra các bucket để xem giá trị hash value đó có trùng khớp với bucket nào hay không. Nếu thoả mãn một bucket nào
+       đó thì Java sẽ trả về giá trị của đối tượng value mà chúng ta muốn tìm kiếm.
+
+    ===> tóm lại hàm băm hascode có giá trị cao trong việc giảm chi phí tính toán giữ các dữ liệu, cụ thể là nó có thể so sánh các dũ liệu
+    trong các khối dữ liệu nhanh hơn và đồng thời hàm băm hascode nó sẽ trả về một giá trị đại diện nào đó cho dữ liệu
+
+
+   >>Cú pháp:
+
+               public int hashCode(){
+                   // trả về giá trị mã băm , tiềm hiểu thêm về mà băm.
+               }
+
+
+        .Note: 
+                        
+                        
+

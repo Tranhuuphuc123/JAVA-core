@@ -91,6 +91,7 @@
                                                         System.out.println(obj.getNum());
                                                     }
                                                 }
+                                            
                    ===> kết quả sẽ là 5. Ở đây chúng ta có thể thấy rằng nếu chúng ta lấy một giá trị lớn hơn 10 thì nó sẽ hiển thị lỗi. Bằng cách
                     sử dụng phương thức setNum(), người ta có thể chắc chắn rằng giá trị của một số luôn nằm trong khoảng từ 1 đến 10. Điều này 
                     tốt hơn nhiều so với việc cập nhật biến số trực tiếp.

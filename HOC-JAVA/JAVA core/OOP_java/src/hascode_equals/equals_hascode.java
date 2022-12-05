@@ -21,6 +21,11 @@ public class equals_hascode {
 
         System.out.println("a1 so sanh bang a3: "
                 + a1.equals(a3));
+
+
+        // sử dụng phương thức hascode, hascode còn tiềm hiểu thêm?
+        System.out.println("a1 hascode: " + a1.hashCode());
+
     }
 
 }

@@ -138,6 +138,15 @@ public class lopphu_equals_hascode {
     }
 //------------------------------------------------------------------------------
 
+    // phương thức hascode
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getDay(), getMonth(), getYear());
+    }
+
+    //--------------------------------------------------------------------------------
+
 
     // toString in ra chuỗi thông tin cho contructor
     @Override
