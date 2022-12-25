@@ -1,0 +1,117 @@
+****************************TIỀM HIỂU VỀ LỚP TRỪU TƯỢNG ABSTRACT TRONG JAVA**************
+>>>> tiềm hiểu về abstract:
+ ## kHái niệm: về trừu tượng hóa trong JAVA
+  - Trừu tượng hóa là thuộc tính mà ở đó chỉ những chi tiêt thiết yếu mới được hiển thị cho người dùng. Trừu tượng cũng đc định nghĩa
+  là quá trình xá định các đặc điểm cần thiết của đối tượng bỏ qua các chi tiết không liên quan hay ít cần thiết.
+  --> ví dụ: một người lái xe thì không cần chuyên moon cao về vật lý, hay động cơ học cái a ta có thể làm là biết lái xe, phanh, hay tắng tốc
+mà không cần quá hiểu biết về chuyên môn, nguyên tác vật lý, hay cấu tạo xe nhưng vẫn đk xe đc.. đó đc gọi là trừu tượng.
+
+
+>>>> lớp trừu tượng và method của nó:
+ - một lớp class trừu tượng là một lớp đc khai báo với từ khóa abstract.
+ - method trong class abstract là một phương thức được khai báo mà hông cần thực thi.
+   vd:
+       public abstract double tinhdientich();
+
+ - một lớp  abstract đc xây dựng phải đc định nghĩa lại tức Overriding lại trong class chile(lớp con). việc ghi đè trở thành bắt buộc để
+ đạt được tính trừu tượng hóa.
+
+ ====> ví dụ về đoạn code sau: một class parent với các với các dạng tổng quát đc trừu tượng hóa mà không cung cấp cách triển khai cụ thể,
+ để lại cho các class child điền thông tin chi tiết:
+    
+                                                
+                                      package loptruutuong_abstract2;
+                                            // tiềm hiểu về trừu tượng thông qua bài tập ví dụ 01
+                                            // tao lớp trừu tượng xử ls trong một file thui nhá
+                                            abstract class shape {
+                                                private String mausac;
+                                                // contructor
+
+                                                public shape(String mausac) {
+                                                    this.mausac = mausac;
+                                                }
+                                                // get and set
+
+                                                public String getMausac() {
+                                                    return mausac;
+                                                }
+
+                                                // xây dung method astarct
+                                                public abstract double tinhdientich();
+
+                                                public abstract String toString(); // xây dựng thêm method toStirng để xuất chuỗi như ý muốn
+
+                                            }
+
+                                            class circle extends shape {
+                                                private double r;
+
+                                                //
+
+                                                public circle(String mausac, double r) {
+                                                    super(mausac);
+                                                    this.r = r;
+                                                }
+
+                                                //thực thi Override chi tiết với abstract ở lớp cha
+
+                                                @Override
+                                                public double tinhdientich() {
+                                                    return Math.PI * Math.pow(this.r, 2);
+                                                }
+
+                                                @Override
+                                                public String toString() {
+                                                    return "màu sắc của hình: " + super.getMausac() + "diện tích circle : " + this.tinhdientich();
+                                                }
+
+                                            }
+
+                                            class rectangle extends shape {
+                                                private double length;
+                                                private double width;
+
+                                                /// contructor
+
+                                                public rectangle(String mausac, double length, double width) {
+                                                    super(mausac);
+                                                    this.length = length;
+                                                    this.width = width;
+                                                }
+
+                                                //định nghĩa override chi tiết lớp abstract ở lóp cha
+                                                @Override
+                                                public double tinhdientich() {
+                                                    return this.length * this.width;
+                                                }
+
+                                                // định nghĩa cchi tiết chuỗi xuất với abstract
+                                                @Override
+                                                public String toString() {
+                                                    return " màu sắc của hình Rectangle: " + super.getMausac() + "diện tích rectangle: " + this.tinhdientich();
+                                                }
+                                            }
+
+                                            public class truutuong1 {
+                                                public static void main(String[] args){
+                                                    shape  h1 = new circle("red", 5);
+                                                    h1.tinhdientich();
+                                                    System.out.println("kw: " + h1.toString());
+
+                                                    shape h2 = new rectangle("yellow", 2,6);
+                                                    h2.tinhdientich();
+                                                    System.out.println("kw: " + h2.toString());
+                                                }
+                                            }
+                                            ---> kw: xuất ra chuỗi như ở method toString.
+
+
+
+
+>>>> ứu điểm  của lớp trừu tượng:
+ - 1/ Nó làm giảm sự phức tạp của việc xem mọi thứ.
+ - 2/ tránh trùng lặp mã và tăng khả năng sử dụng lại.
+ - 3/ hiểu tăng tính bảo mật của ứng dụng hoặc chương trình vì những chi tiết đc cung cấp cho người dùng.
+ - 4/ cải thiện khả năng bảo trì.
+ - 5/ cải thiện tính moodun của ứng dụng.
+ - 6/ 

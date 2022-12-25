@@ -6,6 +6,22 @@
   + boolean: gia tri dung hoac sai.
 ----> day la kieu du lieu nguyen thuy: thuong se viet thuong het, ke ca chu cai dau
 
+
+
+  >>> bảng kiểu dữ liệu chi tiết:
+         name              giá trị mặc định                kích thước                              phạm vi
+
+         boolean              false                           1bit                               true or false
+         byte                   0                            1byte(8bit)                         -128 to 127
+         char                   \u000                        2byte(16bit)                        0 tới 65553 ASCII
+         short                  0                            2byte(16bit)                        -32.768 đến 32.676 
+         int                    0                            4byte(32bit)                        -2.147.483.648 đến 2.147.483.647
+         float                  0.0f                         4byte(32bit)                        3.4e−038 to 3.4e+038
+         long                   0L                           8byte(64bit)                        -9.223.372.036.854.775.808 to 9.223.372.036.854.775.807
+         double                 0.0d                         8byte(64bit)                        1.7e−308 to 1.7e+308
+            
+
+
 ### kieu du lieu doi tuong:
   + Array: chua Mang
   + String: luu chu dang van ban, kieu chuoi~, khi khai bao thi bo trong nhay doi "".

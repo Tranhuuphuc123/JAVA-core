@@ -1,0 +1,167 @@
+**********************GHI ĐÈ PHƯƠNG THỨC Orverride TRONG NGÔN NGỮ LẬP TRÌNH JAVA***************************
+>>>>>>> KHÁI NIỆM VỀ Orverride:
+ ### KHÁI NIỆM:
+  - Overriding hay ghi đè phương thức là một thuật ngữ dùng để chỉ cách sử dụng trong trường 
+  hợp thuộc tính ở lớp con kế thừa từ lớp cha và muốn định nghĩa lại các phương thức chẳng hạn
+  mà ở lớp con có và nó cũng tồn tại ở lớp cha.
+  - một lớp cha có thể có nhiều lớp con kế thừa các thuộc tính, phương thức của mình. nhưng không 
+  phải phương thức kế thừa nào từ lớp cha cũng phù hợp với lớp con. Chính vì vậy lớp con đó
+  cần ghi đè hay định nghĩa lại phưng thức thừa kế đó cho phù hợp hơn.
+
+
+===> Ghi đè phương thức là một trong những cách mà java đạt được Đa hình thời gian chạy . Phiên bản của một phương thức được thực thi sẽ được
+ xác định bởi đối tượng được sử dụng để gọi nó. Nếu một đối tượng của lớp cha được sử dụng để gọi phương thức, thì phiên bản trong lớp cha sẽ 
+ được thực thi, nhưng nếu một đối tượng của lớp con được sử dụng để gọi phương thức, thì phiên bản trong lớp con sẽ được thực thi.
+    Nói cách khác, chính kiểu của đối tượng được tham chiếu (không phải kiểu của biến tham chiếu) sẽ quyết định phiên bản nào của phương thức 
+bị ghi đè sẽ được thực thi.
+
+     ++ ví dụ:
+         
+                                           class Parent {
+                                                void show()
+                                                {
+                                                    System.out.println("đây là lớp cha");
+                                                }
+                                            }
+                                            
+                                           
+                                            class Child extends Parent {
+                                                // This method overrides show() of Parent
+                                                @Override
+                                                void show()
+                                                {
+                                                    System.out.println("đây là lớp con");
+                                                }
+                                            }
+                                            
+                            + hàm main thực thi:
+
+                                            class Main {
+                                                public static void main(String[] args)
+                                                {
+                                                   /*mặc dù đã kế thừa nhưng class cha đc gọi thì nó sẽ tt method lớp cha*/
+                                                    Parent obj1 = new Parent();
+                                                    obj1.show();
+                                            
+                                                /*nếu gọi class con  thì nó sẽ tt method lớp con*/
+                                                    Child obj2 = new Child();
+                                                    obj2.show();
+                                                    --> kw: nd show của lớp con  đc hiên thị , do lớp con đã ghi đè lên lớp cha ở method show.
+                                                }
+                                            }
+
+
+
+
+>>>>> PHƯƠNG THỨC KHÔNG BỊ GHI ĐÈ BỞI KEYWWORD:(FINAL)
+   Nếu chúng ta không muốn một phương thức bị ghi đè, chúng ta sẽ khai báo nó là phương thức final.
+      
+        ++ ví dụ:
+         
+                                        class Parent {
+                                            // khai báo với final giúp nó tránh bị ghi đè 
+                                            final void show() {}
+                                        }
+                                        
+                                        class Child extends Parent {
+                                            // This would produce error
+                                            void show() {}
+                                        }
+                                        ===> lúc này khi chạy sẽ lỗi error do khoogn thể ghi đè method show đc
+
+
+
+
+
+>>>>> PHƯƠNG THƯC KHÔNG BỊ GHI ĐÈ BỞI KEYWWORD: (STATIC)
+   - khi bạn khai báo method với KEYWWORD static thì method ấy sẽ không ghi đè đc, mắc khác chính method ghi đè từ lớp con, sẽ bị ẩn đi khi
+   ghi đè.
+
+      ++ ví dụ:
+
+                                                    class Parent {
+                                                        static void m1()
+                                                        {
+                                                            System.out.println("đây là lớp cha m1");
+                                                        }
+                                                    
+                                                        void m2()
+                                                        {
+                                                            System.out.println("đây là lớp cha m2");
+                                                        }
+                                                    }
+                                                    
+
+                                                    // tạo lớp con kế thừa và ghi đè lên pt m1 của lớp cha
+                                                    class Child extends Parent {
+                                                        static void m1()
+                                                        {
+                                                            System.out.println("đây là lớp con m1");
+                                                            /* do method m1 từ lớp cha khai báo với KEYWWORD static nên nó sẽ không bị
+                                                            ghi đè, thay vào đó chính lớp m1 ở lớp con thay vì ghi đè thì sẽ bị ẩn đi
+                                                            lúc này khi gọi thực thi method m1 thì nd của lớp cha lớp gốc sẽ hiển thị */
+                                                        }
+                                                    
+                                                        // This method overrides m2() in Parent
+                                                        @Override
+                                                        public void m2()
+                                                        {
+                                                            System.out.println("lớp con m2");
+                                                        }
+                                                    }
+
+
+                                        ++ hàm main
+                                                    class Main {
+                                                        public static void main(String[] args)
+                                                        {
+                                                            Parent obj1 = new Child();
+                                                    
+                                                            obj1.m1();
+                                                            ===>kww: nd lớp cha sẽ đc hiển thị do không thể ghi đè với static
+                                                
+                                                            obj1.m2();
+                                                            ---> kw: nd lớp con m2 đc hiển thị ghi đè bt.
+                                                        }
+                                                    }
+                                    
+>>>> Override với super:gọi pt ghi đè từ lớp con với thuộc tính thừ kế super()
+ - xem code sau kèm giải thích:
+
+                                class Parent {
+                                void show()
+                                {
+                                    System.out.println("lớp cha");
+                                }
+                            }
+                            
+                        
+                            class Child extends Parent {
+                                // This method overrides show() of Parent
+                                @Override
+                                void show()
+                                {
+                                    super.show();
+                                    System.out.println("lớp con");
+                                }
+                            }
+                            
+                            // Driver class
+                            class Main {
+                                public static void main(String[] args)
+                                {
+                                    Child obj = new Child();
+                                    obj.show();
+                                    -> kw: in ra 2 dòng lớp cha và lớp con.
+                                    /*mặc dù chỉ gọi lóp con tuy nhiên 1/ là lớp con đã kế thừa lớp cha và 2/ có thuộc tính kế thừa super
+                                    nên ngoài việc ghi đè lên lớp cha thì nó sẽ in ra thêm nd cũ của lớp cha*/
+                                }
+                            }
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------
+**************************GHI ĐÈ PHƯƠNG THỨC VỚI XỬ LÝ NGOẠI LỆ EXCEPTION*********************
+>>>> tiềm hiểu sau khi học xử lý ngoại lệ!!!!!!!!!!!!!!!!!!!!!!!!!!!!!

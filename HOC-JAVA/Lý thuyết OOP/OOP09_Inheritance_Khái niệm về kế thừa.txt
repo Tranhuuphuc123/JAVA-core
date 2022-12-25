@@ -1,0 +1,146 @@
+*******************TIỀM HIỂU KIẾN THỨC VỀ KẾ THỪA INHERITANCE TRONG JAVA ***************************
+>>>>> Khái niệm:
+ - Kế thừa (Inheritance) là một trụ cột quan trọng của OOP (Lập trình hướng đối tượng). Đó là cơ chế trong java theo đó một lớp được 
+ phép kế thừa các tính năng (trường(filed) và phương thức(method)) của lớp khác. Trong Java, kế thừa có nghĩa là tạo các lớp mới dựa 
+ trên các lớp hiện có. Một lớp kế thừa từ một lớp khác có thể sử dụng lại các phương thức và trường của lớp đó. Ngoài ra, bạn cũng có 
+ thể thêm các trường và phương thức mới vào lớp hiện tại của mình.  
+
+ ## uu điểm của Inheritance:
+  - Khả năng sử dụng lại mã
+  - Ghi đè phương THỨC
+  - Trừu tượng: nó chỉ hiên thị những chức năng của người dùng cần thiết.
+
+ ## các thuật ngữ quan trọng có trong kế THỪA
+  - class: Lớp là một tập hợp các đối tượng có chung đặc điểm/hành vi và thuộc tính/thuộc tính chung. Lớp không phải là một thực thể
+  trong thế giới thực.
+  - Super class/parent class: Lớp có các tính năng được kế thừa được gọi là lớp cha (hoặc lớp cơ sở hoặc lớp cha).
+  - sub class/ child class:  Lớp kế thừa lớp khác được gọi là lớp con (hoặc lớp dẫn xuất, lớp mở rộng hoặc lớp con). Lớp con có thể thêm các trường và phương thức riêng 
+  của nó ngoài các trường và phương thức của lớp cha.
+  - Reusability(khả năng tái sử dụng): Kế thừa hỗ trợ khái niệm “khả năng sử dụng lại”, tức là khi chúng ta muốn tạo một lớp mới và đã có một lớp bao gồm một số mã mà
+   chúng ta muốn, chúng ta có thể lấy lớp mới của mình từ lớp hiện có. Bằng cách này, chúng tôi đang sử dụng lại các trường và phương thức của lớp hiện có.
+
+
+
+>>>> cú pháp vfa thực thi tính kế thừa:
+ ### cú pháp
+
+    - thông qua bài code sau sẽ hiểu tính kế thừa là như thế nào.
+       
+        + tạo class cha
+           
+                                                  class cha{
+                                                     private int a =10;
+                                                     private int b = 20;
+                                                     private int tong;
+
+                                                     // khởi tạo contructor
+                                                     public cha(int a, int b){
+                                                        this.a = a;
+                                                        this.n=b;
+                                                     }
+
+                                                     // xây dựng method
+                                                     public void tinhtong(){
+                                                        System.out.println("nhap a: ");
+                                                        a=sc.nextInt();
+                                                        System.out.println("nhap b:  ");
+                                                        b sc.nextInt();
+                                                        tong  = a+b;
+                                                     }
+
+                                                     // method xuất
+                                                     public void ketqua(){
+                                                        System,out.println("ketqua: " + tinhtong);
+                                                     }
+
+                                                     @Override
+                                                     public String toString(){
+                                                        return "kết quả: (tong = a +) + "a" + " b" +b +"=" +")";
+                                                     }
+                                                  }
+
+                                    
+                                +tạo class con kế thừa class cha
+                                   
+                                                class con extend cha{
+                                                        private int c ;
+                                                        private int d;
+                                                        private int hieu;
+
+                                                        // khởi tạo contructor lúc này với tính kế thừa
+                                                        public con(int a, int b, int c, int d){
+                                                            super(a, b);          // hàm super là tính năng kế thừa truyền cha -> con
+                                                            this.c=c;
+                                                            this.d=d;
+                                                        }
+
+                                                        / xây dụng mmethd tinhhieu
+
+                                                        public void hieu(){
+                                                            System.out.println("nhap c: ");
+                                                            c=sc.nextInt();
+                                                            System.out.println("nhap d:  ");
+                                                            d = sc.nextInt();
+                                                            hieu = c-d;
+                                                        }
+                                                        
+                                                        // method xuat
+                                                        public void ketqua2(){
+                                                            System.out.println("hieu la: " + hieu);
+                                                        }
+
+                                                        @Orverride
+                                                        public String toString(){
+
+                                                            // ý nghĩa kế thừa khi triển khai qua lớp con ở hàm toString này sẽ bào gồm cả nd toString bên lớp cha lun. nghĩa
+                                                            // là nó sẽ hiểu qua ghi nhận chuỗi xuất ra gồm tất cả thông tin cho lớp cha và lớp kế thừa là lớp con.
+                                                            return  super.toString() + "hieu :  c " + c + "-" + "b" + b +"=" + hieu +")";
+                                                        }
+                                                }
+
+
+                                ==> triển khai trong hàm main
+                                                        public static void main(){
+                                                            // mặc dù chỉ gọi class con tuy nhiên do class con đã ké thừa class cha nên sẽ truyền hay nhập đủ tham số đã tạo
+                                                            con a = new con(5,6,7,8);
+                                                            a.tinhtong();
+                                                            a.hieu();
+
+                                                            // xuất kw:
+                                                             a.ketqua();
+                                                             a.ketqua2();
+
+                                                        }
+
+                                                        ===> lúc này truy xuất ra kww mặc dù chỉ gọi lớp con tuy nhiên do class con đã kế thừa class cha nên nó sẽ
+                                                        xuất ra kww đầ đủ method của tinh tong bên lớp cha và hieu bên class con.
+
+
+
+>>>>>các kiểu kế thừa: lưu ý java không hỗ trợ đa kế thừa tức là một class con kế thừa nhiều class cha
+  ## kế thừa đơn cấp: một class kế thừa từ một class # (kế thừa từ 1 lớp)
+                                      
+                                            a
+                                           b extend a
+                                           c extend b
+
+                                           --- chỉ gọi class c là sẽ có các method thuộc tính của 2 lớp còn lại
+     
+  ## kế thừa đa cấp nhiều bậc: nhiều class kế thừa lẫn nhau đều đc.(nhiều hơn 1 class)
+  ## kế thừa có tính thức bậc: 4 lớp a, b, c, d kế thừa
+                                           a
+                                           b extend a
+                                           c extend b
+                                           d extend c
+                                           =====> suy ra lớp a là lơp cha.
+
+  ===> có thể tái sử dụng các đoạn method từ các lớp cha
+
+
+
+  >>>>> VÌ SAO JAVA KHÔNG CÓ ĐA KẾ THỪA ( Multiple Inheritance):
+   - giải thich:   đỡn giản vì trong java việc đa kế thừa sẽ gây lỗi
+   ---> ví dụ ngươi mỹ có hello, người việt nam có xinchao, người trung quốc có nihao~.. vậy khi một lớp khác exten ngươi việt nam, extend người mỹ
+   exten người trung quốc. nó sẽ hông biết nên kế thừa method thực thi nào khiến cho java dễ gặp lỗi.
+   --> cách duy nhất để thực thi đc nó là tạo lơp chung duy nhất có cả 3 class kia cùng kế thừa một lớp chung thì các phuơg thức mới có thể lk và 
+   thực thi.

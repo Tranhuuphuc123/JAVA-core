@@ -1,0 +1,137 @@
+*******************************TIỀM HIỂU VỀ OVERLOADING( NẠP CHỒNG PHƯƠNG THỨC) TRONG JAVA*****************************
+>>>>> Khái niệm:
+ - Overloading(hay còn gọi nạp chồng phương thức hay phương thức quá tải) là công việc tạo ra nhiều phương thức trong một class
+ có chung tên nhưng khác tham số truyền vào(# nhau bởi tham số đầu vào hoặc loại tham số dầu vào hoặc cả 2).
+- lý do dùng đến Overloading: tăng tính sử dụng cho các phương thức bên trong một lớp, nạp chồng phương thức Overloading so với đối số
+cha, thì dối số con sẽ được ưu tiên cao nhất
+
+        ++ cosde ví dụ:
+           
+                                        package Overloading_java;
+                                        /*đây là nền tảng tiềm hiểu về Overloading np chồng phương thức trong java*/
+                                        public class timhieu_Overloading {
+                                            // ví dụ về nạp chòng phương thức Overloading
+
+                                            // khởi tạo method tính tổng
+                                            public int sum (int a, int b){
+                                                return  (a+b);
+                                            }
+
+                                            // tạo thêm một method sum trung tền nhưng khác nhau tham số truyền vào
+                                            public int sum (int a, int b, int c){
+                                                return  (a+b+c);
+                                            }
+
+
+                                            // tạo thêm  một method có trùng tên sum nhưng khác kiểu type trả về cho tham số
+                                            public double sum(double a, double b){
+                                                return (a+b);
+                                            }
+
+
+                                            public static void main(String[] args){
+                                                // gọi class khởi tọ vào main
+                                                timhieu_Overloading a = new timhieu_Overloading();
+                                            System.out.println("method dau tien: " + a.sum(5,2));
+                                                System.out.println("method thứ 2: " + a.sum(5,2, 3));
+                                                System.out.println("method thứ 3: " + a.sum(5.0,2.3));
+                                       
+                                            }
+
+                                        }
+
+                             =============> kw: in ra 3 giá trị của 3 pt với sum của 2 só nguyên, sum của 3 số nguyên, sum của kiểu double
+                                            với ba method giống nhau nhưng # nhau về tham số và kiểu dữ liệu.. cách thức này đc gọi là nạp chồng 
+                                            phương thức Overloading
+
+
+
+>>>>>> SO SÁNH OVERLOADING AND OVERRIDING TRONG JAVA:
+  
+                 Overloading                                                         Overriding
+
+- Nạp chồng phương thức giúp code chtrinh dễ đọc hơn                     - đươc dùng để định nghĩa lại phương thức cùng tồn tại ở class cha.
+- Overloading cải thiện khả năng đọc và khă năng tái
+sử dụng lại của chtrinh.
+- Overloading sử dụng bên trong một class                                - Ghi đè phương thức xảy ra trong 2 class có quan hệ cha con.
+- Overloading thì tham số phải khác nhau                                 - Overriding thi tham số phải tuyệt đối giống nhau
+- Overloading là ví dụ về đa hình lúc biên dịch                          - Overriding là ví dụ đa hình lúc runtime.
+
+- Trong java, Overloading không thể thực hiện khi                         - giá trị trả về đều giống nhau
+chỉ thay đổi kiểu trả về của phương thức. kiểu
+giá trị trả về có thể giống hoặc khác nhưng tham số
+truyền vào thì tuyệt đối phải khác nhau.
+
+- Overloading làm giảm độ phức tạp cho chương trình
+- Sử dụng method Overloading có thể truy cập các method thực
+hiện các chức năng liên quán với các đối số và kiểu dữ liệu khác nhau
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
+>>>>>CÁCH THỨC NẠP TRỒNG PHƯỜN THỨC TRONG JAVA.
+ ## 1/ THAY DỔI SỐ LƯỢNG THAM SỐ:
+  - method Overloading có thể đạt được thông qua thay đổi ố lượng tham số trong khi chuyên sáng method khác.
+
+    + vi dụ:
+
+                                pulic class a{
+                                    // method góc
+                                    public int sum(int a, int b){
+                                        return a+b;
+                                    }
+
+
+                                    // thêm method 2 trùng tên sum với số lượng tham số nhiều hơn 
+                                    public  int sum(inta, int b, int c){
+                                        return a+b+c;
+                                    }
+                                }
+
+
+
+### 2/ Thay đổi kiểu dữ liệu của accs đối số:
+ - ta có thể thay đổi type trả về cho cùng tên của một phương thức.
+
+   ++ ví dụ: 
+                                   pulic class a{
+                                    // method góc
+                                    public int sum(int a, int b){
+                                        return a+b;
+                                    }
+
+
+                                    // thêm method 2 trùng tên sum với type trả về khác đi
+                                    public  double sum(inta, int b){
+                                        return a+b;
+                                    }
+                                }
+
+                 
+
+
+### 3/ Thay đổi thứ tự tham số của các phương thức:
+ - Overloading method cuãng có thể được thực hiện bằng cách sắp xếp lại các tham số của hai hoặc nhiều phương thức.
+ ----> ví dụ: nếu các tham số của method 1 là (String name int stt) và method con lại sẽ là (int stt, String name), cả 2 đều có chung tên 
+ hpuwong thức nên đc coi là Overloading.
+
+       ++ ví dụ:
+                                        public class a{
+                                        // method góc
+                                        public int sum(Strig name a, int stt){
+                                            System.out.println("tên: " + name + "stt: " + stt);
+                                        }
+
+
+                                        // thêm method 2 trùng tên sum với các thức thay đối thứ tự tham số
+                                        public  double sum(int stt, String name){
+                                            System.out.println("stt: " + stt + "name: " + name);
+                                        }
+                                    }
+
+                        
+>>>>> java có thể Overloading ngay cả các KEYWWORD static and hàm main.( này ứng dụng tới đó sẽ xem kỹ lại)
+>>>>> Java không thể Overloading đới với toán tử và kiểu trả về.
+
