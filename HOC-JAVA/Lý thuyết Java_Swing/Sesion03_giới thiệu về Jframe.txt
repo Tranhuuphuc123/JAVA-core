@@ -1,0 +1,66 @@
+**********************TIỀM HIỂU VỀ JFRAME******************
+>>>>Khái niệm:
+ - JFrame là một container(Nơi chứa và sắp xếp các component khác của Java Swing, có thể là các container khác) trong ứng dụng Java Swing,
+  nó được dùng để chứa và sắp xếp các phần con như Button, Label, TextField, etc. Có thể đây là nơi bắt đầu của mọi ứng dụng Swing,
+  nên JFrame là mục đầu tiên mà chúng ta cần tìm hiểu trước khi học đến các component khác trong Swing.
+
+ - Jframe: cũng là một lớp abstract();
+
+
+>>>>Những phương thức cơ bản trong Jframe:
+ - setVisible(boolean visible): ẩn, hiện Jframe.
+ - setTitle(String title): gắn tên cho jframe.
+ - setSize(int Width, in Height): quy định kích cỡ của jFrame.
+ - setLocation(int x, int y): Chỉ định toạ độ của JFrame trên màn hình theo 2 trục X, Y
+ - pack(): đóng gói
+ - setBounds(int x, int y, int width, int height) – Cách sử dụng nhanh, gộp 2 hàm setLocation và setSize ở trên lại thành 1.
+ - setDefaultCloseOperation(JRame.Operation): quy định kiểu điều khiển khi đóng.
+    # các Operation đi kèm():
+     ++ DO_NOTHING_ON_CLOSE: Không làm thêm bất cứ điều gì khi JFrame bị đóng
+
+     ++ HIDE_ON_CLOSE:  JFrame sẽ bị ẩn đi khi người dùng đóng nó lại. Chương trình vẫn sẽ hoạt động bình thường trong khi JFrame này bị ẩn. 
+     Đây là một hành động mặc định của JFrame.
+
+     ++ DISPOSE_ON_CLOSE: Sau khi bị đóng lại, nó đồng thời sẽ bị dọn dẹp rác, các tài nguyên được JFrame này sử dụng sẽ bị thu hồi nhường
+      chỗ cho những nơi khác sử dụng.
+
+     ++ EXIT_ON_CLOSE: Sau khi JFrame bị đóng, chương trình cũng sẽ tắt theo.
+
+ 
+  - setLocationRelative(null): thiết lập giao diện nằm giữa màn hình.
+     ====================================> lib của lớp java sswing với jframe:  javax.swing.JFrame 
+
+
+
+>>>> Tạo một JFrame trong Swing:
+ - cú pháp khởi tạo jframe:
+    
+                       JFrame  frame  = new JFrame("Swing");
+
+        ++ code ví dụ:
+
+                                    package Jframe;
+
+                                    import javax.swing.*;
+
+                                    public class jframe01 {
+                                        public static void main(String[] args) {
+                                            // khởi tạo jframe
+                                            JFrame jf = new JFrame();
+                                            //setVisible ẩn hiện jframe
+                                            jf.setVisible(true);
+                                            // thiết lập kích cỡ cho jframe
+                                            jf.setSize(600,400);
+                                            // truyền nội dung tiêu đè
+                                            jf.setTitle("nội dung jframe");
+
+                                            // khi code chạy jframe và tắt thì chtrinh vẫn chạy ngầm
+                                            // khắc phúc bằng cách quy định kiểu đk khi đóng
+                                            // exit_on_close: đóng ctrinh tắt hẳn
+                                            jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+                                            //gắn vị trí hiển thị
+                                            jf.setLocation(300,300);
+                                        }
+                                    }
+           

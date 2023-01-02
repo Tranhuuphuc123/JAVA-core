@@ -1,0 +1,32 @@
+****************XỬ LÝ SỰ KIỆN TRONG JAVA SSWING***********************
+>>>> Khái niệm:
+ - Event là một sự thay đổi trong trạng thái của đối tượng, chẳng hạn như sự kiện mô tả sự thay đổi trong trạng thái của source. Các sự 
+ kiện được tạo ra là do tương tác của người dùng với các thành phần UI. Ví dụ như việc nhấn vào một nút button, di chuyển chuột, nhập ký tự 
+ thông qua bàn phím, … Các sự kiện có thể được phân chia thành hai loại sau:
+
+   + Foreground Event: Những sự kiện này yêu cầu tương tác trực tiếp của người dùng. Chúng được tạo ra do tương tác của người dùng với các 
+   thành phần đồ họa trong Graphical User Interface. Ví dụ như nhấn vào một nút, di chuyển chuật, chọn một item từ list, …
+
+   + Background Event: Các sự kiện này yêu cầu tương tác của người dùng cuối cùng, ví dụ như tín hiệu ngắt hệ điều hành, hardware hoặc software
+    failure …
+
+
+
+    ==============> Nói tóm lại: 
+    - Xử lý sự kiện (Event Handling) là một kỹ thuật kiểm soát sự kiện và quyết định những gì cần thực hiện nếu một sự kiện xảy ra. Kỹ thuật này
+     có code, mà được biết như là Event Handler, được thực thi khi một sự kiện xảy ra. Java sử dụng Delegation Event Model để xử lý các sự kiện.
+      Model này định nghĩa kỹ thuật chuẩn để tạo và xử lý các sự kiện. Model này bao gồm hai thành phần quan trọng sau:
+
+        ++ xử lý even với source: 
+           đây là một đối tượng mà trên đó sự kiện xuất hiện. Source chịu trách nhiệm cung cấp thông tin về sự kiện đã xảy ra tới bộ xử lý Handler của nó.
+
+        ++ xử lý even với Listener:
+          Còn được biết như là Event Handler. Listener chịu trách nhiệm tạo phản hồi tới một sự kiện. Theo quan điểm của Java, Listener cũng là một đối tượng. 
+          Listener đợi tới khi nó nhận một sự kiện. Khi một sự kiện đã được nhận, Listener xử lý sự kiện đó và sau đó trả về kết quả.
+
+    -------------------------------------------------------------------------------------------------------------------------------------------------------
+******************************CÁC LỚP EVENT TRONG JAVA***************************   
+--. tiềm hiểu các phần kế tiếp để ch tiết hơn.
+   
+
+

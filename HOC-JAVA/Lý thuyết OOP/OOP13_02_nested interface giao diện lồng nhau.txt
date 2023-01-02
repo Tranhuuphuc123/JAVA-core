@@ -1,0 +1,130 @@
+*************************************TIỀM HIỂU VỀ GIAO DIỆN LỒNG NHAU NESTED INTEFACE TRONG JAVA*************************************
+>>>>> Khái niệm:
+ - Một kiểu giao diện interface được gọi là nested lồng nhau khi, chúng ta khai báo các giao diện là thành viên của một lớp hoặc môt giao diện
+ khác.
+
+   ###giao diện trong một lớp:
+
+     - Giao diện này có thể được khai báo trong một lớp có thể là mặc định (private), công khai (public), được bảo vệ (protected)
+     ---< và triển khai sẽ đc truy cập theo cú pháp c_name.i_name:
+       # trong đó:
+         + c_name: tên của class mà nó được lồng vào
+         + i_name: tên của chính interface gio diện đó
+
+
+       #code ví dụ: thông qua đoạn code sé hiểu hơn về nested interface
+
+                                                            
+                                                         package nested_intefcae;
+                                                        /*thực thi đoạn code mô tả về nested interfcae trong java*/
+
+                                                        class C_name{
+                                                            public interface i_name{
+                                                                //method khai báo interface
+                                                                public void show();
+                                                            }
+                                                        }
+
+                                                        class C_name02 implements C_name.i_name{
+                                                            // ghi đè lại method bên interface
+                                                            @Override
+                                                            public void show(){
+                                                                System.out.println("text thành công nested interface");
+                                                            }
+                                                        }
+
+
+
+
+                                                        // tiến hành thực thi code nested interface
+                                                        public class nested_inter01 {
+                                                            public static void main(String[] args) {
+                                                                C_name.i_name a;
+                                                                C_name02 b = new C_name02();
+                                                                a = b;
+                                                                a.show();
+                                                            }
+                                                        }
+
+                                
+   ====> đoạn code trên là dạng mặc định, ngoài ra nested interface có thể xác định với dạng public, protected or private.
+   ===> dưới đây là ví dụ về  protected:
+
+                     
+                                                         package nested_intefcae;
+                                                        /*thực thi đoạn code mô tả về nested interfcae trong java*/
+
+                                                        class C_name{
+                                                          // nếu ta thay đổi thành private sẽ gặp lỗi biện dịch
+                                                            protected interface i_name{
+                                                                //method khai báo interface
+                                                                public void show();
+                                                            }
+                                                        }
+
+                                                        class C_name02 implements C_name.i_name{
+                                                            // ghi đè lại method bên interface
+                                                            @Override
+                                                            public void show(){
+                                                                System.out.println("text thành công nested interface");
+                                                            }
+                                                        }
+
+
+
+
+                                                        // tiến hành thực thi code nested interface
+                                                        public class nested_inter01 {
+                                                            public static void main(String[] args) {
+                                                                C_name.i_name a;
+                                                                C_name02 b = new C_name02();
+                                                                a = b;
+                                                                a.show();
+                                                            }
+                                                        }
+                                                                
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+  #### Giao diện trong một giao diện khác:
+    - Một giao diện cũng có thể được khai báo bên trong một giao diện khác và nested với nhau:
+    cú pháp: i_name1.i_name2:
+      ++ trong đó:
+       + i_name1: tên interface thứ 1
+       + i_name2: tên interface thứ 2
+
+          +++ code ví dụ minh họa:
+             
+               
+                                package nested_intefcae;
+                                // ta tiềm hiểu về giao diện interface nested(lồng) trong một giao diện interface khác của java
+                                import java.util.*;
+
+                                interface i_name01{
+                                    interface i_name02{
+                                        public void show();
+                                    }
+                                }
+
+                                // class khác thừa kế 2 interface nested với nhau
+                                class A implements i_name01.i_name02{
+                                    // ghi đè lại method
+                                    @Override
+                                    public void show(){
+                                        System.out.println("thành cong với  nested interface in interface");
+                                    }
+                                }
+
+
+                                // tiến hành thực thi với nested interface in interface
+                                public class nested_inter02 {
+                                    public static void main(String[] args) {
+                                        i_name01.i_name02 a;
+                                        A b = new A();
+                                        a=b;
+                                        a.show();
+                                    }
+                                }
+
+          

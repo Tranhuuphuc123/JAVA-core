@@ -1,0 +1,98 @@
+*******************************TIỀM HIỂU VỀ GIAO DIỆN INTERFACES TRONG JAVA************************
+>>>>>> Khái niệm:
+  - Một interface trong java là một bản thiết kế của một lớp , nó chỉ có các phương thức trừu tượng (Abtract) và hằng số tĩnh thui.
+  Tất cả các hằng số được mặc định là ở dạng public static final. Tát cả các phương thức ở dạng public.
+  - tương tự như lớp abstract, nó không thể được khởi tạo thành các đối tượng (Object), nghĩa là chỉ có method nhưng không có đối số, thân hàm.
+  -----> mục đích: Để thu được tính trừu tượng hoàn toàn và đa kế thừa trong java.
+
+
+     >> cú pháp: đẻ sử dụng giao diện ta dùng từ khóa interface.
+       public interface interface_name(){
+          // các method giao diện đc khai báo như một method abtract,  
+       }
+
+
+    
+>>>>> Mục đích sử dụng Interface trong java:
+ - nó sử dụng để đạt được tính trừu tượng hóa.
+ - vì java không có đa kế thừa nên sử dụng interface đẻ khắc phục điều đó,interface có thể đc đa kế thừa.
+ - bất kỳ class nào cũng chỉ có thể mở rộng từ 1 lớp, không có đa kế thừa nhiều lớp.. nhưng với Interface thì ngc lại có thể kế thừa nhiều inteface 
+ thông qua Implement.
+
+ - nó được sử dụng để đạt được khớp nối lỏng lẻo hơn.
+ - với abstract class thì lớp trừu tượng có thể chứa các biến không phải là cuối cùng, tuy nhiên với các biến trong giao diện interface
+ chúng là final(hằng số), công khai (public) và tĩnh (Static).
+
+
+
+ >>>>điểm khác nhau giữa class và interface:
+   
+                                    class                                                                   interface
+                      - trong class, bạn có thể khởi tạo các biến                     trong một giao diện bạn không thể tạo các biến và Object
+                      và tạo các đối tượng
+
+                      - Lớp có thể chứa các phương thức method cụ thể                 giao diện interface thì không.
+
+                      - Các chỉ định truy cập được sử dụng  riêng tư, bảo              trong interafce, chỉ có một bộ phận xác định được sử dụng - công khai.
+                      vệ và công khai
+
+
+            
+
+
+
+            >>> ví dụ code sau:
+
+                                           // tạo class với từ khóa interface:
+                                            
+                                            import java.io.*;
+                                            
+                                            // A simple interface
+                                            public interface In1 {
+                                              
+                                                // public, static and final
+                                                final int a = 10;
+                                            
+                                                // khai báo method abtract khoogn có thân hàm
+                                               public abtract void display();
+                                               or
+                                               public void display();
+                                            }
+
+
+                                            
+                                            // xây dựng class kế thừa interface với tk implement
+                                            class TestClass implements In1 {
+                                              
+                                              // thực hiện Override lại public abtract trong interface
+                                              @Override
+                                                public void display(){
+                                                  System.out.println("ví dụ về giao thức interface");
+                                                }
+                                            
+                                                // thực thin trong hàm main
+                                                public static void main(String[] args)
+                                                {
+                                                  // gọi class kế thừa interface ra
+                                                    TestClass t = new TestClass();
+                                                  // thực thi method display();
+                                                    t.display();
+                                                    System.out.println(a);
+                                                }
+                                            }
+
+
+
+
+
+>>>>>>>> thực thi kế thừa:
+ - đây là ghi chú :
+  + với một class kế thừ một giao diện thì dùng Implement.
+  + Với một interface kế thừa một interface thì dùng extend như class kế thừa class bình thường.
+  --->
+
+
+
+
+ 
+

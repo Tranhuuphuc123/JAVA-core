@@ -1,0 +1,26 @@
+**********************TÙY CHỈNH COLOR MÀU SẮC CHO GIAO DIỆN SWING*********************
+>>>> Khái niệm:
+ - thông thường thì tạo ứng dụng VIEW với JFrame sẽ chỉ cs một màu đen trắng, để giải quyết vấn đề này thì java SWing giao DIỆN
+ có hỗ trợ chức năng tạo , thay đổi thêm máu sắc cho ứng dụng java giao diện GUI.
+
+>>>>> CÁC HÀM VỀ COLOR TRONG JAVA SWING
+ ## Cách tùy chỉnh màu nền và màu chữ cho các thành phần giao diện:
+  - setForeground(color c);  ==> thiết lập Màu chữ
+  - setBackground(color c);  ==> thiết lập Màu nền
+  - setOpaque(boolean); ==> tô màu cả viền
+
+ ## Các hàm color thay đổi màu sắc khác:
+  - JColorChooser(: tạo một bảng với một màu ban đầu là trắng)
+  - JColorChooser(Color initialColor): Tạo một bảng chọn màu với màu khởi tạo đã cho.
+  - JColorChooser(ColorSelectionModel model): Tạo một bảng chọn màu với ColorSelectionModel đã cho.
+
+ ====>>>>>>> lib hỗ trợ color: 
+ 
+                      import java.awt.Color;
+
+                      or
+
+                      import java.awt.*;
+
+  >>>>Code minh họa ví dụ xem phần ứng dụng bài tập mô hình MVC/changeColor, bên 
+  phần thực hành.

@@ -55,13 +55,13 @@
          &           AND (num1 & num2)        1101&1110              1100 đối với toán tử & thì 1 với 1 là 1 
                                                                   còn lại 0vs1 hoặc 1vs0 đều là 0
 					                                                                                                                                                                                                                                                             
-		 ^	         XOR (num1 ^ num2)        1101&1110              0011 đối với ^ (XOR) thì 1vs1 la 0 còn
+	 ^	     XOR (num1 ^ num2)        1101&1110              0011 đối với ^ (XOR) thì 1vs1 la 0 còn
                                                                   0vs1 hoặc 1vs0 đều bằng 1.
 
-		 |           OR (num1 | num2)         1101|1110              1111 đối với | (OR của toán hạng bit)
+	 |           OR (num1 | num2)         1101|1110              1111 đối với | (OR của toán hạng bit)
                                                                   chỉ cần 1 vế của num1 or num2 có 1 thì thành 1.
 		
-		 ~           NOT (~ num1)	          ~1101	                 0010 đối với ~ (NOT của toán hạng bit) thì 
+	 ~           NOT (~ num1)	       ~1101	             0010 đối với ~ (NOT của toán hạng bit) thì 
                                                                   nó sẽ phủ định và đổi ngược kết quả 0 thành 
                                                                   1 và 1 thành 0.
 
@@ -103,7 +103,9 @@
 
 
 
-
+>>>>>>> tiềm hiểu rõ hơn về toán tử dịch trái và dịch phải trong bitwise:
+   
+      << toán tử dịch trái: 
 
 >>>>>>> Toán tử hỗn hợp trong Java
   

@@ -1,0 +1,31 @@
+*********************ÁP DỤNG MÔ HÌNH MVC VÀO ỨNG DỤNG và CÁCH XỬ LÝ SỰ KIỆN***************************
+>>>>>>> xem đoạn code minh hóa bên phân bai tập,
+phần này khá khó
+
+
+>>>>> mô hình MVC là gì?:
+
+
+ -                                          Model
+                                View                   Controle
+                                            
+                                             use
+
+                ++++ trong đóa:
+                 > Model: có chức năng quản lý và xử lý dữ liệu.(vd như JDBC tg tac java với SQL, Method chính thực thi chương trình)
+                    + Là bộ phận có nhiệm vụ quản lý dữ liệu của ứng dụng.
+                    + Chức năng biểu diễn, vận chuyển thông tin để trình diễn (view) và xử lý (control)
+                    + Chứa tất cả các nghiệp vụ logic, đối tượng mô tả dữ liệu, ...
+
+                 > view: hiển thị cho người dùng.(ví dụ đây là giao diện java Swing)
+                    + Tương tác với người sử dụng.
+                    + Show kết quả từ tầng Controller.
+                    + Thu nhận các hoạt động, request của người sử dụng và chuyển cho tầng Controller xử lý.
+                    + Hiểu một cách đơn giản, View là hệ thống các frame, cửa sổ của ứng dụng; các trang giao diện web: html, jsp; Các bảng, mẫu biểu, báo cáo.
+
+                 > Controle: có chức năng điều khiển tương tác giữa Model và view (các sự kiện.. nút chức năng hiển thị trên giao diện)
+                    + Định nghĩa các hành vi, hoạt động, xử lý của hệ thống.
+                    + Đối chiếu hành động của người sử dụng từ View. Đồng thời tương tác Model để gọi View và hiển thị thông tin tương
+                    ứng cho người dùng.
+                    
+                 > use: là người dùng tương tác

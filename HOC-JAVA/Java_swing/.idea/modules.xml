@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Java_swing.iml" filepath="$PROJECT_DIR$/Java_swing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Jtextfiled_ungdungmaytinhbotui/Jtextfiled_ungdungmaytinhbotui.iml" filepath="$PROJECT_DIR$/Jtextfiled_ungdungmaytinhbotui/Jtextfiled_ungdungmaytinhbotui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/change_color/change_color.iml" filepath="$PROJECT_DIR$/change_color/change_color.iml" />
+      <module fileurl="file://$PROJECT_DIR$/setup_size_font/setup_size_font.iml" filepath="$PROJECT_DIR$/setup_size_font/setup_size_font.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ungdung_mvc/ungdung_mvc.iml" filepath="$PROJECT_DIR$/ungdung_mvc/ungdung_mvc.iml" />
+    </modules>
+  </component>
+</project>

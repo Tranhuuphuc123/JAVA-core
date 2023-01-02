@@ -5,6 +5,8 @@ b/ tạo lớp interface thứ 2 là sapxep và 2 lớp con thực thi interfce 
 c/ tạo lớp thực thi cả 2 interface lớn Maytinhbotui va sapxep co ten là phan mem may tinh
 * */
 
+
+
 import java.util.Scanner;
 public class text {
     /* a tính năng máy tính*/
@@ -20,6 +22,8 @@ public class text {
 
             // phương pháp trừ theo kiểu gáng giá trị trự tiếp
             System.out.println("kw trừ: " + Fx570.tru(5,3));
+            System.out.println("kw phép nhân: " + Fx570.nhan(3,4));
+            System.out.println("kw phép chia: " + Fx570.chia(6,3));
 
 
 

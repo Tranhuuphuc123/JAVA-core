@@ -1,0 +1,38 @@
+********************************TIỀM HIỂU VỀ JTEXTFILED TRONG JAVA*********************
+>>>> Khái niệm:
+ - Lớp JTextField trong Java Swing là một thành phần cho phép sửa đổi một dòng text đơn.
+
+>>>>> Lớp này kế thừa các phương thức từ các lib sau:
+
+                javax.swing.text.JTextComponent
+
+                javax.swing.JComponent
+
+                java.awt.Container
+
+                java.awt.Component
+
+                java.lang.Object
+
+
+
+
+>>>> Các constructor của lớp JTextField trong Java Swing
+ ## JTextField(): Xây dựng một TextField mới.
+
+ ## JTextField(Document doc, String text, int columns): Xây dựng một JTextField mới mà sử dụng mô hình lưu trữ text đã cho và số cột đã cho.
+
+ ## JTextField(int columns): Xây dựng một TextField mới và trống với số cột đã cho.
+
+ ## JTextField(String text): Xây dựng một TextField mới được khởi tạo với text đã cho.
+
+ ## JTextField(String text, int columns): Xây dựng một TextField mới được khởi tạo với text và các cột đã cho.
+
+
+
+>>>>>Cú pháp:
+  
+    // khởi tạo Jtextfled
+
+    JTextField tên_filed = new JTextField(size column: kích thước);
+    

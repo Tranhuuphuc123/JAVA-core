@@ -1,0 +1,53 @@
+***************TÙY CHỈNH FONT CHỮ VÀ KÍCH CỠ CHỮ VỚI CÁC THÀNH PHẦN GIAO DIỆN***********************
+>>>>>Khái niệm:
+ - những đoạn code giao diện thg mawcjd dịnh khó kiểm soát tỉ lệ, để giải quyết ta cần tùy chỉnh kích cỡ size của nó cho phù hợp.
+ vì vậy ta có các cacch căn chỉnh bằng code trong giao diện như sau:
+
+
+>>>>Cách tùy chính font chữ:
+ /
+ // gọi hàm tạo Font
+ Font font_name = new Font("name_font", Font.BOLD,20);
+
+// tiến hành gán font vừa khởi tạo
+// jtextarea, jLabel,Jlist, Jbutton...có thể thay thế (các thẻ JPANEL liên kết thui))
+
+ Jbutton.setFont(font_name));
+
+   
+
+   
+
+    ++ trong đó:
+      > "name_font": kiểu font chữ cần hiển thị.
+      > font.PLAIN: đây là vd đại diện font.PLAIN là font chữ thô(font chữ bình thường) ra có thể thay thế
+                   + font.ITALIC
+                   + font.BOLD
+                   + font.... bổ sung thêm
+
+      > size: kích cỡ chữ, 20,30,150....
+
+
+>>>> code tham khảo xem phần thực hành bài/setup_size_font
+
+      ++ ví dụ: minh họa nhỏ
+
+                            // thiết lập kích cỡ font chữ cho java swing
+                            // tạo và gọi hàm font
+                            Font font = new Font("Arial", Font.BOLD, 20);
+
+                            // add font cho chỗ cần gán
+
+
+                        JPanel jpanel_num = new JPanel();
+                        jpanel_num.setLayout(new GridLayout(2,2));
+
+                        //tạo jbutton
+                            JButton jbutton01 = new JButton("1");
+                            jbutton01.setFont(font);
+                            JButton jbutton02 = new JButton("2");
+                            jbutton02.setFont(font);
+                            JButton jbutton03 = new JButton("3");
+                            jbutton03.setFont(font);
+                            JButton jbutton04 = new JButton("4");
+                            jbutton04.setFont(font);

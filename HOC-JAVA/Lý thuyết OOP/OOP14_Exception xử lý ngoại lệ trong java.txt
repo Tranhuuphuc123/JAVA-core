@@ -1,0 +1,62 @@
+*********************TIỀM HIỂU VỀ EXCEPTION XỬ LÝ NGOẠI LỆ TRONG JAVA************************
+>>> Khái niệm:
+ - Xử lý ngoại lệ trong Java là một trong những phương tiện hiệu quả để xử lý các lỗi thời gian chạy để có thể duy trì luồng thông thường của ứng dụng. Xử lý
+  ngoại lệ Java là một cơ chế để xử lý các lỗi thời gian chạy như ClassNotFoundException, IOException, SQLException, RemoteException, v.v.
+
+ - Ngoại lệ là một sự kiện không mong muốn hoặc không mong đợi, xảy ra trong quá trình thực hiện chương trình, tức là trong thời gian chạy, làm gián đoạn luồng
+  hướng dẫn bình thường của chương trình. Các ngoại lệ có thể được bắt và xử lý bởi chương trình. Khi một ngoại lệ xảy ra trong một phương thức, nó sẽ tạo ra một đối 
+  tượng. Đối tượng này được gọi là đối tượng ngoại lệ. Nó chứa thông tin về ngoại lệ, chẳng hạn như tên và mô tả về ngoại lệ và trạng thái của chương trình khi ngoại
+  lệ xảy ra.
+
+
+
+>>> Nguyên nhân tại sao một ngoại lệ xảy ra:
+ - Người dùng nhập không hợp lệ  ( lỗi về syntax eror)
+ - lỗi thiết bị
+ - Mất kết nối mạng
+ - Giới hạn vật lý(hết bộ nhớ đĩa).
+ - lỗi mã
+ - Mở một tệp không khả dụng.
+......
+==> lỗi: cho biết một vấn đề trong một ứng dụng 
+    Ngoại lệ: chỉ ra các điều kiện mà một ứng dụng hợp lý có thể cố nắm bắt.
+
+
+
+>>> Phân cấp hệ thống Exception:
+    
+                               Object
+                                 |
+                                 |
+                                 
+                              Throwable
+                    |                            |
+                                           
+                Exception                       Error
+                    |                             |
+                    |-- checked Exception         |--Viturmachine Eror
+                    |                             |
+                    |-- Unchecked Exception       |-- Asertion Error etc
+                                 
+
+
+
+  ### Phân tích:
+   - tất cả ngoại lệ và lỗi là của các lớp con của class Throwable, đây là lớp cơ sở của hệ thống phân cấp.
+   - một nhánh do Exception đứng đầu, lớp này sử dụng cho các đk đặc biêt mà người dùng sẽ nắm bắt được..
+   - nhánh eror lỗi được suer dụng bởi hệ thống thời gian chạy JVM để chỉ ra lỗi phải thực thi trong mt JRE.
+
+
+
+
+
+>>>>>Các ngoại lệ có  thể được phân loại theo hai cách
+  >> Ngoại lệ tích hợp (Built-in exception)
+   - 
+  >> Ngoại lệ do người dùng xác định (user-defined exception)
+
+
+
+   
+
+

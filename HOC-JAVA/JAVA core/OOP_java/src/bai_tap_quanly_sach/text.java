@@ -27,9 +27,7 @@ public class text {
 
         // tiền giảm giá 10%
          System.out.println("---------------------");
-        System.out.println("giá giảm sp1: " + c1.giaSauKhiGiam(10));
-        System.out.println("giá giảm sp1: " + c2.giaSauKhiGiam(10));
-
+       
 
     }
 }

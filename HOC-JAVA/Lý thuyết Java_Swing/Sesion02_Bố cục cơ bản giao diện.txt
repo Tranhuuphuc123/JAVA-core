@@ -1,0 +1,132 @@
+************************TIỀM HIỂU VỀ CÁC THÀNH PHẦN CƠ BẢN BỐ CỤC CỦA JAVA_SWING (hay còn gọi là layout)***********************
+>>>>>CÁC THÀNH PHẦN CƠ BẢN CỦA GIAO DIỆN:
+ >> Component: các thành phần cơ bản giao diện:
+  - Jframe: là 1 container(1 khung hiển thị) nơi chứa các component .
+  - Panel: là các vật chứa, hay bao các thành phần khác:
+      vd: nút button thì thẻ bao nút button là một Panel
+  - Label: vd login, passworrd: nơi hiển thị đoạn văn bản tên chức năng các nút nhấn..
+  - text filed: nơi nhập trường thông tin
+  - button: tạo nút nhấn
+
+ >>container: nó cũng là một tp như component tuy nhiên nó có thể chứa nhiều component, container trong nó
+ >>Jcomponent: chứa các thẻ tạo giao diện chính: label, button, list.....
+ ------------------------------------------------------
+
+ >> thêm một điều khiển vào vật chứa:
+
+      add(new component "name_component");
+
+ >>Layout: bố cục giao diện:
+   ##cú pháp:
+    - set.Layout(new Jcomponent_name);
+    
+   ## các dạng layout:
+    - Flowlayout: các thành phàn sẽ được sắp xếp theo 1 luồng liên tiếp(từ trái qua phải hoăc từ phải qua trái haowcj ở giữa)
+
+       vd: JFrame a = new JFRAME();
+           a.setLayout(new Flowlayout());
+           //thêm các tp để tiến hành sắp xếp Flowlayout
+           a.add(new button("ok"));
+           a.add(new button("cancel));
+           --------> tạo 2 nút ok và cancel theo thứ tự từ trái qua, đc bao lại như một thẻ button thg thường
+
+
+    - Gridlayout: các thành phần sẽ đc sắp xếp dạng lưới, và có kích thước đều nhau.
+     
+
+       vd: Jframe b = new Jframe();
+          b.setLayout(new Gridlayout(1,2));
+           b.add(new button("ok));
+           a.add(new button("cancel));
+           ---> kw: tạo 2 nút nhấn ok và cancel, sắp xếp theo dạng lưới 2 phần chia đều nhau ra
+
+   - BorderLayout: các thành phần sẽ đc bố trí theo vị trí (bắc nam đông tây)
+       
+       vd:
+           Jframe c = new Jframe();
+           c.setLayout(new BorderLayout());
+           c.add(new button("nút bắc"), BorderLayout.NORTH);
+           c.add(new button("nút nam"), BorderLayout.SOUTH);
+           c.add(new button("nút đông"), BorderLayout.EAST);
+           c.add(new button("nút tây"), BorderLayout.WEST);
+           c.add(new button("nút giữa), BorderLayout.CENTER);
+
+           ---> tạo ra 5 nút theo tên ở vtri bắc nam đông tây và giữa.
+
+   
+
+
+
+
+
+          +++ code ví dụ:
+
+
+
+                                                        package Layout_bocuc;
+
+                                                        import javax.swing.*;
+                                                        import java.awt.*;
+
+                                                        // tiềm hiểu các dạng Layout:
+                                                        public class cacdang_layout extends JFrame {
+                                                            //  hiển thị và tắt hết chug cho giao diện ở class cacdang_layout
+                                                            public cacdang_layout(){
+                                                                //tắt hẳn ứng dụng
+                                                                this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                                                            }
+
+                                                            //tạo layout dạng Flowlayout, layout nằm xếp ngang
+                                                            public void dang_flowlayout( String title,int x, int y){
+                                                                this.setTitle(title);
+                                                                this.setSize(x,y);
+                                                                this.setLayout(new FlowLayout());
+                                                                this.add(new Button("ok"));
+                                                                this.add(new Button("Cancel"));
+                                                                // hiển thị không ẩn JFrame
+                                                                this.setVisible(true);
+                                                            }
+
+                                                            // tạo layout dạng Gridlayout, chia dạng bố cục lưới
+                                                            public void dang_Gridlayout(String title, int x, int y){
+                                                                this.setTitle(title);
+                                                                this.setSize(x, y);
+                                                                this.setLayout(new GridLayout(1,2));
+                                                                this.add(new Button("ok"));
+                                                                this.add(new Button("cancel"));
+                                                                // hiển thị không ẩn JFrame
+                                                                this.setVisible(true);
+                                                            }
+
+                                                            // tạo layout dạng Borderlayout dang phân theo vị trí bắc nam đôgn tây
+                                                            public void dang_Borderlayout(String title, int x, int y){
+                                                                this.setTitle(title);
+                                                                this.setSize(x, y);
+                                                                this.setLayout(new BorderLayout());
+                                                                this.add(new Button("nút bắc"), BorderLayout.NORTH);
+                                                                this.add(new Button("nút nam"), BorderLayout.SOUTH);
+                                                                this.add(new Button("nút đông"), BorderLayout.EAST);
+                                                                this.add(new Button("nút tây"), BorderLayout.WEST);
+                                                                this.add(new Button("nút gữa"), BorderLayout.CENTER);
+
+                                                                // hiển thị không ẩn JFrame
+                                                                this.setVisible(true);
+                                                            }
+
+
+
+
+
+                                                        // thực thi ở hàm main
+                                                            public static void main(String[] args) {
+                                                                cacdang_layout a = new cacdang_layout();
+                                                                // gọi từng dạng layout
+                                                        //        a.dang_Gridlayout("dang grid", 200,200);
+                                                                // dạng Border layout
+                                                                a.dang_Borderlayout("dang Border", 200,200);
+                                                            }
+                                                        }
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+   ## các dạng layout(cont...):
+    - 
