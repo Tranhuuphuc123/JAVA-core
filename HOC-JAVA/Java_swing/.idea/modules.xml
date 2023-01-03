@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/JTextArea_Ungdungtimkiem/JTextArea_Ungdungtimkiem.iml" filepath="$PROJECT_DIR$/JTextArea_Ungdungtimkiem/JTextArea_Ungdungtimkiem.iml" />
       <module fileurl="file://$PROJECT_DIR$/Java_swing.iml" filepath="$PROJECT_DIR$/Java_swing.iml" />
       <module fileurl="file://$PROJECT_DIR$/Jtextfiled_ungdungmaytinhbotui/Jtextfiled_ungdungmaytinhbotui.iml" filepath="$PROJECT_DIR$/Jtextfiled_ungdungmaytinhbotui/Jtextfiled_ungdungmaytinhbotui.iml" />
       <module fileurl="file://$PROJECT_DIR$/change_color/change_color.iml" filepath="$PROJECT_DIR$/change_color/change_color.iml" />

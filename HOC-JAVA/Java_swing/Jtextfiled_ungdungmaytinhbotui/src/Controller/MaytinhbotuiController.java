@@ -22,7 +22,21 @@ public class MaytinhbotuiController implements ActionListener {
     // tiến ành ghi đè method actionPerformed để xử lý sự kiện
     @Override
     public void actionPerformed(ActionEvent e) {
-        String src = e.getActionCommand();
+        //nguồn sự kiện được bắt lấy bởi hàm getActionCommand có tên là button, ý nghĩa nhấn nút sự kiện gì sẽ xảy ra???
+        String button = e.getActionCommand();
+        if(button.equals("+")){
+            this.maytinhbotui_view.cong();
+        }else if(button.equals("-")){
+            this.maytinhbotui_view.tru();
+        }else if(button.equals("*")){
+            this.maytinhbotui_view.nhan();
+        }else if(button.equals("/")){
+            this.maytinhbotui_view.chia();
+        }else if(button.equals("^")){
+            this.maytinhbotui_view.pow();
+        }else if(button.equals("%")){
+            this.maytinhbotui_view.mod();
+        }
 
     }
 }

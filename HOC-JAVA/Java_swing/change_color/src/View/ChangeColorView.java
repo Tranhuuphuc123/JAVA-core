@@ -136,6 +136,7 @@ public class ChangeColorView extends JFrame {
         * truyền vào tham số biến do use đặt để sét thay đổi khi sự kiện nhấn vào
         * sẽ bắt đc sự khiển và tiến hành đổi màu
         * */
+
         this.label_display.setBackground(color_background);
 
         // thiêt lập đổi màu

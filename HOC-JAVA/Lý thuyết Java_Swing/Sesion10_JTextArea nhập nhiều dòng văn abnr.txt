@@ -1,0 +1,41 @@
+**************TIỀM HIỂU VỀ JTEXTAREA ĐỂ HIỂN THỊ NHẬP LIỆU VĂN BẢN TRÊN NHIỀU DÒNG**********
+>>>>>Khái niệm:
+ - Lớp JTextArea trong Java Swing được sử dụng để tạo một khu vực dành cho text. Nó là một khu vực gồm nhiều dòng và chỉ hiển thị 
+ thuần text.
+
+ >>>>Lib hỗ trợ:
+
+        javax.Swing.JTextArea;
+
+        javax.swing.text.JTextComponent
+
+        javax.swing.JComponent
+
+        java.awt.Container
+
+        java.awt.Component
+
+        java.lang.Object
+
+
+>>>> Các constructor của lớp JTextArea trong Java Swing
+  - JTextArea(): Tạo một TextArea mới.
+
+  - JTextArea(String s): Tạo một TextArea mới với text đã cho.
+
+  - JTextArea(int row, int column): Tạo một TextArea trống, mới với số hàng và cột đã cho.
+
+  - JTextArea(String s, int row, int column): Tạo một TextArea mới với text, số hàng và cột đã cho.
+
+
+>>>>> Cấu trúc:
+  JTextArea name_đại_diện = new JTextArea(row: 50, column: 50);
+
+
+>>>>> hàm setText và getText:
+ - đối với dạng hiển thị văn bản và nhập văn bản chữ thì getText và setText có chức năng như sau:
+  + setText: nhận chuỗi String vào, đúng hơn thì setText nhận hay thiết lập giá trị chuỗi vào jTextfield hay JTextArea
+  (ví dụ người nhập nhậ[p vào một chuỗi ký tự thì cũng đc hiểu là ta set(đặt) chuỗi vào) 
+
+  + getText: getText là phương thức trả về chuỗi String đã thiết đặt hay nhập vào. Nó ghi nhận giá trị khi setText đưa vào ghi nhận
+  và xuất nó ra.
