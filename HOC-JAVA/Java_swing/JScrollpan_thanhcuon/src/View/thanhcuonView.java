@@ -1,15 +1,14 @@
 package View;
-// mô hình MVC _view giao diện chương trình
 
-import Controller.UngdungtimkeimController;
-import Model.UngdungtimkiemModel;
+import Controller.thanhcuonControler;
+import Model.thanhcuonModel;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-public class UngdungtimkiemView extends JFrame {
-    private UngdungtimkiemModel timkiem_model;
+public class thanhcuonView extends JFrame {
+    private thanhcuonModel tc_model;
 
     private JLabel label_display01;
     private JLabel label_display02;
@@ -21,8 +20,8 @@ public class UngdungtimkiemView extends JFrame {
     private JButton button01;
 
     //contructor
-    public UngdungtimkiemView()  throws HeadlessException{
-        this.timkiem_model = new UngdungtimkiemModel();
+    public thanhcuonView()  throws HeadlessException {
+        this.tc_model = new thanhcuonModel();
         this.giaodienchinh();
     }
 
@@ -41,7 +40,7 @@ public class UngdungtimkiemView extends JFrame {
 
 
         // gọi s kiện ActionListener
-        ActionListener al = new UngdungtimkeimController(this);
+        ActionListener al = new thanhcuonControler(this);
 
         // thiết lập JPanel
 
@@ -87,12 +86,11 @@ public class UngdungtimkiemView extends JFrame {
 
     // method truy bắt sự kiện
     public void timkiem(){
-        this.timkiem_model.setVanban(area.getText());
-        this.timkiem_model.setTukhoa(field.getText());
-        this.timkiem_model.timkiem();
+        this.tc_model.setVanban(area.getText());
+        this.tc_model.setTukhoa(field.getText());
+        this.tc_model.timkiem();
         // lúc này không nhận giá trị nhập vào(hay gtri đầu vào) nên ta dùng setText để ghi nhận kết quả
         // setText trả về chuỗi kw
-        this.label_display03.setText(this.timkiem_model.getKetqua());
+        this.label_display03.setText(this.tc_model.getKetqua());
     }
-
 }
