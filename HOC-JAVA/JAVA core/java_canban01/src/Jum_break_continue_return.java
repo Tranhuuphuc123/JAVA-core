@@ -1,7 +1,7 @@
 /*tiềm hiểu về câu lệnh Jum nhảy với Break, continue, return*/
 
 public class Jum_break_continue_return {
-    public static void main(String[] args) {
+    public static void main(String [] args) {
 
         // câu lệnh với continue có đạt label tên là outer
       /*

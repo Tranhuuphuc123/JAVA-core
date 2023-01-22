@@ -2,12 +2,12 @@ package Get_Set;
 /*
 * trong bài hôm nay mình sẽ tiềm hiểu về phương thức Get and Set trong lập trinnh OOP*/
 
-import java.util.Scanner;
+
 public class phuognthuc_get_set {
 
     /*tạo lớp Phuongthuc, để khai báo getter and seter*/
-    private int day;
-    private int month;
+     private int day;
+     private int month;
      private int year;
 
 

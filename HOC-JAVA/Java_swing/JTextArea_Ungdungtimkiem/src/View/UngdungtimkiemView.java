@@ -95,4 +95,7 @@ public class UngdungtimkiemView extends JFrame {
         this.label_display03.setText(this.timkiem_model.getKetqua());
     }
 
+
+
+
 }

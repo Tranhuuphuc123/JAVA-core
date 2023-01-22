@@ -1,0 +1,100 @@
+****************************TIỀM HIỂU VỀ CÁCH XÂY DỰNG FUNCTION HÀM TRONG LẬP TRÌNH JAVA***************************
+>>>> KHÁI NIỆM VỀ FUNCTION(HÀM):
+ - function(hàm) trong java Hàm (function) là một đoạn chương trình có tên, đầu vào và đầu ra. Hàm có chức năng giải quyết một số vấn đề 
+ chuyên biệt cho chương trình chính. Hàm được gọi nhiều lần với các tham số khác nhau.
+
+ - Hàm là một đơn vị độc lập của chương trình, không cho phép xây dựng một hàm bên trong một hàm khác. Một chương trình bao gồm một hoặc
+  nhiều hàm. Trong đó, hàm main() là thành phần bắt buộc của chương trình.
+
+  -------> hàm cũng có thể gọi là method nơi thực thi một chức năng riêng biệt cho chtrinh ( phương pháp chia để trị phân tán ra nhiều 
+  method để dễ quản lý).
+
+
+>>>> CẤU TRÚC XÂY DỰNG MỘT HÀM:
+
+            modifier returnType nameOfMethod (Parameter List) {
+               // method body
+            }
+
+     >> Trong đó:
+
+           ++ Modifiers: Tạm dịch là phạm vi sửa đổi và truy cập( tiềm hiểu về acess modifier: pubclic, default, protected, private...)
+           ++ returnType: Là kiểu dữ liệu trả về
+           ++ nameOfMethod: Là tên của hàm (method)
+           ++ Parameter là các tham số đầu vào của hàm (có thể có nhiều tham số với nhiều kiểu dữ liệu khác nhau)
+           ++ method body: là các mã code bên trong hàm, nội dung method thực thi chức năng mong muốn
+
+
+           ==> vd: public static int tong(int x, int x){
+                int tong = x+y;
+                return tong;
+           }
+
+
+
+>>>> CÁC LOẠI FUNCTION:
+ - HÀM CÓ KIỂU DL TRẢ VỀ KHÔNG ĐỐI số
+ - HÀM CÓ KIỂU DL TRẢ VỀ NHƯNG CÓ ĐỐI SỐ TRUYỀN vào
+ - HÀM KHÔNG CÓ KIỂU TRẢ VỀ KHÔNG ĐỐI SỐ (VOID)
+ ....
+
+ ===> xem code ví dụ:
+      
+
+                   public class Ham_function {
+                    /*Bài học này học về cách xây dựng một hàm function trong một class và các kểu hàm function thông dụng
+                    * --> hàm main (main) nơi thực thi code của một chtrinh tiềm hiểu trong phần cấu trúc của một ctrinh java sẽ hiểu hơn về main
+                    * */
+
+                    // function có kiểu trả về nhưng không có đối số truyền vào
+                    public static  int tinhtong(){
+                        int x =5;
+                        int y = 12;
+                        int tong  = x+y;
+
+                        return tong;
+                    }
+
+
+                    // function có kiểu trả về có đối số truyền vào
+                        public static int tinhhieu(int x, int y){
+                            int hieu= x-y;
+                            return  hieu;
+                        }
+
+                    // function không có kiểu trả về (void)
+                    public static  void xinchao(){
+                        System.out.println("xin chao day la ham khong doi so va kieu tra ve");
+                    }
+
+                    // function không có đối số truyền vào nhưng vẫn có kiểu trả về
+                    public static float Pi(){
+                        return 3.14f;
+                    }
+
+
+
+
+
+                    // hàm main thực thi chtrinh chính của java
+                    public static void main(String[] args) {
+                        int x =5;
+                        int y = 2;
+
+                        // gọi thực thi function01 có kiểu dl trả về nhưng không đối số, tong la 17 vì x, y gi trị đc khai báo trong method ham tinhtong trc đó
+                        System.out.println("tong: " + tinhtong());
+
+                        // gọi và tt hàm 02 truyền ga đối số trong ha main vào hàm 02 để nó hiểu
+                        int hieu= tinhhieu(x,y);
+                        System.out.println("hieu: " + hieu);
+
+                        // gọi và thực thi hàm không đối ố không kiểu trả về
+                        xinchao();
+
+                        //gọi thực thi hàm function 04 hàm kiểu không đôối số nhưng có kiểu trả về
+                        float S = Pi()*2;
+                        System.out.println("Diện tích: " + S);
+
+                    }
+
+                }
