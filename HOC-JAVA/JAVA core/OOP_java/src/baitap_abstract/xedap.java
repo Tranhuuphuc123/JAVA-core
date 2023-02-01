@@ -9,7 +9,7 @@ public class xedap extends phuongtiendichuyen{
         super("xe đạp", tenhangsanxuat, quocgiasx);
     }
 
-  // contructor rổng để tiê hành nhập từ bàn phím
+  // contructor rổng để tiến hành nhập từ bàn phím
     public xedap(){
 
     }
@@ -33,3 +33,7 @@ public class xedap extends phuongtiendichuyen{
                 + "vận tốc: " + this.layvantoc();
     }
 }
+
+
+
+

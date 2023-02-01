@@ -52,6 +52,7 @@ public class Ham_function {
         float S = Pi()*2;
         System.out.println("Diện tích: " + S);
 
+
     }
 
 }

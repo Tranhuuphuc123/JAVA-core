@@ -25,7 +25,7 @@
 
 
 
- >>>>điểm khác nhau giữa class và interface:
+ >>>>điểm khác nhau giữa class và interface:s
    
                                     class                                                                   interface
                       - trong class, bạn có thể khởi tạo các biến                     trong một giao diện bạn không thể tạo các biến và Object
