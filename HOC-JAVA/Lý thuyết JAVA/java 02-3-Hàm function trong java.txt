@@ -18,7 +18,7 @@
 
      >> Trong đó:
 
-           ++ Modifiers: Tạm dịch là phạm vi sửa đổi và truy cập( tiềm hiểu về acess modifier: pubclic, default, protected, private...)
+           ++ Modifiers: Tạm dịch là phạm vi sửa đổi và truy cập( tiềm hiểu về acess modifier: public, default, protected, private...)
            ++ returnType: Là kiểu dữ liệu trả về
            ++ nameOfMethod: Là tên của hàm (method)
            ++ Parameter là các tham số đầu vào của hàm (có thể có nhiều tham số với nhiều kiểu dữ liệu khác nhau)

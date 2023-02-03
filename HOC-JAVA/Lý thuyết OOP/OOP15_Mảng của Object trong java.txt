@@ -1,0 +1,95 @@
+********TIỀM HIỂU VỀ CÁCH XÂY DỰNG MẢNG CỦA ĐỐI TƯỢNG TRONG OOP******
+>>> tg tự cách khai báo mảng trong java tuy nhiên lần  này trong lập trình OOP ta khai báo mản cho class về một đối tượng.
+>>> Khái niệm:
+ - Mảng Object trong java là một mảng chứa các đối tượng của bất kỳ lớp nào. Vì Object là lớp gốc của tất cả các lớp trong java,
+ nên các đối tuowgnj của một lớp con đều có thể lưu trữ trong một mảng của Object.
+
+ ==> ví dụ code mình họa:
+
+   + file sub:
+       package Mang_Object;
+// xây dựng class với pg thưc method ve thong tin ca nhan
+
+                            public class sub_thongtin {
+                                private String name;
+                                private String diachi;
+                                private int tuoi;
+
+                                // contructor
+
+
+                                public sub_thongtin() {
+                                // contructor mă định
+                                }
+
+                                public sub_thongtin(String name, String diachi, int tuoi) {
+                                    this.name = name;
+                                    this.diachi = diachi;
+                                    this.tuoi = tuoi;
+                                }
+
+                                // get and set
+
+                                public String getName() {
+                                    return name;
+                                }
+
+                                public void setName(String name) {
+                                    this.name = name;
+                                }
+
+                                public String getDiachi() {
+                                    return diachi;
+                                }
+
+                                public void setDiachi(String diachi) {
+                                    this.diachi = diachi;
+                                }
+
+                                public int getTuoi() {
+                                    return tuoi;
+                                }
+
+                                public void setTuoi(int tuoi) {
+                                    this.tuoi = tuoi;
+                                }
+                            }
+
+
+   + file main:
+
+                        package Mang_Object;
+                        // thực hiện tạo mảng của đối tượng trong lập trình OOP
+                        import java.util.Scanner;
+                        public class text {
+                            public static void main(String[] args) {
+                                // tạo manng cho đối tượng bằng cách dùng tên class thay thế kiểu dl trả về
+                                sub_thongtin [] thongtin = new sub_thongtin[1];
+
+                                Scanner sc = new Scanner(System.in);
+                                System.out.println("nhập thông tin");;
+
+                                // tiến hành nhập thong tin và ép vào mảng đối tượng
+                                for(int i =0; i<thongtin.length;i++){
+                                    String ten = sc.nextLine();
+                                    String diachi = sc.nextLine();
+                                    int tuoi = sc.nextInt();
+
+                                    // gán tt vào từng mảng đối tương
+                                    thongtin[i] = new sub_thongtin(ten, diachi, tuoi);
+
+                                    // xóa bộ nhớ đệm của bàn phím đi
+                                    sc.nextLine();
+                                }
+
+                                // tiến hành xuất thông tin mảng đối tượng
+                                for(sub_thongtin tt: thongtin){
+                                    System.out.println(tt.getName() + " " + tt.getDiachi() + " " + tt.getTuoi());
+                                }
+                            }
+                        }
+
+
+
+  =====> Sử dụng mảng của Object có thể giúp bạn lưu trữ các đối tượng của nhiều lớp khác nhau trong một mảng duy nhất.  
+

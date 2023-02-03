@@ -1,0 +1,64 @@
+****************TIỀM HIỂU RÕ HƠN VỀ CÁC LOẠI BIẾN TRONG JAVA*******************
+>>>>Biến Local:
+ - Biến Local là biến chỉ khai báo trong một phương thức hay một khối lệnh một function. Phạm vi sủ dụng của biến chỉ giới hàn
+ tronng pham vi của method hay khối lệnh đó, vì vậy biến local là một biến tạm thời và khoog lưu trữ giá trị của nó sau khi phương thức
+ hoặc khối lệnh đã kết thúc:
+
+
+ ## ví dụ code:
+   ---> 
+                        package list_keyword;
+                        // tiềm hiểu các hình thức tổng hợp các loại biến và hàm trong lập trình hướng đối tượng
+
+                        public class tonghopbien {
+
+                            // biến local, biến trong một phương thức hàm
+                            public void tongtin(){
+                                String xincaho="xinchao";
+                                System.out.println(xincaho);
+                            }
+                            //---> lúc này nếu trong hàm main không gọi method thongtin th giá trị biến xin chào sẽ không bao giờ đc thực hiện..
+
+
+                            public static void main(String[] args) {
+
+                            }
+                        }
+
+
+>>>> Biến InStance:
+  - biến InStance là biến được tạo ra từ một đối tượng cụ thể của một class, nó đc khai báo ngoài method và trong một class, có thể
+  được truy cập cho bất kỳ method nào trong một class đó
+
+  --> ví dụ code
+
+                        package list_keyword;
+                        // tiềm hiểu các hình thức tổng hợp các loại biến và hàm trong lập trình hướng đối tượng
+
+                        public class tonghopbien {
+                            // biến intstance là biến khai báo chung cho một class dùng chung cho tât cả method
+                            private String name;
+                            //--> String name là một biến instace
+
+                            //contructor
+                            public tonghopbien(String name) {
+                                this.name = name;
+                            }
+
+                            //method layten dung biến instance
+                            public String getName(){
+                                return name;
+                            }
+
+
+                            //hàm main thực thi chtrinh
+                            public static void main(String[] args) {
+                                //biến instance là một dạng khai báo không có static nên sẽ thực thi bằng cách khởi tạo biens đối tượng
+                                tonghopbien thb = new tonghopbien("phúc");
+                                System.out.println("ten: " + thb.getName());
+                            }
+                        }
+                                            
+>>> Biến static:
+========================>> xem phần Static_list all list_keyword/bài OOP07_03
+                                
