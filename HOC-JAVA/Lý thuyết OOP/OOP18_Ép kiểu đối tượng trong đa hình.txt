@@ -1,0 +1,58 @@
+*******************ÉP KIỂU ĐỐI TƯỢNG TRONG ĐA HÌNH JAVA******************
+>>> kHÁI NIÊM:
+ - Như ta đã biết ép kiểu dữ liệu: có kiểu ngầm đinh và tường mình
+  vd:
+    long a = 10;
+    int x = (int) A---> lúc này ta sẽ ép kiểu logn a =10 thành a bằng kiểu int có giá trị số nguyên...
+
+   ===> thì trong OOP ép kiểu Object trong đa hình cũng như thể.. nhiều khu trong lớp con đc trỏ đến từ lớp cha
+   không có method, biến của lớp cha , để lố cha trỏ đến biến và methopd từ loiwps con ta tiến hành ép kiểu Object 
+
+   ++ ví dụ code:
+     + class cha:
+                    package Epkieu_dahinh;
+
+                    public class Parrent_class {
+                        // xay dựng method từ lơp cha
+                        public void thongtin_Parenclass(){
+                            System.out.println("đây là lớp cha");
+                        }
+                    }
+    
+      + class con:
+
+                package Epkieu_dahinh;
+
+                public class sub_class  extends  Parrent_class{
+
+                    // method lơp con
+                    public void thongtin_subclass(){
+                        System.out.println("đây là class con");
+                    }
+                }
+
+
+      + thực thi ctrinh
+         
+                    package Epkieu_dahinh;
+                    /*bài tập này sẽ hiểu rõ về tính ép kiểu trong đối tượng đa hình trong java*/
+                    public class texter {
+                        public static void main(String[] args) {
+                            sub_class s = new sub_class();
+                            // tiến hành thực nghiệm tính đa hình: trỏ lơp cha gọi  đến lơp con
+                            Parrent_class p = new sub_class();
+
+                            s.thongtin_subclass();
+                            // lơp con gọiddeeneens method subclass rất bt
+
+                        // p.thongtin_subclass();
+                            //--> tuy nhiên đa hình p gọi đến method thongtin_subclass sẽ báo lỗi do bên lớp cha Pareent_class không có pt đó
+                            // để nó lk đc thì ta tiến hành ép kiểu đối tường cha về kiểu ối tượng con:
+                            sub_class ek = (sub_class) p;
+                            ek.thongtin_subclass();
+                            // 0--> lúc này p đã gọi đc method bên class con
+                            
+                        }
+                    }
+
+

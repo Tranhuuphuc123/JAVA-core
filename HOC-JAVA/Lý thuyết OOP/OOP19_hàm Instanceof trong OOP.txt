@@ -1,0 +1,68 @@
+**************TIỀM HIÊU VỀ HÀM INSTANCEOF TRONG JAVA***************
+>>> KHÁI NIỆM:
+ - "instanceof" trong Java là một toán tử dùng để kiểm tra xem một đối tượng có phải là một instance(thực thể) của một class nào đó hay 
+ không. Toán tử này trả về giá trị true hoặc false, cho biết đối tượng có phải là một instance của class được kiểm tra hay không.
+
+ => instance là gì?"
+  --> instance là một thuộc tính của object-oriented programming (OOP), nghĩa là một thực thể cụ thể của một lớp. Mỗi lần tạo ra một 
+  đối tượng từ một lớp, đối tượng đó là một instance của lớp đó. Ví dụ: Nếu có một lớp tên là Person, mỗi đối tượng tạo ra từ lớp này 
+  (ví dụ như John, Jane, Bob) là một instance của lớp Person.
+
+
+  ++ ví dụ code:
+      >> xây dựng class fongvat làm class cha:
+                public class Dongvat {
+                    // method lơp cha động vật
+                    public void mota(){
+                        System.out.println("động vật thì có tiếng kêu, âm thanh, cử chỉ...");
+                    }
+                }
+
+        >> xây dựng class con cho meo:
+
+           public class dog extends Dongvat {
+                @Override
+                public void mota(){
+                    System.out.println("chó thì sủa và biết giữ nhà");
+                }
+            }
+
+
+            public class meo extends Dongvat{
+                @Override
+                public void mota(){
+                    System.out.println("mèo thì kêu meo meo và biết bắt chuột");
+                }
+            }
+
+
+
+         >> class texter:
+         
+                    public class texter {
+                        public static void main(String[] args) {
+
+                            String h;
+                            Dongvat dv = new Dongvat();
+                            dog d = new dog();
+                            meo m = new meo();
+
+
+                            // để kiểm tra xem các lớp trên có thuộc class đã xây dựng ta dùng Instanceof đ kiemtra
+                            if (dv instanceof Dongvat) {
+                                System.out.println("dv thuộc class Dongvat");
+                            }
+                            if (d instanceof dog) {
+                                System.out.println("d là thuộc class dog");
+                            }
+                            if (m instanceof meo) {
+                                System.out.println("m là thuộc class meo");
+                            }
+
+                        }
+
+                    }
+
+
+
+                    

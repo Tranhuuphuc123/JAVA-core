@@ -1,0 +1,113 @@
+*******************TIỀM HIỂU VỀ TÍNH ĐA HÌNH TRONG JAVA****************
+===> CÓ THỂ NÓI, trong java không cóa đa kế thừa..(ngoài trừ interface có đa kế thừa với implement). Nhưng trong java thì có tính đa hình.
+>>> Khái niệm tính đa hình trong java:
+ - Đa hình (Polymorphism) trong Java là một trong những tính chất của lập trình hướng đối tượng (OOP) cho phép một đối tượng hoạt động 
+ như nhiều dạng khác nhau. Điều này có nghĩa là một đối tượng có thể được gọi bằng nhiều phương thức khác nhau, tùy vào tình huống.
+
+ ## trong thực tế:
+    - Một người đồng thời có thể có những đặc điểm khác nhau. Giống như một người đàn ông đồng thời là một người cha, một người chồng, một 
+  nhân viên. Vì vậy, cùng một người sở hữu hành vi khác nhau trong các tình huống khác nhau. Điều này được gọi là đa hình. 
+    - Tính đa hình được coi là một trong những tính năng quan trọng của Lập trình hướng đối tượng. Tính đa hình cho phép chúng ta thực
+ hiện một hành động theo nhiều cách khác nhau. Nói cách khác, tính đa hình cho phép bạn xác định một giao diện và có nhiều triển khai. 
+ Từ "poly" có nghĩa là nhiều và "morphs" có nghĩa là hình thức, vì vậy nó có nghĩa là nhiều hình thức.
+
+**********************************************************************************************************
+ >>> Minh họa tính đa hình trong java:
+  ## dạng đa hình: với Overloading Khi có nhiều hàm có cùng tên nhưng khác tham số thì các hàm này được gọi là quá tải . Hàm có 
+  thể bị quá tải do thay đổi số lượng đối số hoặc/và thay đổi loại đối số.
+
+    ++ ví dụ code:
+       ===> code minh hoa:
+  
+                            package tinhdahinh;
+                            /*hình thưc có tính chất đa hình với overloding(quá tải phương thức)*/
+                            public class dahinh_overloading {
+                                public int tichso(int a, int b){
+                                    return  a*b;
+                                }
+
+                                /* overloading là quá tải phg thức nghĩa là dùng lại method cùng tên nhưng khác đối sô, sl đối số 
+                                truyền vào cũng đc xem là tính đa hình*/
+
+                                public double tichso(double a, double b){
+                                    return  a*b;
+                                }
+
+                                public static void main(String[] args) {
+                                    dahinh_overloading dh = new dahinh_overloading();
+
+                                    // đa hình gọi method số nguyên--> kw: sẽ là tích số nguyên
+                                    System.out.println("tich so nguyen: " + dh.tichso(5,7));
+                                    // đa hình gọi method số thực--> kw: sẽ là tích số thực
+                                    System.out.println("tích sô thực: " + dh.tichso(5.5,9.3));
+
+                                }
+                            }
+
+
+>>> tính đa hình với Override(ghi đè phương thức):
+ --> xem ví dụ bên phần thực hành OOP/tinhdahinh:
+ --> có thể xem vd chung này
+
+
+                                    class Parent {
+                                    
+                                        // Method of parent class
+                                        void Print()
+                                        {
+                                    
+                                            // Print statement
+                                            System.out.println("parent class");
+                                        }
+                                    }
+                                    
+                                    // Class 2
+                                    // Helper class
+                                    class subclass1 extends Parent {
+                                    
+                                        // Method
+                                        void Print() { System.out.println("subclass1"); }
+                                    }
+                                    
+                                    // Class 3
+                                    // Helper class
+                                    class subclass2 extends Parent {
+                                    
+                                        // Method
+                                        void Print()
+                                        {
+                                    
+                                            // Print statement
+                                            System.out.println("subclass2");
+                                        }
+                                    }
+                                    
+                                    // Class 4
+                                    // Main class
+                                    class GFG {
+                                    
+                                        // Main driver method
+                                        public static void main(String[] args)
+                                        {
+                                    
+                                            // Creating object of class 1
+                                            Parent a;
+                                    
+                                            // Now we will be calling print methods
+                                            // inside main() method
+                                    
+                                            a = new subclass1();
+                                            a.Print();
+                                    
+                                            a = new subclass2();
+                                            a.Print();
+                                            
+                                  -->kw: in ra tất cả các methof bên 2 lơp class con subclass1 và subclass2....do nó gọi đến subclass đó
+                                        }
+                                    }
+
+
+
+
+********************************************************************************************************
+****************ÉP KIỂU TRONG TÍNH ĐA HÌNH**********************************

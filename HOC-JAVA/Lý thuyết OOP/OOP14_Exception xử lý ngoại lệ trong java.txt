@@ -1,5 +1,5 @@
 *********************TIỀM HIỂU VỀ EXCEPTION XỬ LÝ NGOẠI LỆ TRONG JAVA************************
->>> Khái niệm:
+>>> KHÁI NIỆM CƠ BẢN:
  - Xử lý ngoại lệ trong Java là một trong những phương tiện hiệu quả để xử lý các lỗi thời gian chạy để có thể duy trì luồng thông thường của ứng dụng. Xử lý
   ngoại lệ Java là một cơ chế để xử lý các lỗi thời gian chạy như ClassNotFoundException, IOException, SQLException, RemoteException, v.v.
 
@@ -44,16 +44,185 @@
   ### Phân tích:
    - tất cả ngoại lệ và lỗi là của các lớp con của class Throwable, đây là lớp cơ sở của hệ thống phân cấp.
    - một nhánh do Exception đứng đầu, lớp này sử dụng cho các đk đặc biêt mà người dùng sẽ nắm bắt được..
-   - nhánh eror lỗi được suer dụng bởi hệ thống thời gian chạy JVM để chỉ ra lỗi phải thực thi trong mt JRE.
+   - nhánh eror lỗi được sử dụng bởi hệ thống thời gian chạy JVM để chỉ ra lỗi phải thực thi trong mt JRE.
 
 
 
 
 
 >>>>>Các ngoại lệ có  thể được phân loại theo hai cách
-  >> Ngoại lệ tích hợp (Built-in exception)
-   - 
+  >> Ngoại lệ tích hợp (Built-in exception): gồm checked Exception(ngoại lệ đc kiểm tra) và Unchecked Exception(ngoại lệ không đc ktra)
+   ## checked Exception(ngoại lệ đc kiểm tra):
+    - Các ngoại lệ được kiểm tra được gọi là ngoại lệ thời gian biên dịch vì các ngoại lệ này được trình biên dịch kiểm tra tại thời
+     điểm biên dịch.
+
+   ## Unchecked Exception(ngoại lệ không đc ktra):
+    - Nói một cách đơn giản, nếu một chương trình đưa ra một ngoại lệ không được kiểm tra và ngay cả khi chúng ta không xử lý hoặc khai báo nó, 
+    chương trình sẽ không báo lỗi biên dịch.  
+   
   >> Ngoại lệ do người dùng xác định (user-defined exception)
+  - Đôi khi, các ngoại lệ tích hợp sẵn trong Java không thể mô tả một tình huống nhất định. Trong những trường hợp như vậy, người dùng 
+  cũng có thể tạo ngoại lệ, được gọi là 'Ngoại lệ do người dùng xác định'. 
+
+  
+
+
+ ******************************************************************************************************************************************
+
+>>>> LỆNH TRY CATCH TRONG JAVA:
+ >>> Khái niệm:
+  - Trong Java, try-catch là một cấu trúc điều khiển lỗi, cho phép bạn kiểm soát và xử lý các ngoại lệ (exceptions) trong
+   chương trình của bạn.
+   - finally: Trong Java, câu lệnh finally là một phần của một cấu trúc try-catch. Nó chứa một đoạn mã sẽ được thực hiện một cách 
+   bắt buộc sau khi mã trong try hoặc catch đã được thực hiện xong. Điều này có nghĩa là nó sẽ được thực hiện dù có xảy ra ngoại
+   lệ hay không.
+  
+    ## cấu trúc try catch:
+         
+                                    try {
+                                      // code có thể gây ra ngoại lệ
+                                    } catch (ExceptionType e) {
+                                      // code xử lý ngoại lệ
+                                    }finally(){
+
+                                    }
+
+                     ##### trong đó:
+                         + try: chứa mã có thể gẫy ra lỗi ngoại lệ. Đúng hơn là bao gọn phần code để khi phát hiện lỗi 
+                      nó sẽ đẩy xuống catch để thông báo và finally để xử LÝ.
+
+                         + catch: chứa mã xử lý ngoại lệ xác định lỗi exception và thông báo lỗi exception.
+
+                         + ExceptionType: kiểu thức ngoại lệ cần xử lý.
+                            --> có nhiều kiểu ExceptionType:
+                              1/ ArithmeticException: Được ném khi phép toán số học gây ra lỗi (chia cho 0, vô hiệu hóa ...).
+
+                              2/ NullPointerException: Được ném khi truy cập vào một biến hoặc phương thức của một đối tượng null.
+
+                              3/ ArrayIndexOutOfBoundsException: Được ném khi truy cập vào một vị trí mảng vượt quá giới hạn của mảng.
+
+                              4/ ClassNotFoundException: Được ném khi không tìm thấy lớp được yêu cầu.
+
+                              5/ FileNotFoundException: Được ném khi không tìm thấy tập tin.
+
+                              6/ NumberFormatException: Được ném khi chuyển đổi một chuỗi sang số không hợp lệ.
+
+                              7/ IllegalArgumentException: Được ném khi truyền một tham số không hợp lệ cho một phương thức hoặc hàm.
+
+                              8/ IOException: Được ném khi có lỗi về đầu vào/đầu ra (ví dụ, ghi tập tin thất bại).
+
+                          + finally: thực thi truy bắt lỗi dù có exception hay khôn có exception  
+
+
+                     +++ code minh họa:
+
+                                      package Exception_Xulyngoaile;
+                                        // tiềm hiểu về try catch trong xử l ngoại lệ
+
+                                        public class try_catch {
+                                            public static void main(String[] args) {
+                                                // ví dụ đoạn code sai sao va cách bắt lỗi với try catch
+
+                                                int mang[] = {2,3};
+
+                                                try {
+                                                    System.out.println("mpt thứ 3: "+ mang[3]);
+                                                }catch (ArrayIndexOutOfBoundsException e){
+                                                    System.out.println("loi 1: " + "\n" + e);
+                                                }
+                                                catch (Exception e){
+                                                    System.out.println("lỗi 2" + "\n" + e);
+                                                }
+                                                  finally {
+                                                    System.out.println("luôn thực thi dù có hay khoogn có exception");
+                                                }
+
+                                                  /* lưu ý catch(Exception) là phần tử gốc của bắt lỗi catch
+                                                * vì trong try catch ta có thể thêm nhiểu catch cô một try
+                                                * cho nên lưu ý với Exception e là phần tử gốc thì ta nên để nó ở cúi cùng
+                                                * để tránh lỗi khi biên dịch chtrinh
+                                                * */
+
+                                            }
+                                        }
+
+
+
+
+
+ *******************************************************************************************************************************************
+
+  >>>>>> TIỀM HIỂU VỀ THROW VÀ THROWS RA MỘT EXCEPTION THEO Ý MUỐN
+   >> Khái niệm:
+    -  Trong java THROW đc sinh ra để người dùng tự định nghĩa một exception theo ý muốn. Khi một ngoại lệ xảy ra, chúng ta có thể sử 
+    dụng throw để tạo ra và ném ra ngoại lệ.
+    - throws được sử dụng để định nghĩa danh sách các ngoại lệ mà một phương thức có thể gây ra. Khi một phương thức định nghĩa một
+     danh sách ngoại lệ bằng throws, nó có nghĩa là nó sẽ giao nhiệm vụ xử lý ngoại lệ cho phương thức gọi.  
+     ==> đơn giản hơn trong try_catch khi throw ném ra một ngoại lệ thì function đó phải định danh lại exception throw vừa ném bằng throws
+     thì đoạn code mới thực thi,....
+
+        ++ ví dụ code:
+
+           # xây dựng Myexception tự định nghĩa:
+             
+                                              package Exception_Throw_Throws;
+                                              // đoạn Exception do mình tự định nghĩa và tạo ra khong dự cấu trúc khuôn mẫu có sẵn
+
+                                              public class MyException extends Exception{
+                                                  private String eror;
+                                                  // contructor
+
+
+                                                  public MyException(String eror) {
+                                                      super();
+                                                      this.eror = eror;
+                                                  }
+
+                                                  // get and set
+
+                                                  public String getEror() {
+                                                      return eror;
+                                                  }
+
+                                                  public void setEror(String eror) {
+                                                      this.eror = eror;
+                                                  }
+                                              }
+
+           #  thực thi throw và throws:
+
+                                          package Exception_Throw_Throws;
+                                          /*trong bài toán này ta thực hành một đoạn bắt lỗi với số chia cho 0 sẽ bị loi
+                                          dùng đoạn Myexception tự tạo để bắt lõi cỗ đó
+                                          * */
+                                          public class text {
+                                              public static void main(String[] args) {
+                                                try {
+                                                    // lỗi nếu không bỏ vào try catch bắt lỗi vì số ngueeen khoogn chia đc cho 0
+                                                    chia2so(5,0);
+                                                }catch (MyException e){
+                                                    System.out.println(e.getEror());
+                                                }
+
+                                              }
+
+                                              // xây dựng function  xử lý số  chia 2so
+                                              public static void chia2so(int a, int b) throws MyException{
+                                                  try {
+                                                          int kq = a/b;
+                                                  }catch (Exception e){
+                                                      // ném ra ngoại lệ vừa khởi tạo MyException
+                                                      throw new MyException("lỗi không chi đc cho số 0 nha bạn yêu");
+                                                      //---> lúc này throw ne ra ngoại lệ sẽ bị lõi nếu ta không định danh nó lại trong hàm bằng throws
+                                                      // định danh throws ở ngay tên của function khơi tạo
+                                                  }
+                                              }
+                                          }                                         
+
+
+
+ 
+
 
 
 

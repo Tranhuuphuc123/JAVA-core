@@ -1,0 +1,15 @@
+***************ĐỊNH NGHĨA LẠI VỀ QUAN HỆ ĐỐI TƯỢNG TRONG JAVA*********************
+>>> kHÁI NIỆM:
+ - quan hệ đối tượng has a và is a là quan hệ quan trọng giữa các lớp class trong java.
+ ## Has-A: (có một) quan hệ xác định rằng một lớp có một thuộc tính (thành phần) là một đối tượng của một lớp khác.
+ ===> ở đây dễ hiểu hơn là ta xây dung một class trc đó và dùng class đó để làm kiểu dữ liệu tự định nghĩa cho một Oject trong lớp khác.
+  ++ code minh hoa: 
+      xem bên phần code
+
+ ## Is-A: (là một) quan hệ xác định rằng một lớp là một phần của một lớp cha hoặc là một lớp con của một lớp cha
+ ====? cụ thể hơn ở đây khi ta có một class cha và một class con extend thừ kế lại từ lớp cha thì nó đc gọi là Is-A.
+   ++ code ví dụ minh họa: 
+      xem bên phần thực hành.    
+
+
+  

@@ -26,6 +26,8 @@ public class equals_hascode {
         // sử dụng phương thức hascode, hascode còn tiềm hiểu thêm?
         System.out.println("a1 hascode: " + a1.hashCode());
 
+
+
     }
 
 }
