@@ -1,6 +1,6 @@
 ****************************TIỀM HIỂU CÁC DẠNG ĐỊNH DẠNG HIỂN THỊ TRONG JAVA*****************************
 >>>>> Dạng hiển thị số:
- - chú yes đến hàm chuyển đổi số getInsstacne, truyền đối số(định danh mã quốc gia...)
+ - chú ý đến hàm chuyển đổi số getInsstacne, truyền đối số(định danh mã quốc gia...)
  - ngoài các kiểu dl hiển thị số int, float, double..ta có thể dùng cách hiển thị nâng cao thông và ví dụ code và giải thích chi tiết sau:
 
   +++ code hg dẫn:
