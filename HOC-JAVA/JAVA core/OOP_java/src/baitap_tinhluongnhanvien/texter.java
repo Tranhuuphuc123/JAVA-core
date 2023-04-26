@@ -23,9 +23,7 @@ public class texter {
             dc.setTenduong(tenduong);
             dc.setTentp(tentp);
 
-            nhanvien nv = new nhanvien(ten,dc,sonamkinhnghiem);
-
-            nvs[i] = nv;
+            nvs[i] = new nhanvien(ten,dc,sonamkinhnghiem);
 
             //xóa bộ nhớ đệm
             sc.nextLine();

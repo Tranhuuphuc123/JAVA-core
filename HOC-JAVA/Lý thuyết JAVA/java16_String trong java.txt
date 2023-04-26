@@ -151,9 +151,23 @@ giống nhau       - Giá trị lớp chuỗi thay thế đc                 - G
 
 khác nhau        - Đồng bộ hóa đc                                - Không đồng bộ hóa
                  - Tính an toàn cao                              - Tính an toàn thấp hơn 
-                 _ quản lý không gian bộ nhớ bt.                 - quản lý không gian bộ nhớ tốt hơn
+                 _ quản lý không gian bộ nhớ bt.                 - quản lý không gian bộ nhớ tốt hơn, nhanh hơn
                  
                 ===> trong lập trình sẽ ưu tiên dùng StringBuilder
+                ====> tagt thấy dùng StringBuffer và StringBuilder nó sẽ giảm tải bộ nhớ heap của máy tính nhiều hơn,. và quá trình
+                khai báo cũng gọn không cần khai báo nhiều biến chứa như String thông thường
+                  
+                    Ví dụ:
+                      vois String bt đế nối chũi
+
+                          String S = "tôi là a";
+                          S= S + "và bạn của b";
+                          ===> tốn thêm bộ nhớ heap cho mỗi lần lỗi biến S ra
+
+
+                       Với Stringbuilder vad StringBuffer thì không cần chỉ cần sử dụng phương thức kết nối là xong:
+                        StringBuffer a = new StringBuffer();
+                        a.append(và là bạn của b);   
 
 
 

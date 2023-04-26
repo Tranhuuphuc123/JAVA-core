@@ -3,11 +3,11 @@ import java.util.Scanner;
 
 public class vonglap {
     public static  void main(String[] args){
+         // in bảng cửu chương với vòng lặp for.
         Scanner sc = new Scanner(System.in);
 
-         int x=0;
+        int x=0;
 
-         // in bảng cửu chương với vòng lặp for.
       /*
          System.out.println(" ente the x: ");
          x= sc.nextInt();

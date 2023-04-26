@@ -5,10 +5,11 @@ dùng đoạn Myexception tự tạo để bắt lõi cỗ đó
 public class text {
     public static void main(String[] args) {
        try {
-           // lỗi nếu không bỏ vào try catch bắt lỗi vì số ngueeen khoogn chia đc cho 0
+           // lỗi nếu không bỏ vào try catch bắt lỗi vì số nguyên không chia đc cho 0
            chia2so(5,0);
        }catch (MyException e){
            System.out.println(e.getEror());
+
        }
 
     }

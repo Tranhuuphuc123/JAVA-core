@@ -56,7 +56,7 @@ public class UngdungtimkiemView extends JFrame {
         // thiết lập màu chữ, màu nền
         button01.setForeground(Color.WHITE);
         button01.setBackground(Color.BLACK);
-        // thiết lập tô màu cả viền
+        // thiết lập tô màu cả viền+
         button01.setOpaque(true);
         // thêm sự kiện
         button01.addActionListener(al);
@@ -74,7 +74,7 @@ public class UngdungtimkiemView extends JFrame {
         panel_footer.add(button01);
         panel_footer.add(label_display03);
 
-        // thiết lập layout chugn của JFraem phân bố
+        // thiết lập layout chugn của JFrame phân bố
         this.setLayout(new BorderLayout());
         this.add(label_display01, BorderLayout.NORTH);
         this.add(area, BorderLayout.CENTER);

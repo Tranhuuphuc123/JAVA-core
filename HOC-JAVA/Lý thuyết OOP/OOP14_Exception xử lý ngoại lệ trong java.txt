@@ -7,6 +7,8 @@
   hướng dẫn bình thường của chương trình. Các ngoại lệ có thể được bắt và xử lý bởi chương trình. Khi một ngoại lệ xảy ra trong một phương thức, nó sẽ tạo ra một đối 
   tượng. Đối tượng này được gọi là đối tượng ngoại lệ. Nó chứa thông tin về ngoại lệ, chẳng hạn như tên và mô tả về ngoại lệ và trạng thái của chương trình khi ngoại
   lệ xảy ra.
+  ===>  trong java hay xử lý ngoại lệ trong java là một cơ chế mạnh mẽ để xử lý các lỗi runtime để có thể duy trì luồng bình
+   thường của ứng dụng.
 
 
 
@@ -115,8 +117,12 @@
 
                               8/ IOException: Được ném khi có lỗi về đầu vào/đầu ra (ví dụ, ghi tập tin thất bại).
 
-                          + finally: thực thi truy bắt lỗi dù có exception hay khôn có exception  
+                          + finally: thực thi truy bắt lỗi dù có exception hay không có exception  
 
+
+
+
+                ##### 
 
                      +++ code minh họa:
 
@@ -160,14 +166,36 @@
 
 
 
-  >>>>>> TIỀM HIỂU VỀ THROW VÀ THROWS RA MỘT EXCEPTION THEO Ý MUỐN
+  >>>>>> TIỀM HIỂU VỀ CÁCH TẠO RA MỘT EXCEPTION THEO Ý MUỐN
    >> Khái niệm:
     -  Trong java THROW đc sinh ra để người dùng tự định nghĩa một exception theo ý muốn. Khi một ngoại lệ xảy ra, chúng ta có thể sử 
     dụng throw để tạo ra và ném ra ngoại lệ.
     - throws được sử dụng để định nghĩa danh sách các ngoại lệ mà một phương thức có thể gây ra. Khi một phương thức định nghĩa một
      danh sách ngoại lệ bằng throws, nó có nghĩa là nó sẽ giao nhiệm vụ xử lý ngoại lệ cho phương thức gọi.  
-     ==> đơn giản hơn trong try_catch khi throw ném ra một ngoại lệ thì function đó phải định danh lại exception throw vừa ném bằng throws
+     ==> đơn giản hơn trong try_catch khi throw ném ra một ngoại lệ thì function đó phải định nghĩa lại exception throw vừa ném bằng throws
      thì đoạn code mới thực thi,....
+
+
+     hiểu rõ hơn về THROW AND THROWS THÔNG QUA BẢNG SO SÁNH SAU:
+      |------------------------------------------------------------------------------------------------------------------------|
+                                 THROW                          |                         THROWS                  
+      |------------------------------------------------------------------------------------------------------------------------|
+         Từ khóa throw trong java được sử dụng để ném ra một    |    Từ khóa throws trong java được sử dụng để khai báo một 
+        ngoại lệ rõ ràng.                                       |  ngoại lệ.                                    
+      |------------------------------------------------------------------------------------------------------------------------|
+         Ngoại lệ checked không được truyền ra nếu chỉ sử dụng  |    Ngoại lệ checked được truyền ra ngay cả khi chỉ sử dụng từ 
+         từ khóa throw.                                         |  khóa throws.                                        
+      |------------------------------------------------------------------------------------------------------------------------|
+          Sau throw là một instance.                            |    Sau throws là một hoặc nhiều class.                           
+      |------------------------------------------------------------------------------------------------------------------------|
+          Throw được sử dụng trong phương thức.                 |    Throws được khai báo ngay sau dấu đóng ngoặc đơn của 
+                                                                |  phương thức.                                       
+      |------------------------------------------------------------------------------------------------------------------------|
+         Bạn không thể throw nhiều exceptions.                  |    Bạn có thể khai báo nhiều exceptions, Ví dụ:
+                                                                | public void method()throws IOException,SQLException.                                      
+      |------------------------------------------------------------------------------------------------------------------------|
+
+      
 
         ++ ví dụ code:
 
@@ -221,7 +249,7 @@
                                                   }catch (Exception e){
                                                       // ném ra ngoại lệ vừa khởi tạo MyException
                                                       throw new MyException("lỗi không chi đc cho số 0 nha bạn yêu");
-                                                      //---> lúc này throw ne ra ngoại lệ sẽ bị lõi nếu ta không định danh nó lại trong hàm bằng throws
+                                                      //---> lúc này throw ném ra ngoại lệ sẽ bị lõi nếu ta không định danh nó lại trong hàm bằng throws
                                                       // định danh throws ở ngay tên của function khơi tạo
                                                   }
                                               }
@@ -237,11 +265,19 @@
  ******************************************************************************************************************************************
  ******************************************************************************************************************************************
 
- >>>>> TỔNG QUAN VỀ THROW RUNTIMEEXCEPTION VÀ COMPILE EXCEPTION
+ >>>>> TỔNG QUAN VỀ THROW/THROWS RUNTIME EXCEPTION VÀ COMPILE EXCEPTION
   >> kHÁI NIỆM:
    - RuntimeException: RuntimeException là một loại ngoại lệ xảy ra tại thời điểm chạy của chương trình. Những ngoại lệ này không cần 
    phải được bắt bởi phần mã Try catch hoặc được định nghĩa bởi từ khóa throws, không cần được báo trước
-   - CompileException: Compile Exception là một loại ngoại lệ xảy ra trong quá trình biên dịch mã nguồn Java. Nó được gọi là Checked Exception vì nó cần được xử lý hoặc được bắt ngoại lệ trong quá trình biên dịch.
+    --->. này thì vd 5/0 sẽ báo lỗi nhưng hông cần try, cactch hay throws ctrinh vẫn báo và nó vẫn chạy bt.
+
+   - Compile Exception: Compile Exception là một loại ngoại lệ xảy ra trong quá trình biên dịch mã nguồn Java. Nó được gọi là 
+   Checked Exception vì nó cần được xử lý hoặc được bắt ngoại lệ trong quá trình biên dịch. Và nó bắt buộc phải try catch hoặc throws.
+   --->với các lỗi mà nếu không khai báo try catch, throws thì chưng trình java sẽ bắt buộc mình phải try catch băt lôi, hay mún throw exception tự tạo và 
+   throws nó ra thì xem lại phần trên.
+
+
+
    
     
 

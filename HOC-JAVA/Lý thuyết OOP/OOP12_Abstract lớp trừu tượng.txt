@@ -108,10 +108,11 @@ mà không cần quá hiểu biết về chuyên môn, nguyên tác vật lý, h
 
 
 
->>>> ứu điểm  của lớp trừu tượng:
+>>>> ưu điểm  của lớp trừu tượng:
  - 1/ Nó làm giảm sự phức tạp của việc xem mọi thứ.
  - 2/ tránh trùng lặp mã và tăng khả năng sử dụng lại.
  - 3/ hiểu tăng tính bảo mật của ứng dụng hoặc chương trình vì những chi tiết đc cung cấp cho người dùng.
  - 4/ cải thiện khả năng bảo trì.
  - 5/ cải thiện tính moodun của ứng dụng.
- - 6/ 
+ - 6/ tính đa hình cao. 
+ - 7/ tính bảo mật cao.

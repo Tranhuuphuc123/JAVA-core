@@ -12,19 +12,12 @@ public class String_nangcao {
         //===> in ra hello java
 
 
-
-
-
         //02_ tìm hiểu phương thức insert() trong Stringbuilder, Stringbuffer
         StringBuffer sb = new StringBuffer("Hello ");
         sb.insert(1, "Java");
         System.out.println(sb.toString());
 
         //===> lúc này ở vtri 1 sẽ chèn chữ java vào vtri 1 Hello thành  HJavaello
-
-
-
-
 
         //03_ phương thức replace trong Stringbuilder, Stringbuffer
 

@@ -1,0 +1,154 @@
+****************TIỀM HIỂU VỀ OUTER CLASS -INNER STATIC-NON STATIC INNER TRONG JAVA************
+>>>>> OUTER CLASS:
+  >>> Outer class: Outer class là một class khai báo bên cạnh, hay phía ngoài của public class(thường đc hiểu là class chính của 
+  package). Nó đc thg đc khai báo với từ khóa class và với một Access Modifier(Phạm vi truy cập) duy nhất là Default.
+  - có thể kế thừa từ Outer class tg tự các class khác nhung do khi khai báo outer class có phạm vi truy cập là Default nên nó chi
+  đc kế thừa giữa các class trong một package thui.
+
+   ++ ví dụ: code
+       
+                    package Outer_inner_nonStatic.Outer;
+                    /*tiềm hiểu kiến thức về Outer class*/
+                    public class Outerclass {
+                        public void Info(){
+                            sub_non a = new sub_non();
+                            a.thongtin();
+
+                        }
+
+                    }
+
+                    // đay là Outer class-nghĩa là một class trong cùng một package nhưng nằm ngoài class chinh với class Public
+                    // lưu ý với Outer class trong cùng một package thì Access Modified(Quản lý truy cap) nó mặc định là Default
+                    class sub_non{
+                        private int tuoi;
+                        public void thongtin(){
+                            System.out.println("tuổi là 18");
+                        }
+                    }
+
+       ## tính kế thưà:
+
+                      package Outer_inner_nonStatic.Outer;
+                      /*trong class kethua này ý nghãi là để biểu thị tính kế thừa trong Outer class
+                      * lưu ý là Outer class chỉ đc kế thừa giữa các class trong một package thui do giời hạn của phạm vi truy 
+                      * cập Default
+                      * */
+                      public class Outerclass_kethua  extends sub_non{
+                          public static void main(String[] args) {
+                              sub_non a = new sub_non();
+                              a.thongtin();
+
+                          }
+                      }
+        
+===========================================================================================================
+ >>> INNER CLASS:
+  ### Khái niệm:
+   - Trong Java, Inner class (lớp nội tại) là một lớp được định nghĩa bên trong một lớp khác và được xem là thành viên của lớp ngoài.
+   --> ưu điểm của Inner class:
+    + Làm cho mã sạch sẽ và dễ đọc.
+    + Các phương thức riêng của lớp bên ngoài có thể được truy cập, do đó mang lại một chiều hướng mới và làm cho
+     nó gần gũi hơn với thế giới thực.
+   
+    + Tối ưu hóa mô-đun mã.
+
+ 
+  ### các loại Inner class:
+    ## Inner non static class(lớp nội tại không có static): hay còn gọi là lớp nội tại không tĩnh
+      - Non-static Inner class (lớp nội tại không tĩnh): là một lớp được khai báo bên trong một lớp khác và không được khai báo 
+     với static. Nó có thể truy cập vào tất cả các trường và phương thức của lớp ngoài của nó, kể cả các trường và phương thức:
+     private, public, protected, Default;
+ 
+      - Nó có tính Inheritance(kế thừa): với Inner class non static thì nó chỉ có thể kế thừa trong một class thui, ngoài class hay 
+      package khác sẽ không thể kế thừa Inner class đc.
+
+
+     +++ ví dụ code:
+
+
+                                    public class Non_static_class {
+
+                                        // class Inner
+                                        class inner{
+                                            private String name;
+                                            public void show(){
+                                                System.out.println("đây là class Inner không có static");
+                                            }
+                                        }
+
+                                        // tính kế thừa của Iner class non static chỉ duy trì trong một class cha Non_static_class
+                                        class Inner2 extends  inner{
+
+                                        }
+                                
+
+                                        public static void main(String[] args) {
+                                            // trc tiên để gọi đc pt thức của Inner class với non static inner class thi ta cần tham 
+                                            // chiếu class cha trc
+                                            Non_static_class a = new Non_static_class();
+
+                                            // sau đó mới dùng Object a vừa khởi tạo tham chiếu đến inner class
+                                            Non_static_class.inner b = a.new inner();
+
+                                            // gọi method
+                                            b.show();
+
+                                        }
+
+                                    }
+
+
+
+
+    ## Inner static class(lớp nội tại có static): hay còn gọi là lớp nội tại tĩnh 
+     - Static Inner class (lớp nội tại tĩnh): là một lớp được khai báo bên trong một lớp khác và được khai báo là static. Nó có 
+     thể truy cập vào tất cả các trường và phương thức static của lớp ngoài của nó, nhưng không thể truy cập vào các trường và
+     phương thức non-static
+
+     - tính kế thừa(Inheritance): nó có thể extend các Inner class kể cả trong cùng class hay ngoài class, ngoài package đều đc.
+
+     ++ cde ví dụ:
+
+                            package Outer_inner_nonStatic.Inner;
+                            // tiềm hiểu về static Inner class trong java
+                            public class Static_Inner_class {
+
+                                // xây dựng class iiner với từ khóa static
+                                public static class Person{
+                                    private String name;
+                                    public void show(){
+                                        System.out.println("hello tôi la Person của class Inner có từ khóa Static");
+                                    }
+                                }
+
+                                // tính kế thừa trong cùng một class, có thể kế thừa ngoài package hay class khác cũng đc
+                                public class Person2 extends  Person{
+
+                                }
+
+                                // thực thi
+                                public static void main(String[] args) {
+                                    // gọi và khởi tạo Object tham chiếu
+                                    // việc gọi khơi tạo class Inner dễ dàng hơn không ần pahir khởi tạo class cha trc như Non 
+                                    // static class
+
+                                    Static_Inner_class.Person a = new Static_Inner_class.Person();
+                                }
+                            }
+
+
+                            // cóa thể gọi theo cách này
+                            class Main{
+                                public static void main(String[] args) {
+                                    Static_Inner_class.Person a = new Static_Inner_class.Person();
+                                }
+                            }
+                                
+                            
+
+    ## Method Local Inner Classes : hay còn gọi là Phương thức các lớp nội tại cục bộ
+     - 
+
+    ## Anonymous Inner Classes: các lớp nội tại ẩn danh
+     -   

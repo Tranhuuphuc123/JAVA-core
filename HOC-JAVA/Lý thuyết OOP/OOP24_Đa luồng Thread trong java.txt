@@ -1,0 +1,356 @@
+***************************ĐA LUỒNG THREAD TRONG JAVA***************************
+>>> kHÁI NIỆM:
+ - Trong Java, thread là một đơn vị nhỏ nhất của xử lý đồng thời (concurrency) mà có thể được thực hiện bởi hệ điều hành. Một chương
+  trình Java có thể có nhiều thread chạy đồng thời, mỗi thread đều có một luồng thực thi (execution stream) riêng biệt, tuy nhiên 
+  chúng có thể truy cập và sử dụng chung các tài nguyên và biến toàn cục của chương trình.
+
+      Một thread trong Java được thể hiện bằng một đối tượng của lớp Thread. Để tạo một thread mới, bạn có thể kế thừa lớp Thread 
+  hoặc triển khai giao diện Runnable và chuyền nó vào trong một đối tượng Thread. Sau đó, bạn gọi phương thức start() của đối tượng
+  Thread để bắt đầu thực thi thread.
+  ====>tóm lại:
+   - Đa luồng (multithreading) trong java là một tiến trình thực hiện nhiều luồng đồng thời.
+   - Luồng (thread) về cơ bản là một tiến trình con (sub-process). Nó là đơn vị nhỏ nhất của tiến trình. Đa tiến trình 
+   (multiprocessing) và đa luồng (multithreading) cả hai được sử dụng để tạo ra hệ thống đa nhiệm (multitasking).
+
+   - Nhưng chúng ta sử dụng đa luồng nhiều hơn đa tiến trình bởi vì các luồng chia sẻ một vùng bộ nhớ chung. Chúng không phân bổ
+    vùng bộ nhớ riêng biệt để tiết kiệm bộ nhớ, và chuyển đổi ngữ cảnh giữa các luồng mất ít thời gian hơn tiến trình.
+
+
+  >>> Ưu điểm của đa luồng:
+    - 1 Nó không chặn người sử dụng vì các luồng là độc lập và bạn có thể thực hiện nhiều công việc cùng một lúc.
+
+    - 2 Bạn có thể thực hiện nhiều hoạt động với nhau để tiết kiệm thời gian.
+
+     - 3 Luồng là độc lập vì vậy nó không ảnh hưởng đến luồng khác nếu ngoại lệ xảy ra trong một luồng duy nhất.  
+
+
+
+ 
+ ===============================================================================================================================
+ =======================Vòng Đời của một thread========================
+ >>>>>> Khái niệm:
+  -  Một luồng trong Java tại bất kỳ thời điểm nào tồn tại ở bất kỳ trạng thái nào sau đây. Một luồng chỉ nằm ở một
+   trong 5 trạng thái được hiển thị bất kỳ lúc nào:   
+
+    1/ New
+    2/ Runnable
+    3/ Running
+    4/ Non-Runnable (Blocked)
+    5/ Terminated
+
+
+
+   -----------------------------------------------------------
+    + New: tạo mới
+     -> Thread ở trạng thái new nếu bạn tạo một thể hiện của lớp Thread nhưng trước khi gọi phương thức start().
+
+    + Runnable: chạy thực thi
+     -> Thread ở trạng thái runnable sau khi gọi phương thức start(), nhưng trình lên lịch (scheduler) của thread đã không chọn 
+     nó là thread đang chạy.
+
+    + Running:
+     -> Thread ở trạng thái running nếu trình lên lịch của thread đã chọn nó.
+
+    + Non-Runnable (Blocked)
+     -> Đây là trạng thái khi thread vẫn còn sống, nhưng hiện tại không được chọn để chạy.
+
+    + Terminated: chấm dứt
+     -> Một thread ở trong trạng thái terminated hoặc dead khi phương thức run() của nó bị thoát.
+
+
+      ++ ví dụ code: xem phần thực hành/OOP_java/Thread_daluong/Vongdoi_thread.
+
+
+
+================================================================================================================================
+================CÁCH TẠO MỘT THREAD=================
+          
+  - Có hai cách để tạo ra một thread:
+    + Bởi extends lớp Thread:
+       _> pt sử dụng trong thread rất nhiều: 
+          + public void run()....
+          + public void start()
+          + public void join()
+          .......rất nhiều tham khảo thêm
+
+    + Bởi implements Runnable interface: 
+      -> Giao tiếp Runnable chỉ có một phương thức run().
+         + public vid run().
+
+    ===>Lưu ý chạy thread bằng start:
+              
+
+             ++ ví dụ code:
+                        # tạo thread với việc implement Runable()
+                            // tạo thread theo kiểu implement Runable
+                                class myThread1 implements Runnable {
+
+                                    // với việc tạo thread thì vần Override lại method run của Runable
+                                    @Override
+                                    public void run() {
+                                        for (int i = 0; i < 10; i++) {
+                                            System.out.println("A: " + i);
+                                        }
+                                    }
+
+                        # tạo thread với extend ThrEAD():
+
+                                // tạo thread theo kiểu extend Thread
+                                    class myThread2 extends Thread {
+                                        // với việc tạo thread thì vần Override lại method run của Runable
+                                        @Override
+                                        public void run() {
+                                            for (int i = 0; i < 10; i++) {
+                                                System.out.println("A: " + i);
+                                            }
+                                        }
+                                    }
+
+
+                        # THỰC THI CHẠY đa luồn với thread:
+
+                        public class myThread{
+                                public static void main(String [] args){
+                                    // cách chạy song song nhiều luông
+                                    myThread1 thread1 = new myThread1();
+                                    Thread t = new Thread(thread1);
+                                    /* khi goi khởi tạo thread2 thi không cần gán vào Thread chỉ cần gọi là chạy
+                                    * vì thread 1 đã liên kết với Thread ngay từ lần khởi tạo đầu tiên
+                                    * */
+                                    myThread2 thread2 = new myThread2();
+
+
+                                    // chạy thread
+                                    t.start();
+                                    thread2.start();
+                                }
+                            }   
+
+
+
+
+============================================================================================================================
+===========================CÁC METHOD TRONG THREAD======================
+>>>>PHƯƠNG THỨC SLEEP TRONG JAVA:
+ - Khái niệm: Phương thức sleep() của lớp Thread được sử dụng để tạm ngứng một thread cho một khoảng thời gian nhất định.
+ --> Phương thức này có thể được sử dụng để tạo ra các delay giữa các hoạt động của các luồng khác nhau trong ứng dụng của bạn.
+ 
+      ++ ví dụ code:
+         
+
+                package Thread_daluong;
+                /*trong lập trình java thread có nhiều method khác nhau - ta cùng tiềm hiểu về methd slepp của thread*/
+                public class method_Sleep extends Thread{
+                    public void run(){
+                        for(int i =0;i<=5;i++){
+                            try{
+                                // sử dụng sleep để delay
+                                Thread.sleep(1000);
+                            }catch(InterruptedException e){
+                                System.out.println(e);
+                            }
+                            System.out.println(i);
+                        }
+                    }
+
+                public  static  void main(String[] args){
+                        method_Sleep t1 = new method_Sleep();
+                        method_Sleep t2 = new method_Sleep();
+                        //khởi chạy Thread
+                        t1.start();
+                        t2.start();
+
+                        /*
+                        * giải thích như sau:
+                        *  + Đoạn code này tạo ra hai đối tượng thread của lớp method-Sleep và khởi chạy chúng. Mỗi thread được thực
+                        * thi bởi phương thức run(), trong đó mỗi vòng lặp sẽ đợi 1s
+                        *
+                        *  + Trong phương thức run(), thread đợi 2000 milliseconds(2s) bằng cách gọi phương thức sleep(2000).
+                        *  + Sau đó, thread in ra giá trị của biến i (từ 0 đến 5).
+                        *  + Nếu thread bị gián đoạn (interrupted) trong khi đang ngủ, nó sẽ in ra thông báo lỗi.
+                        * ===> Bởi vì hai thread được thực thi đồng thời, kết quả của chương trình có thể khác nhau mỗi lần chạy.
+                        * Các giá trị i có thể được in ra lần lượt hoặc xen kẽ giữa hai thread.
+                        * */
+                    }
+
+                }
+
+
+  ***********Note lưu ý là không start 1 Thread 2 lần nó chỉ chạy start đúng 1 làn duy nhất
+
+
+
+
+
+  ==================================================================================================================================
+  ==============METHOD JOIN VÀ ĐẶT TÊN CHO THREAD==============
+  >>> Khái niệm:
+   - thread join sẽ cho phép thread đó thực thi xong chương trình của nó, sau đó mới cho phép các thread còn lại thực thi.
+   - cách thức đặt tên cho Thread là dùng getName và setName        
+
+      + ví dụ code:
+
+                            package Thread_daluong;
+                            /*tiềm hiểu về method_join trong java thread*/
+                            public class method_join extends Thread {
+                                public void run(){
+                                    for(int i = 0; i<5;i++){
+                                        try {
+                                            Thread.sleep(1000);
+                                        } catch (InterruptedException e) {
+                                            e.printStackTrace();
+                                        }
+                                        //cách xuất ra thread với giá trị đươợc đặt tên
+                                        System.out.println(this.getName() + " " + i);
+                                    }
+                                }
+
+                                //hàm main để chạy tiến trình join và setName cho thread
+                                public static  void main(String[] args){
+                                    method_join t1 = new method_join();
+                                    // đặt tên cho thread
+                                    t1.setName("Thread1");
+
+                                    method_join t2 = new method_join();
+                                    // đặt tên cho thread
+                                    t2.setName("Thread2");
+
+                                    method_join t3 = new method_join();
+                                    // đặt tên cho thread
+                                    t3.setName("Thread3");
+
+                                    /*bài toa đặt ra l nếu chạy t1.start.. t3.start thì tiên trình chạy sẽ bị delay 2s và chạy song song
+                                    * vậy nếu muốn cho thread t1 chạy hết rồi mới tới các thread sau thì làm sau: dùng join
+                                    * lưu ý khi dùng join cần bỏ vào exception
+                                    * */
+                                    t1.start();
+                                    try {
+                                        t1.join();
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
+
+                                    t2.start();
+                                    t3.start();
+                                    /*
+                                    *  ==> lúc này sau khi t1 chạy hết tiến trình thì t2,t3 mới chạy song song tiếp tục
+                                    * ==> ngoài ra join cũng có  thể set thời gian: vd join(1500) sau 1.5s maf không chạy xong thì
+                                    * các thread còn lại sẽ chạy
+                                    * */
+                                }
+                            }
+                        
+
+                    
+======================================================================================================================================
+===============MỨC ĐỘ ƯU TIÊN THREAD (PRIORITY) VÀ METHOD LUỒNG HIẾM METHOD DAEMON==========
+>>> kHÁI NIỆM:
+ ## Mỗi thread có một mức ưu tiên (priority). Ưu tiên được đại diện bởi một số từ 1 đến 10. Trong hầu hết các trường hợp, lịch trình 
+ của thread được sắp xếp theo thứ tự ưu tiên của chúng (được gọi là lập kế hoạch ưu tiên). Nhưng nó không được bảo đảm bởi vì nó phụ
+  thuộc vào thông số kỹ thuật của JVM.
+    - Mức độ ưu tiên mặc định của một thread: lưu ý mức độ càng cao thì sẽ đc chạy trước nhưng không đảm bảo
+      ++  MIN_PRIORITY có giá trị 1
+      ++  NORM_PRIORITY  có giá trị 5
+      ++  MAX_PRIORITY có giá trị 10
+
+     + cú phép: get/setPriority
+
+
+ ## Daemon: là chương trình chạy ngầm bên dưới hệ thống thread.  là một luồng cung cấp dịch vụ cho luồng người dùng. Thời gian sống
+  của nó phụ thuộc vào các luồng người dùng. Tức là khi tất cả các luồng người dùng chết, JVM sẽ tự động chấm dứt luồng này. 
+   - Các phương thức của luồng hiểm:
+      |------------------------------------------------------------------------------------------------------------|
+                            method                          |                           mô tả
+      |------------------------------------------------------------------------------------------------------------|
+        public void setDaemon(boolean status)               |   Được sử dụng để đánh dấu luồng hiện tại là luồng 
+                                                            |  hiểm hoặc luồng người dùng.(xét trang thái boolean)
+      |------------------------------------------------------------------------------------------------------------|
+        public boolean isDaemon()                           |   Được sử dụng để kiểm tra xem luồng hiện tại có phải 
+                                                            |  là luồng hiểm không.
+      |------------------------------------------------------------------------------------------------------------|
+
+
+
+
+      ++ VÍ DỤ CODE:
+
+       
+           package Thread_daluong;
+        /*cùng tiềm hiểu thuộc tính mới của Thread
+        * 1/Priority: độ ưu tiên khi chạy củ một thread(ưu tiên theo câp độ: 1 - 5 - 10)
+        * 2/ daemon(): luồng hiếm chạy ngầm của Thread
+        * */
+        public class priority_daemon extends  Thread{
+            @Override
+            public void run(){
+                for(int i =0;i<5;i++){
+                    System.out.println(this.getName() + " " + i);
+                }
+            }
+        //hàm main thực thi
+            public static  void main(String[] args){
+                priority_daemon t1 = new priority_daemon();
+                priority_daemon t2 = new priority_daemon();
+                priority_daemon t3 = new priority_daemon();
+
+                //đặt tên cho thread
+                t1.setName("thread1");
+                t2.setName("thread2");
+                t3.setName("thread3");
+
+                //xét độ ưu tiên priority-> dựa vào độ ưu tiên càng cao thread sẽ chạy trc.
+                t1.setPriority(1);
+                t2.setPriority(10);
+                t3.setPriority(5);
+
+                // tiến trình Daemon luồng hiếm
+                t1.setDaemon(true);
+                System.out.println("luong hiem hoat dong: " + t1.isDaemon());
+                /*
+                * Lưu ý: Nếu bạn muốn tạo một luồng người dùng như một luồng hiểm, phải gọi phương thức setDaemon(true) trước khi start()
+                * */
+
+                //chạy thread
+                 t1.start();
+                 t2.start();
+                 t3.start();
+                /*xét đọ ựu tiên của pritotity*/
+            }
+        }
+
+
+
+or có thể ví dụ về cách chạy uồng hiếm như sau:
+                                public class TestDaemonThread1 extends Thread {
+                                public void run() {
+                                    if (Thread.currentThread().isDaemon()) { // check luong hiem
+                                        System.out.println("luong hiem hoat dong");
+                                    } else {
+                                        System.out.println("luong nguoi dung hoat dong");
+                                    }
+                                }
+                            
+                                public static void main(String[] args) {
+                                    TestDaemonThread1 t1 = new TestDaemonThread1(); // tao thread
+                                    TestDaemonThread1 t2 = new TestDaemonThread1();
+                                    TestDaemonThread1 t3 = new TestDaemonThread1();
+                            
+                                    t1.setDaemon(true);// cat dat t1 la luong hiem
+                            
+                                    t1.start();// start cac thread
+                                    t2.start();
+                                    t3.start();
+                                }
+                            }
+
+                            /*
+                * Lưu ý: Nếu bạn muốn tạo một luồng người dùng như một luồng hiểm, phải gọi phương thức setDaemon(true) trước khi start()
+                * */
+
+
+
+
+
+=======================================================================================================================================
+=======================================================================================================================================
+=======================

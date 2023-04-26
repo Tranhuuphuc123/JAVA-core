@@ -1,3 +1,25 @@
 *********************************TIỀM HIỂU CÁC SỬ DỤNG DATE VÀ TIME (NGÀY VÀ GIỜ TRONG JAVA)**************************
 >>>>>> KHÁI NIỆM:
- - 
+ - Trong Java, các thời gian và ngày giờ được quản lý bằng các lớp trong thư viện Java SE (Standard Edition) của Java:
+    + java.util.Date: là lớp cơ bản nhất để quản lý ngày tháng năm, giờ phút giây và milisecond.
+    + java.util.Calendar: là lớp mạnh hơn của java.util.Date, nó cho phép bạn thao tác với ngày tháng năm, giờ phút giây và
+     milisecond một cách dễ dàng hơn.
+
+    + java.time.LocalDate: là lớp mới trong Java 8 và được ưa chuộng hơn so với java.util.Date và java.util.Calendar. Nó cho 
+    phép bạn làm việc với ngày tháng năm mà không có thời gian.
+
+    + java.time.LocalTime: là lớp mới trong Java 8 và cho phép bạn làm việc với thời gian mà không có ngày tháng năm.
+    + java.time.LocalDateTime: là lớp mới trong Java 8 và cho phép bạn làm việc với cả ngày tháng năm và thời gian.
+    + java.time.ZonedDateTime: là lớp mới trong Java 8 và cho phép bạn làm việc với cả ngày tháng năm, thời gian và múi giờ.
+
+    =====> Tất cả các lớp trên đều cung cấp các phương thức để tạo, chuyển đổi, và so sánh các ngày giờ. Bạn có thể sử dụng các
+     lớp này để xử lý các yêu cầu về ngày ngày và giờ......
+
+
+
+
+
+
+
+     ====>>>>> Code mẫu:
+      -  

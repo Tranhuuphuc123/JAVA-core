@@ -16,7 +16,7 @@ import java.lang.Cloneable;
          this.s = s;
      }
 
-     // ghi đè metthod của clone(), đơn giản bằng cách gọi class Object va metjod clone
+     // ghi đè metthod của clone(), đơn giản bằng cách gọi class Object va method clone
      @Override
     protected Object clone()
          throws CloneNotSupportedException{
