@@ -13,11 +13,6 @@ public class text {
         System.out.print("myDay sau (sau thay đổi với setter): " + tt.getDay() + "\n");
 
 
-
-
-
-
-
         /* thay vì dùng setter để đặt gi trị mới ghi đề ta có thể thiết lập toString()
         * để ta in tt value day, month, year thừ tên class tt mà không cần xd method riêng
         * */

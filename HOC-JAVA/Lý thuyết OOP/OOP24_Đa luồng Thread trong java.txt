@@ -92,6 +92,7 @@
                                             System.out.println("A: " + i);
                                         }
                                     }
+                                }
 
                         # tạo thread với extend ThrEAD():
 
@@ -253,7 +254,7 @@
       ++  NORM_PRIORITY  có giá trị 5
       ++  MAX_PRIORITY có giá trị 10
 
-     + cú phép: get/setPriority
+     + cú pháp: get/setPriority
 
 
  ## Daemon: là chương trình chạy ngầm bên dưới hệ thống thread.  là một luồng cung cấp dịch vụ cho luồng người dùng. Thời gian sống
@@ -299,7 +300,7 @@
                 t3.setName("thread3");
 
                 //xét độ ưu tiên priority-> dựa vào độ ưu tiên càng cao thread sẽ chạy trc.
-                t1.setPriority(1);
+                t1.setPriority(1);     // hoặc có thể viết t1.setPriority(thread.MIN_PRIORITY)... tg tự các th còn lại
                 t2.setPriority(10);
                 t3.setPriority(5);
 
@@ -335,7 +336,7 @@ or có thể ví dụ về cách chạy uồng hiếm như sau:
                                     TestDaemonThread1 t2 = new TestDaemonThread1();
                                     TestDaemonThread1 t3 = new TestDaemonThread1();
                             
-                                    t1.setDaemon(true);// cat dat t1 la luong hiem
+                                    t1.setDaemon(true);// cai dat t1 la luong hiem
                             
                                     t1.start();// start cac thread
                                     t2.start();
