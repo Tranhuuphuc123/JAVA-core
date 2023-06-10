@@ -94,7 +94,7 @@
                                     }
                                 }
 
-                        # tạo thread với extend ThrEAD():
+                        # tạo thread với extend Thread():
 
                                 // tạo thread theo kiểu extend Thread
                                     class myThread2 extends Thread {
@@ -224,7 +224,8 @@
                                     * vậy nếu muốn cho thread t1 chạy hết rồi mới tới các thread sau thì làm sau: dùng join
                                     * lưu ý khi dùng join cần bỏ vào exception
                                     * */
-                                    t1.start();
+                                    t1.start()
+                                    
                                     try {
                                         t1.join();
                                     } catch (InterruptedException e) {

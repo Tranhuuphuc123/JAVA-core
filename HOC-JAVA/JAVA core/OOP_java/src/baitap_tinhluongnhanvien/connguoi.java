@@ -38,4 +38,6 @@ public class connguoi {
     public double luong(){
         return luongcoban;
     }
+
+
 }

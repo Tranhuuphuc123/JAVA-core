@@ -34,7 +34,7 @@
 
  - CharArt(): lấy vị trí ký tự mong muốn trong 1 chuỗi
    
-        String abc= " hoc sinh";
+        String abc= "hoc sinh";
         char c = abc.CharArt(0);
        System.out.println(c);
        ===> với CharArt(0) tức lấy ký tự ở vtri đâug tiên thì kw hiển thị là chữ "h"

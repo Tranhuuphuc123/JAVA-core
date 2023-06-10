@@ -10,7 +10,7 @@ public class try_catch {
         try {
             System.out.println("mpt thứ 3: "+ mang[3]);
         }catch (ArrayIndexOutOfBoundsException e){
-            System.out.println("loi 1: " + "\n" + e);
+            System.out.println("loi : " + "\n" + e);
         }
         catch (Exception e){
             System.out.println("lỗi 2" + "\n" + e);
